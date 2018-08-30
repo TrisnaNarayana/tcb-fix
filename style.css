@@ -330,18 +330,18 @@ h1.big-title
 
 #services
 {
-    background-color: #14336F;
+    background-color: rgb(157, 186, 245);
     z-index: 9;
 }
 
 #services .section-title-holder
 {
-    background-color: #32DB8A
+    background-color: #14336F;
 }
 
 #services .section-title-holder span
 {
-    color: #55B286;
+    color: #fff;
 }
 
 .service-holder 
@@ -587,12 +587,12 @@ div.pp_default .pp_loaderIcon
 
 #about .section-title-holder
 {
-    background-color: #e64b77;
+    background-color: #5666f8;
 }
 
 #about .section-title-holder span
 {
-    color: #b24564;
+    color: #fff;
 }
 
 #about .section-content-holder
