@@ -149,7 +149,8 @@ body a:hover
 
 .section-title-holder
 {
-    background-color: #32DB8A;
+    background-color: #00CEC9;
+    /* background-image: linear-gradient(left, #1e5799, #207cca, #00cec9); */
     width: 370px;
     height: 370px;    
     z-index: 2;
@@ -158,7 +159,7 @@ body a:hover
 .section-num span
 {    
     margin: 64px;
-    color: #55B286;
+    color: rgb(37, 155, 153);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 60px;
@@ -592,7 +593,7 @@ div.pp_default .pp_loaderIcon
 
 #about .section-title-holder span
 {
-    color: #fff;
+    color: rgb(67, 78, 185);
 }
 
 #about .section-content-holder
