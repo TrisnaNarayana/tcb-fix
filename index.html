@@ -544,7 +544,7 @@
                                     <ul>
                                         <li>
                                             <br>
-                                            <button class="negative ui button">Launch</button>
+                                            <a class="negative ui button" href="javascript:void(0)" id="modallaunch">Launch</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -554,7 +554,24 @@
                             </h3>
                             <div class="clear"></div>
                         </article>
-
+                        <div class="ui modal">
+                            <i class="close icon"></i>
+                            <div class="header">
+                                Modal Title
+                            </div>
+                            <div class="image content">
+                                <div class="image">
+                                    An image can appear on left or an icon
+                                </div>
+                                <div class="description">
+                                    A description can appear on the right
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <div class="ui button">Cancel</div>
+                                <div class="ui button">OK</div>
+                            </div>
+                        </div>
                         <article class="relative blog-item-holder center-relative">
                             <div class="num">02</div>
                             <div class="info">
@@ -944,6 +961,7 @@
     <script type='text/javascript' src='js/imagesloaded.pkgd.js'></script>
     <script type='text/javascript' src='js/jquery.prettyPhoto.js'></script>
     <script type='text/javascript' src='js/main.js'></script>
+    <script src="js/semantic.min.js"></script>
     <script>
         jQuery(function ($) {
             $('.flexslider').flexslider({
@@ -958,9 +976,16 @@
                     $('body').removeClass('loading');
                 }
             });
+            $('#modallaunch').click(function () {
+                $('.ui.modal')
+                    .modal('setting', 'closable', false)
+                    .modal('show');
+            });
         });
+
     </script>
-    <script src="js/semantic.min.js"></script>
+
+
 </body>
 
 </html>
