@@ -46,14 +46,30 @@
         <nav id="header-main-menu">
             <div class="mob-menu">MENU</div>
             <ul class="main-menu sm sm-clean">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#video">Video</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                    <li>
+                            <a href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#services">Solutions</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">Product</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#news">Information</a>
+                        </li>
+                        <li>
+                            <a href="#video">Video</a>
+                        </li>
+                        <li>
+                            <a href="#skills">Partner</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
             </ul>
         </nav>
     </div>
@@ -77,12 +93,18 @@
                     $nomor = $no++;
                     if($nomor % 2 == 0) { ?>
 
-                    <div class="one_half margin-0">
+                    <div class="one_half margin-0 hover_image">
                         <img class="image_product" src="<?=base_url().'img/product/'.$d['foto_product']?>" alt="">
+                        <div class="overlay_product">
+                            <div class="text_product"><?=$d['nama_product']?></div>
+                        </div>
                     </div>
                     <?php } else if($nomor %2 != 0) { ?>
-                    <div class="one_half last margin-0">
+                    <div class="one_half last margin-0 hover_image">
                         <img class="image_product" src="<?=base_url().'img/product/'.$d['foto_product']?>" alt="">
+                        <div class="overlay_product">
+                            <div class="text_product"><?=$d['nama_product']?></div>
+                        </div>
                     </div>
                     <?php } } }?>
                    
