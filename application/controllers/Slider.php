@@ -169,11 +169,6 @@ class Slider extends CI_Controller
     public function hapus($id)
     {
       $hasil=$this->MModel->getData("select * from slider where id_slider='$id'");
-      if($hasil)
-      {
-        unlink(base_url().'img/slider/'.$hasil->image);
-      }
-      
       $this->MModel->hapus("id_slider",$id,"slider");
       echo json_encode(array("status"=>TRUE));
 

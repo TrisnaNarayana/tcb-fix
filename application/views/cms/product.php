@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-    <title>Boxus - Html Responsive One Page Template</title>
+    <title>Tali Cahaya Buana</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Template by Colorlib" />
     <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
