@@ -137,7 +137,7 @@
                                             <?=$s['deskripsi_sub_kategori']?>
                                                 <br />
                                                 <br>
-                                                <div class="ui animated button" tabindex="0">
+                                                <div class="ui button" tabindex="0">
                                                     <div class="visible content">Read More</div>
                                                     <div class="hidden content">
                                                         <i class="right arrow icon"></i>
@@ -770,8 +770,7 @@
                             window.alert('Approved!');
                         }
                     })
-                    .modal('show')
-                    ;
+                .modal('show');
             });
             $.fn.showDeskripsi = function (id) {
                 $.ajax({
@@ -813,18 +812,18 @@
         <div class="header">
             Magazine
         </div>
-        <div class="image content">
+        <!-- <div class="image content"> -->
             <div>
-                <object style="width:auto" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
+                <object style="width:100%" height="100%" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
                     id="fullscreen" align="middle">
                     <param name="allowFullScreen" value="true" />
                     <param name="movie" value="fullscreen.swf" />
                     <param name="bgcolor" value="#fff" />
-                    <embed id="magazine" width="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
+                    <embed id="magazine" width="100%" height="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
                         type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
                 </object>
             </div>
-        </div>
+        <!-- </div> -->
         <div class="actions">
             <div class="ui button">Cancel</div>
             <div class="ui button">OK</div>
