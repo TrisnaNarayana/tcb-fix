@@ -38,7 +38,7 @@
     <table class="doc-loader">
         <tr>
             <td>
-                <img src="<?=base_url().'assets/cms/images/loading.gif'?>" alt="Loading..." />
+                <img src="<?=base_url().'assets/cms/images/tcb_loading.gif'?>" alt="Loading..." />
             </td>
         </tr>
     </table>
@@ -256,7 +256,7 @@
                             </div>
                         </a>
                     </div>
-                    <?php $product=$this->MModel->getData("select * from product order by RAND() limit 2");
+                    <?php $product=$this->MModel->getData("select * from product order by RAND() limit 4");
                     if($product) { 
                     foreach($product as $p) { ?>
                     <div class="grid-item element-item p_one_half">
@@ -276,20 +276,6 @@
                         </a>
                     </div>
                     <?php } } ?>
-                    <div class="grid-item element-item p_one">
-                        <a data-rel="prettyPhoto[gallery1]" href="<?=base_url().'assets/cms/demo-images/portfolio_item_05.jpg'?>">
-                            <img src="<?=base_url().'assets/cms/demo-images/portfolio_item_05.jpg'?>" alt="">
-                            <div class="portfolio-text-holder">
-                                <div class="portfolio-text-wrapper">
-                                    <p class="portfolio-type">
-                                        <img src="<?=base_url().'assets/cms/images/icon_post.svg'?>" alt="">
-                                    </p>
-                                    <p class="portfolio-text">PSD MOCKUP</p>
-                                    <p class="portfolio-sec-text">Smart Watch</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
                 </div>
 
                 <div class="clear"></div>
@@ -458,7 +444,7 @@
                                     <ul>
                                         <li>
                                             <br>
-                                            <button class="positive ui button" id="modallaunch">Launch</button>
+                                            <button class="positive ui button" id="#" onclick="showModal('<?=$i['swf']?>')">Launch</button>
                                         </li>
                                         <li>
                                             <br>
@@ -808,6 +794,20 @@
 
     </script>
 
+    <script type="text/javascript">
+ 
+        function showModal(swf)
+        {
+            var url = "<?=base_url().'img/info/'?>"+swf;
+            <!-- alert(url); -->
+            jQuery(function ($) {
+            $('#magazine').attr('src',url);
+             $('.ui.modal').modal('show');
+            });
+            
+        }
+    </script>
+
     <div class="ui modal">
         <i class="close icon"></i>
         <div class="header">
@@ -820,7 +820,7 @@
                     <param name="allowFullScreen" value="true" />
                     <param name="movie" value="fullscreen.swf" />
                     <param name="bgcolor" value="#fff" />
-                    <embed width="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
+                    <embed id="magazine" width="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
                         type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
                 </object>
             </div>
