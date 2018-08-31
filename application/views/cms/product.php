@@ -36,7 +36,7 @@
     <table class="doc-loader">
         <tr>
             <td>
-                <img src="<?=base_url().'assets/cms/images/loading.gif'?>   " alt="Loading..." />
+                <img src="<?=base_url().'assets/cms/images/tcb_loading.gif'?>   " alt="Loading..." />
             </td>
         </tr>
     </table>
@@ -69,7 +69,7 @@
                     </a>
 
                     <div class="one margin-0">
-                        <img src="<?=base_url().'assets/cms/demo-images/item_img_01.jpg'?>" alt="">
+                        <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
                     </div>
                     <div class="clear"></div>
                     <?php $no = 1 ; if($data) {
@@ -78,11 +78,11 @@
                     if($nomor % 2 == 0) { ?>
 
                     <div class="one_half margin-0">
-                        <img src="<?=base_url().'img/product/'.$d['foto_product']?>" alt="">
+                        <img class="image_product" src="<?=base_url().'img/product/'.$d['foto_product']?>" alt="">
                     </div>
                     <?php } else if($nomor %2 != 0) { ?>
                     <div class="one_half last margin-0">
-                        <img src="<?=base_url().'img/product/'.$d['foto_product']?>" alt="">
+                        <img class="image_product" src="<?=base_url().'img/product/'.$d['foto_product']?>" alt="">
                     </div>
                     <?php } } }?>
                    
@@ -98,14 +98,7 @@
             <div class="footer content-1170 center-relative">
                 <ul>
                     <li class="copyright-footer">
-                        © 2018 All rights reserved. | Boxus Template by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    </li>
-                    <li class="social-footer">
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                        <a href="#"><span class="fa fa-behance"></span></a>
-                        <a href="#"><span class="fa fa-dribbble"></span></a>
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-rss"></span></a>
+                    © 2018 All rights reserved. | Tali Cahaya Buana
                     </li>
                 </ul>
             </div>

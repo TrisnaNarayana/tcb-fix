@@ -6,7 +6,9 @@ body
     font-weight: 400;
     color: #23214c;    
 }
-
+ul li{
+    list-style: none;
+}
 body a
 {
     text-decoration: none;
@@ -331,7 +333,7 @@ h1.big-title
 
 #services
 {
-    background-color: rgb(157, 186, 245);
+    background-color: rgb(51, 89, 167);
     z-index: 9;
 }
 
@@ -417,7 +419,7 @@ h1.big-title
     font-weight: 700;
     font-size: 20px;
     width: 430px;
-    background-color: #E74C78;
+    background-color: #FFBA42;
     text-align: center;
 }
 
@@ -578,8 +580,8 @@ div.pp_default .pp_loaderIcon
 
 #about
 {
-    background-color: rgb(34, 28, 90); 
-    background-image: url("demo-images/background_img_03.jpg"); 
+    background-color: rgb(20, 51, 111); 
+    background-image: url("demo-images/building.png"); 
     background-repeat: no-repeat; 
     background-position: center top; 
     background-size: cover; 
@@ -653,8 +655,8 @@ div.pp_default .pp_loaderIcon
 
 #news
 {
-    background-color: rgb(34, 28, 90); 
-    background-image: url("demo-images/background_img_04.jpg"); 
+    background-color: rgb(20, 51, 111); 
+    background-image: url("demo-images/book.png"); 
     background-repeat: no-repeat; 
     background-position: center center; 
     background-size: cover; 
@@ -764,8 +766,8 @@ div.pp_default .pp_loaderIcon
 
 #video
 {
-    background-color: rgb(34, 28, 90); 
-    background-image: url("demo-images/background_img_06.jpg"); 
+    background-color: rgb(20, 51, 111); 
+    background-image: url("demo-images/galeri.png"); 
     background-repeat: repeat-x; 
     background-position: center center; 
     background-size: auto; 
@@ -821,10 +823,9 @@ a.video-popup-holder:hover img.popup-play
 
 /* SKILLS SECTION */
 
-
 #skills
 {
-    background-color: rgb(34, 28, 90); 
+    background-color: rgb(20, 51, 111); 
     background-image: url("demo-images/item_background_01.jpg"); 
     background-repeat: no-repeat; 
     background-position: left top; 
@@ -902,8 +903,8 @@ a.video-popup-holder:hover img.popup-play
 
 #contact
 {
-    background-color: rgb(34, 28, 90); 
-    background-image: url("demo-images/background_img_05b.jpg"); 
+    background-color: rgb(20, 51, 111); 
+    background-image: url("demo-images/particle.png"); 
     background-repeat: no-repeat; 
     background-position: center top; 
     background-size: auto; 
@@ -912,12 +913,12 @@ a.video-popup-holder:hover img.popup-play
 
 #contact .section-title-holder
 {
-    background-color: rgb(230, 75, 119);
+    background-color: rgb(173, 55, 55);
 }
 
 #contact .section-title-holder span
 {
-    color: #b24564;
+    color: #fff;
 }
 
 #contact .section-content-holder
@@ -1089,7 +1090,7 @@ footer
     font-size: 16px;
     line-height: 36px;
     clear: both;
-    color: #5b5881;
+    color: #fff;
     text-align: center;    
     padding: 100px 0;
 }
@@ -1123,7 +1124,7 @@ footer
 
 #portfolio-1
 {
-    background-color: #14336F;
+    background-color: rgb(20, 51, 111);
     background-image:url("demo-images/background_img_05b.jpg"); 
     background-repeat: no-repeat;
     background-position: center top;
@@ -1133,8 +1134,8 @@ footer
 #portfolio-2
 {
 
-    background-color: #14336F;
-    background-image: url(demo-images/item_background_01.jpg);
+    background-color: rgb(20, 51, 111);
+    background-image: url("demo-images/item_background_01.jpg");
     background-repeat: no-repeat;
     background-position: left top;
     background-size: 100% auto;
