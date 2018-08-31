@@ -462,7 +462,7 @@
                                         </li>
                                         <li>
                                             <br>
-                                            <button class="negative ui button" href="javascript:void(0)" id="modallaunch">Download</button>
+                                            <a target="_blank" class="negative ui button" href="<?=base_url().'img/info/'.$i['pdf']?>" id="modallaunch">Download</a>
                                         </li>
                                     </ul>
                                 </div>

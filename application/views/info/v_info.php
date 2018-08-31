@@ -34,6 +34,7 @@ $this->load->view('include/header');
                                         <th>No</th>
                                         <th>Tanggal Info</th>
                                         <th>Judul Info</th>
+                                        <th>Unduh Pdf</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -42,6 +43,7 @@ $this->load->view('include/header');
                                         <th>No</th>
                                         <th>Tanggal Info</th>
                                         <th>Judul Info</th>
+                                        <th>Unduh Pdf</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tbody>
@@ -118,6 +120,14 @@ $this->load->view('include/header');
         $('#dropify').dropify({
             messages: {
                 default: 'Only SWF file',
+                replace: 'Update',
+                remove: 'Remove',
+                error: 'error'
+            }
+        });
+        $('#dropify1').dropify({
+            messages: {
+                default: 'Only PDF file',
                 replace: 'Update',
                 remove: 'Remove',
                 error: 'error'
@@ -255,6 +265,10 @@ $this->load->view('include/header');
                     <div class="form-group">
                         <label class="ace-file-input ace-file-multiple">Image</label>
                         <input multiple="" id="dropify" type="file" name="image">
+                    </div>
+                    <div class="form-group">
+                        <label class="ace-file-input ace-file-multiple">Image</label>
+                        <input multiple="" id="dropify1" type="file" name="pdf">
                     </div>
                     <div class="form-group">
                         <label for="">Judul Info</label>
