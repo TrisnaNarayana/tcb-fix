@@ -53,11 +53,6 @@ $this->load->view('include/header');
 											<td><?=$detail->email_mitra?></td>
 										</tr>
 										<tr>
-											<td>Alamat Mitra</td>
-											<td>:</td>
-											<td><?=$detail->alamat_mitra?></td>
-										</tr>
-										<tr>
 											<td>Link</td>
 											<td>:</td>
 											<td><a target="_blank" href="<?=$detail->link_mitra?>">Visit</a></td>
@@ -65,11 +60,7 @@ $this->load->view('include/header');
 									</tbody>
 								</table>
 							</div>
-							<div class="col-xs-12">
-							<hr>
-								<h4>Deskripsi :</h4>
-								<?=$detail->deskripsi?>
-							</div>
+							
             </div>
             <!-- /.box-body -->
           </div>

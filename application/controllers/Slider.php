@@ -88,8 +88,8 @@ class Slider extends CI_Controller
               $config['source_image']='./img/slider/'.$gbr['file_name'];
               $config['create_thumb']= FALSE;
               $config['maintain_ratio']= FALSE;
-              $config['width']= 1380 ;//1145; //;
-              $config['height']=800; //456;//
+              $config['width']= 1367 ;//1145; //;
+              $config['height']=796; //456;//
               $config['new_image']= './img/slider/'.$gbr['file_name'];
               $this->load->library('image_lib', $config);
               $this->image_lib->resize();
@@ -132,8 +132,8 @@ class Slider extends CI_Controller
               $config['source_image']='./img/slider/'.$gbr['file_name'];
               $config['create_thumb']= FALSE;
               $config['maintain_ratio']= FALSE;
-              $config['width']= 1380 ;//1145; //;
-              $config['height']=800; //456;//
+              $config['width']= 1367 ;//1145; //;
+              $config['height']=796; //456;//
               $config['new_image']= './img/slider/'.$gbr['file_name'];
               $this->load->library('image_lib', $config);
               $this->image_lib->resize();

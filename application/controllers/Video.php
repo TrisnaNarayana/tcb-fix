@@ -16,7 +16,16 @@ class Video extends CI_Controller
 
   public function index()
   {
-    $this->load->view('video/v_video');
+      $hasil=$this->MModel->get("select * from video where id_video='1'");
+      if($hasil)
+      {
+        $data['detail']=$hasil;
+        $this->load->view('video/v_video',$data);
+      }
+      else {
+        redirect(base_url("Error404"));
+      }
+    
   }
 
   public function ajax_list()
@@ -159,7 +168,8 @@ class Video extends CI_Controller
               'video'=>$gambar,
               'judul_video'=>$this->input->post('nama_video'),
             );
-            $this->MModel->add("video",$data);
+            $this->MModel->update("id_video",1,"video",$data);
+
             echo json_encode(array("status" => TRUE));
       }
 
@@ -168,7 +178,8 @@ class Video extends CI_Controller
         $data = array(
         'nama_video'=>$this->input->post('nama_video'),
       );
-            $this->MModel->add("video",$data);
+      $this->MModel->update("id_video",1,"video",$data);
+
             echo json_encode(array("status" => TRUE));
 
       }
@@ -241,21 +252,7 @@ class Video extends CI_Controller
     }
 
 
-    function updateTampilkan($id,$status)
-    {
-      if($status=="Y")
-      {
-        $data=array("tampilkan"=>"N");
-      }
-      else
-      {
-        $data=array("tampilkan"=>"Y");
-      }
-
-      $this->MModel->update("id_video",$id,"video",$data);
-      redirect(base_url().'Video');
-    }
-
+   
 
 
 }

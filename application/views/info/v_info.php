@@ -111,17 +111,13 @@ $this->load->view('include/header');
             $(this).next().empty();
         });
 
-        $('#editor').redactor({
-            buttons: ["formatting", "|", "bold", "italic", "deleted", "|", "unorderedlist", "orderedlist", "outdent", "indent", "|", "image", "video", "link", "table", "|", "alignment", "|", "horizontalrule"],
-            plugins: ['fontcolor'],
-            minHeight: 200,
-        });
+        
 
 
 
         $('#dropify').dropify({
             messages: {
-                default: 'Choose file Jpg/JPEG/PNG max(500 kb)',
+                default: 'Only SWF file',
                 replace: 'Update',
                 remove: 'Remove',
                 error: 'error'
@@ -264,10 +260,6 @@ $this->load->view('include/header');
                         <label for="">Judul Info</label>
                         <input type="text" name="judul" id="" placeholder="Judul Info" class="form-control" required>
                         <p class="help-block mb-0"></p>
-                    </div>
-                    <div class="form-group">
-                        <label class="">Description</label>
-                        <textarea name="deskripsi" id="editor" class="form-control" data-iconlibrary="fa fa-plus" rows="10" required><?php echo htmlspecialchars(set_value('deskripsi'));?></textarea>
                     </div>
             </div>
             <div class="modal-footer">

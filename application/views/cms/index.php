@@ -1,668 +1,839 @@
-<!DOCTYPE html>
-<html lang="zxx" style="overflow-x: hidden;">
+<!DOCTYPE HTML>
+<html lang="en-US">
 
 <head>
-	<title>PT Tali Cahaya Buana</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"
-	/>
-	<meta name="keywords" content="Invest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+    <title>Tali Cahaya Buana</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Template by Colorlib" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
+    <meta name="author" content="Colorlib" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!-- Custom Theme files -->
-	<link href="<?=base_url().'assets/cms/css/bootstrap.css'?>" type="text/css" rel="stylesheet" media="all">
-	<link href="<?=base_url().'assets/cms/css/style.css'?>" type="text/css" rel="stylesheet" media="all">
-	<link href="<?=base_url().'assets/cms/css/animate.css'?>" type="text/css" rel="stylesheet" media="all">
-	<link href="<?=base_url().'assets/cms/css/font-awesome.css'?>" rel="stylesheet">
-	<!-- font-awesome icons -->
-	<link rel="stylesheet" href="<?=base_url().'assets/cms/css/flexslider.css'?>" type="text/css" media="screen" />
-	<!-- //Custom Theme files -->
-	<!-- js -->
-	<script src="<?=base_url().'assets/cms/js/jquery-2.2.3.min.js'?>"></script>
-	<!-- //js -->
-	<!-- web-fonts -->
-	<link href="//fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Jacques+Francois+Shadow" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Roboto+Condensed|Roboto+Mono|Roboto+Slab" rel="stylesheet">
-	<link rel="stylesheet" href="<?=base_url().'assets/dropify/dropify.min.css'?>">
-	<link rel="stylesheet" href="<?=base_url().'assets/swt/sweetalert.css'?>">
-	<!-- //web-fonts -->
+    <link rel="shortcut icon" href="<?=base_url().'assets/cms/images/favicon.png'?> />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet'
+        type='text/css'>
+    <link rel=" stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/clear.css "?>' />
+    <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/common.css "?>' />
+    <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/font-awesome.min.css "?>' />
+    <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/carouFredSel.css "?>' />
+    <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/prettyPhoto.css "?>' />
+    <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/sm-clean.css "?>' />
+    <link rel="stylesheet " href="<?=base_url(). 'assets/cms/css/flexslider.css'?>">
+    <link rel="stylesheet" href="<?=base_url().'assets/cms/css/semantic.min.css'?>">
+    <link rel="stylesheet" type="text/css" href='<?=base_url()."assets/cms/style.css"?>' />
+
+
+    <!--[if lt IE 9]>
+                <script src="js/html5.js"></script>
+        <![endif]-->
 
 </head>
-<?php $setting=$this->MModel->get("select * from profile where id_profile='1'");?>
-<?php $dsc=$this->MModel->get("select * from deskripsi where id_deskripsi='1'");?>
+<?php $setting=$this->MModel->get("select * from profile where id_profile='1'"); ?>
+<?php $deskripsi=$this->MModel->get("select * from deskripsi where id_deskripsi='1'"); ?>
+<?php $video=$this->MModel->get("select * from video where id_video='1'"); ?>
 
 <body>
-		<!-- <div class="sk-folding-cube">
-			<div class="sk-cube1 sk-cube"></div>
-			<div class="sk-cube2 sk-cube"></div>
-			<div class="sk-cube4 sk-cube"></div>
-			<div class="sk-cube3 sk-cube"></div>
-		</div> -->
-	<style media="screen">
-		@media(min-width: $screen-md-min) {
-			.col-md-border {
-				&:not(:last-child) {
-					border-right: 1px solid #d7d7d7;
-				}
 
-				&+.col-md-border {
-					border-left: 1px solid #d7d7d7;
-					margin-left: -1px;
-				}
-			}
-		}
-	</style>
-	<!-- banner -->
-	<div class="banner-w3layouts">
-		<div class="flexslider">
-			<ul class="slides">
-				<?php $slider=$this->MModel->getData("select * from slider where tampilkan='Y'");
-			if($slider) {
-			foreach ($slider as $s) { ?>
-				<li>
-					<div class="banner-w3text banner-img4" style="background: url(<?=base_url().'img/slider/'.$s['image']?>)no-repeat center 0px; background-size:cover;">
-					</div>
-				</li>
-				<?php } } ?>
+    <!-- Preloader Gif -->
+    <table class="doc-loader">
+        <tr>
+            <td>
+                <img src="<?=base_url().'assets/cms/images/loading.gif'?>" alt="Loading..." />
+            </td>
+        </tr>
+    </table>
 
-			</ul>
-		</div>
-		<!-- FlexSlider -->
-		<script defer src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
-		<script>
-			$(window).load(function () {
-				$('.flexslider').flexslider({
-					animation: "slide",
-					animationLoop: true,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
-					smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode  
-					startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
-					slideshow: true,
-					slideshowSpeed: 5000,
-					start: function (slider) {
-						$('body').removeClass('loading');
-					}
-				});
-			});
-		</script>
+    <!-- Menu -->
+    <div class="menu-wrapper center-relative">
+        <nav id="header-main-menu">
+            <div class="mob-menu">MENU</div>
+            <ul class="main-menu sm sm-clean">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#services">Solutions</a>
+                </li>
+                <li>
+                    <a href="#portfolio">Product</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#news">Information</a>
+                </li>
+                <li>
+                    <a href="#video">Video</a>
+                </li>
+                <li>
+                    <a href="#skills">Partner</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-		<!-- //FlexSlider -->
-		<!-- banner-info -->
-		<div class="banner-agileinfo">
-			<div class="nav-info">
-				<div class="container-fluid">
-					<div class="nav-contact">
-						<ul>
-							<li>
-								<a href="">
-									<i class="fa fa-phone"></i> <?=$setting->telepon?></a>
-							</li>
-							<li>
-								<a href="">
-									<i class="fa fa-envelope"></i> <?=$setting->email?></a>
-							</li>
-							<!-- <li style="float:right;">
-								<a href="">Register&nbsp;&nbsp;
-									<i class="fa fa-key"></i>
-								</a>
-							</li>
-							<li style="float:right; padding-right:0px;">
-								<a href="">Sign In |</a>
-							</li> -->
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="w3header">
-					<!--header-->
-					<nav class="navbar navbar-default navbar-fixed-top">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="#">
-								<img src="<?=base_url().'assets/cms/images/tcb.png'?>" width="60px" alt="">
-							</a>
-						</div>
-						<!-- navbar-header -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav navbar-right block-menu">
-								<li>
-									<a href="<?=base_url().'Welcome'?>" class="three-d">Home
-										<span aria-hidden="true" class="three-d-box">
-											<span class="front">Home</span>
-											<span class="back">Home</span>
-										</span>
-									</a>
-								</li>
-								<li>
-									<a href="<?=base_url().'Welcome/about'?>" class="three-d">About
-										<span aria-hidden="true" class="three-d-box">
-											<span class="front">About</span>
-											<span class="back">About</span>
-									</a>
-								</li>
-								<li>
-									<a href="<?=base_url().'Welcome/portofolio'?>" class="three-d">Product
-										<span aria-hidden="true" class="three-d-box">
-											<span class="front">Product</span>
-											<span class="back">Product</span>
-									</a>
-								</li>
-								<li>
-									<a href="<?=base_url().'Welcome/info'?>" class="three-d">Information
-										<span aria-hidden="true" class="three-d-box">
-											<span class="front">Information</span>
-											<span class="back">Information</span>
-									</a>
-								</li>
-								<li>
-									<a href="#footer" class="three-d page-scroll">Reach US
-										<span aria-hidden="true" class="three-d-box">
-											<span class="front">Reach US</span>
-											<span class="back">Reach US</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //banner -->
-	<!-- about -->
-	<div class="w3ls-section w3-about_short" id="about_short" style="background:url('<?=base_url().'img/profile/B.png'?>')">
-		<div class="container">
-			<div class="about-main animated fadeInRight">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="tittle">
-							<div class="col-md-10 col-sm-12">
-								<span>Why are we here</span>
-							</div>
-							<div class="col-md-2 col-sm-12">
-								<a class="btn btn-danger btn-md form-control pull-right" href="<?=base_url().'Welcome/about'?>">LEARN MORE</a>
-								<br>
-								<br>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 w3_agileits-ab-main">
-						<div class="panel panel-default">
-							<div class="panel-body deskripsi">
-								<p>
-									<?=$setting->deskripsi?>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="w3ls-section w3-data-center" id="data-center" style="background:url('<?=base_url().'assets/cms/images/bg2.png'?>') no-repeat;background-size: cover;background-position:center;">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 animated fadeInLeft">
-					<div class="tittle">
-						<span>Solutions</span>
-					</div>
-					<div class="description-data-center">
-						<?=$dsc->desc_solution?>
-					</div>
-					<br>
-					<hr>
-					<br>
-					<div class="row">
-						<?php $no=1; $servis=$this->MModel->getData("select * from servis");
+    <!-- Home -->
+    <div class="flexslider">
+        <ul class="slides">
+            <?php $data=$this->MModel->getData("select * from slider where tampilkan='Y'");
+        if($data){
+        foreach($data as $slider) { ?>
+            <li>
+                <div id="home" class="section intro-page" style="background-image:url('<?=base_url().'img/slider/'.$slider['image']?>');">
+                    <div class="block content-1170 center-relative center-text">
+                        <center>
+                            <img class="top-logo" src="<?=base_url().'assets/cms/demo-images/logo.png'?>" alt="Boxus" />
+                        </center>
+                        <br>
+                        <h1 class="big-title">Tali Cahaya Buana
+                            <span>-</span>
+                        </h1>
+                        <p class="title-desc">Support bright Technology today for a better tomorrow</p>
+                    </div>
+                </div>
+            </li>
+            <?php } } ?>
+        </ul>
+    </div>
+    <!-- Service -->
+
+    <div id="services" class="section">
+        <div class="block content-1170 center-relative">
+            <div class="section-title-holder left">
+                <div class="section-num">
+                    <center>
+
+                        <span>Solutions</span>
+                    </center>
+                </div>
+                <!-- <h2 class="entry-title">Services</h2> -->
+            </div>
+            <div class="section-content-holder right">
+                <div class="content-wrapper">
+                    <script>
+                        var slider1_speed = "500";
+                        var slider1_auto = "false";
+                        var slider1_hover = "true";
+                    </script>
+                    <div class="image-slider-wrapper relative service slider1">
+                        <a id="slider1_next" class="image_slider_next" href="#"></a>
+
+                        <ul id="slider1" class="image-slider slides">
+                            <?php $no=1; $solution=$this->MModel->getData("select * from sub_kategori order by RAND() limit 4"); ?>
+                            <li>
+                                <?php if($solution) { 
+                            foreach ($solution as $s ) { ?>
+                                <div class="service-holder ">
+                                    <!-- <img src="demo-images/icon_03.png" alt=""> -->
+                                    <div class="service-content-holder">
+                                        <div class="service-title">
+                                            <?=$s['nama_sub_kategori']?>
+                                        </div>
+                                        <div class="service-content">
+                                            <?=$s['deskripsi_sub_kategori']?>
+                                                <br />
+                                                <br>
+                                                <div class="ui animated button" tabindex="0">
+                                                    <div class="visible content">Read More</div>
+                                                    <div class="hidden content">
+                                                        <i class="right arrow icon"></i>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php } }?>
+                            </li>
+                            <li>
+
+                                <div class="service-holder ">
+                                    <div class="row">
+                                        <?php $no=1; $servis=$this->MModel->getData("select * from servis");
 					if($servis){
 					foreach($servis as $s){
 					
 					$no_hasil=$no++;
 					if($no_hasil % 2 == 0) { 
 						$id_servis=$s['id_servis'];?>
-						<div class="col-md-6">
-							<div id="button">
-								<ul>
-									<li class="top">
-										<a class="btn btn-data-center form-control btn-md"><?=$s['nama_servis']?> <i class="fa fa-angle-down pull-right"></i></a>
-									</li>
-									<?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
+                                        <div class="col-md-6">
+                                            <div id="button">
+                                                <ul>
+                                                    <li class="top">
+                                                        <a class="btn btn-data-center form-control btn-md"><?=$s['nama_servis']?> <i class="fa fa-angle-down pull-right"></i></a>
+                                                    </li>
+                                                    <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
 									if($sub){
 									foreach($sub as $b) { 
 									$hasil_no=$noo++; 
 									if($hasil_no==1) { ?>
-									<li class="item">
-										<div class="triangle"></div><a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
-									</li>
-									<?php } else { ?>
-									<li class="item">
-										<a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
-									</li>
-									<?php } } } ?>
+                                                    <li class="item">
+                                                        <div class="triangle"></div><a class="btn btn-data-center-sub form-control btn-md"
+                                                            href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                    </li>
+                                                    <?php } else { ?>
+                                                    <li class="item">
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                    </li>
+                                                    <?php } } } ?>
 
-								</ul>
+                                                </ul>
 
-							</div>
-						</div>
-						<?php } if($no_hasil % 2 != 0 ) { 
+                                            </div>
+                                        </div>
+                                        <?php } if($no_hasil % 2 != 0 ) { 
 						$id_servis=$s['id_servis']; ?>
-						<div class="col-md-6">
-							<div id="button">
-								<ul>
-									<li class="top">
-										<a class="btn btn-data-center form-control btn-md"><?=$s['nama_servis']?> <i class="fa fa-angle-down pull-right"></i></a>
-									</li>
-									<?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
+                                        <div class="col-md-6">
+                                            <div id="button">
+                                                <ul>
+                                                    <li class="top">
+                                                        <a class="btn btn-data-center form-control btn-md"><?=$s['nama_servis']?> <i class="fa fa-angle-down pull-right"></i></a>
+                                                    </li>
+                                                    <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
 									if($sub){
 									foreach($sub as $b) { 
 									$hasil_no=$noo++; 
 									if($hasil_no==1) { ?>
-									<li class="item">
-										<div class="triangle"></div><a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
-									</li>
-									<?php } else { ?>
-									<li class="item">
-										<a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
-									</li>
-									<?php } } } ?>
-								</ul>
+                                                    <li class="item">
+                                                        <div class="triangle"></div><a class="btn btn-data-center-sub form-control btn-md"
+                                                            href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                    </li>
+                                                    <?php } else { ?>
+                                                    <li class="item">
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                    </li>
+                                                    <?php } } } ?>
+                                                </ul>
 
-							</div>
-						</div>
-						<?php } } }?>
+                                            </div>
+                                        </div>
+                                        <?php } } }?>
 
-					</div>
-					<!-- data modal -->
+                                    </div>
+                                </div>
 
-				</div>
-				<div class="col-md-4">
-					<img src="<?=base_url();?>assets/cms/images/pict1.png" width="100%" style="box-shadow: 14.5px 14.5px 24px -2px rgb(181, 176, 211);"
-					 alt="">
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="w3ls-section w3-harness" id="harness" style="background:url('<?=base_url().'assets/cms/images/bg2.png'?>') no-repeat;background-size: cover;background-position:center;">
-		<div class="container">
-			<div class="row box">
-				<div class="col-md-2 col-sm-12 col-xs-12">
-					<div class="tittle">
-						<span>HARNESS</span>
-					</div>
-				</div>
-				<div class="col-md-8 col-sm-12 col-xs-12">
-					<?=$dsc->desc_product?>
-				</div>
-			</div>
-			<div class="row">
-				<?php $product=$this->MModel->getData("select * from product  order by id_product DESC limit 6");
-					$no=1; ;if($product){
-				   foreach ($product as $p) { ?>
-				<div class="col-md-4">
-					<center>
-						<img class="img-responsive image-harness" src="<?=base_url().'img/product/'.$p['foto_product']?>">
-						<div class="middle-image">
-							<div class="text-image">
-								<?=$p['nama_product']?>
-							</div>
-						</div>
-					</center>
-				</div>
-				<?php } } ?>
+                            </li>
 
-			</div>
-		</div>
-	</div>
-	<div class="w3ls-section w3-contact" id="contact" style="background:url('<?=base_url().'assets/cms/images/bg2.png'?>') no-repeat;background-size: cover;background-position:center;">
-		<div class="container">
-			<div class="row">
-				<h2 style="text-align:center;">LET'S SEE HOW WE CAN HELP YOU</h1>
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<div class="panel-contact" id="partner">
-							<div class="panel-body-contact">
-								<h3>PARTNER</h3>
-								<p>What can we offer for you? Let's see the oppertunities
-								</p>
-							</div>
-							<div class="panel-footer-contact">
-								<button type="button" class="btn btn-primary form-control">WORK TOGETHER</button>
-							</div>
-						</div>
-					</div>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<div class="panel-contact" id="client">
-							<div class="panel-body-contact">
-								<h3>CLIENT</h3>
-								<p>We Are to help. Feel free to tell us
-								</p>
-							</div>
-							<div class="panel-footer-contact">
-								<button type="button" onclick="addClient()" class="btn btn-primary form-control">CONTACT US</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<div class="panel-contact" id="career">
-							<div class="panel-body-contact">
-								<h3>CAREER</h3>
-								<p>Glad to know more from you. Join our team today
-								</p>
-							</div>
-							<div class="panel-footer-contact">
-								<button type="button" onclick="addKarir()" class="btn btn-primary form-control">APPLY NOW</button>
-							</div>
-						</div>
-					</div>
-
-			</div>
-		</div>
-	</div>
-	<div class="w3ls-section w3-stayuptodate" id="stayuptodate" style="background:url('<?=base_url().'assets/cms/images/bg2.png'?>') no-repeat;background-size: cover;background-position:center;">
-		<div class="row">
-
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				<img src="<?=base_url().'assets/cms/images/building3.png'?>" class="img-responsive building" width="100%" alt="">
-			</div>
-			<div class="container">
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-					<form action="" method="POST" role="form" class="form-stayuptodate">
-						<div class="form-group">
-							<h2 class="text-suptd">STAY UP TO DATE</h2>
-							<p class="sub-suptd">Sign Up receive newsletter packed with exiting news,our activity updates and events right in
-								your inbox</p>
-							<input type="text" class="form-control email" id="" placeholder="Email">
-						</div>
-						<center>
-							<button type="submit" class="btn btn-danger btn-md">Submit</button>
-						</center>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="w3ls-section w3-partner" id="partner" style="background:url('<?=base_url().'assets/cms/images/bg2.png'?>') no-repeat;background-size: cover;background-position:center;">
-		<div class="container">
-		<h2 style="text-align:center;font-weight:bold;margin:15px 0px 50px 0px;">Partner</h2>
-					<div class="row"> 
-						<?php
-						$partner=$this->MModel->getData("select * from mitra");
-						if($partner){
-						foreach($partner as $part){?>
-						<div class="col-md-2 col-sm-4 col-xs-4">
-							<a target="_blank" href="<?=$part['link_mitra']?>"><img src="<?=base_url().'img/mitra/'.$part['foto_mitra']?>" width="128px" alt=""></a>
-						</div>
-						<?php }} ?>
-					</div>
-		</div>
-	</div>
-	<!-- //about-slid -->
-	<!--services section starts here-->
-	<?php $this->load->view("cms/include/footer"); ?>
-<script>
-$('.page-scroll').on('click',function(e){
-    var tujuan = $(this).attr('href');
-    var elementHref = $(tujuan);
-    console.log(elementHref);
-   console.log($('body').scrollTop()); 
-   $("html,body").animate({
-        scrollTop:elementHref.offset().top - 50
-    },1250,'easeInOutExpo');
-    console.log(elementHref.offset().top - 50);
-e.preventDefault();
-});
-
-</script>
-	<script type="text/javascript">
-		var save_method;
-
-		$(document).ready(function () {
-
-			$('input').change(function () {
-				$(this).parent().parent().removeClass('has-error');
-				$(this).next().empty();
-			});
-			$('select').change(function () {
-				$(this).parent().parent().removeClass('has-error');
-				$(this).next().empty();
-			});
-
-			$('#dropify').dropify({
-				messages: {
-					default: 'Choose file CV (PDF/DOC/DOCX max(2 MB))',
-					replace: 'Update',
-					remove: 'Remove',
-					error: 'error'
-				}
-			});
-
-			$('#formC').on('submit', function (e) {
-				$('#btnSave1').text('Menyimpan...');
-				$('#btnSave1').attr('disabled', true);
-				var url;
-				if (save_method == 'add') {
-					url = "<?=base_url().'Client/add';?>";
-				} else {
-					url = "<?=base_url().'Client/update';?>";
-				}
-				e.preventDefault();
-				$.ajax({
-					url: url,
-					method: "POST",
-					data: new FormData(this),
-					contentType: false,
-					cache: false,
-					processData: false,
-					success: function (data) {
-						if (save_method == 'add') {
-							$('#addClient').modal('hide');
-							swal({
-								title: 'Sukses!',
-								text: 'Data berhasil di simpan',
-								type: 'success'
-							},
-								function () {
-									location.reload();
-								});
-						}
-						else {
-							$('#addClient').modal('hide');
-							swal({
-								title: 'Sukses!',
-								text: 'Data berhasil di ubah',
-								type: 'success'
-							},
-								function () {
-									location.reload();
-								});
-						}
-					}
-				});
-			});
+                </div>
+            </div>
+            <div class='clear'></div>
+        </div>
+    </div>
 
 
-			$('#formJ').on('submit', function (e) {
-				$('#btnSave').text('Menyimpan...');
-				$('#btnSave').attr('disabled', true);
-				var url;
-				if (save_method == 'add') {
-					url = "<?=base_url().'Karir/add';?>";
-				} else {
-					url = "<?=base_url().'Karir/update';?>";
-				}
-				e.preventDefault();
-				$.ajax({
-					url: url,
-					method: "POST",
-					data: new FormData(this),
-					contentType: false,
-					cache: false,
-					processData: false,
-					success: function (data) {
-						if (save_method == 'add') {
-							$('#addLomba').modal('hide');
-							swal({
-								title: 'Sukses!',
-								text: 'Data berhasil di simpan',
-								type: 'success'
-							},
-								function () {
-									location.reload();
-								});
-						}
-						else {
-							$('#addLomba').modal('hide');
-							swal({
-								title: 'Sukses!',
-								text: 'Data berhasil di ubah',
-								type: 'success'
-							},
-								function () {
-									location.reload();
-								});
-						}
-					}
-				});
-			});
+    <!-- Portfolio -->
+    <div id="portfolio" class="section">
+        <div class="block content-1170 center-relative">
+            <div class="section-title-holder right">
+                <div class="section-num">
+                    <center>
+                        <span>Product</span>
+                    </center>
+                </div>
+                <!-- <h2 class="entry-title">Product</h2> -->
+            </div>
+            <div class="section-content-holder portfolio-holder left">
+                <div class="grid" id="portfolio-grid">
+                    <div class="grid-sizer"></div>
+                    <div class="grid-item element-item p_one">
+                        <a href="single-portfolio.html">
+                            <img src="<?=base_url().'assets/cms/demo-images/gambar1.jpg'?>" alt="">
+                            <div class="portfolio-text-holder">
+                                <div class="portfolio-text-wrapper">
+                                    <p class="portfolio-type">
+                                        <img src="<?=base_url().'assets/cms/images/icon_post.svg'?>" alt="">
+                                    </p>
+                                    <p class="portfolio-text">Harness</p>
+                                    <p class="portfolio-sec-text">Cable</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <?php $product=$this->MModel->getData("select * from product order by RAND() limit 2");
+                    if($product) { 
+                    foreach($product as $p) { ?>
+                    <div class="grid-item element-item p_one_half">
+                        <a href="single-portfolio2.html">
+                            <img src="<?=base_url().'img/product/'.$p['foto_product']?>" alt="">
+                            <div class="portfolio-text-holder">
+                                <div class="portfolio-text-wrapper">
+                                    <p class="portfolio-type">
+                                        <img src="<?=base_url().'assets/cms/images/icon_post.svg'?>" alt="">
+                                    </p>
+                                    <p class="portfolio-text">
+                                        <?=$p['nama_product']?>
+                                    </p>
+                                    <p class="portfolio-sec-text">Cable</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <?php } } ?>
+                    <div class="grid-item element-item p_one">
+                        <a data-rel="prettyPhoto[gallery1]" href="<?=base_url().'assets/cms/demo-images/portfolio_item_05.jpg'?>">
+                            <img src="<?=base_url().'assets/cms/demo-images/portfolio_item_05.jpg'?>" alt="">
+                            <div class="portfolio-text-holder">
+                                <div class="portfolio-text-wrapper">
+                                    <p class="portfolio-type">
+                                        <img src="<?=base_url().'assets/cms/images/icon_post.svg'?>" alt="">
+                                    </p>
+                                    <p class="portfolio-text">PSD MOCKUP</p>
+                                    <p class="portfolio-sec-text">Smart Watch</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-		});
+                <div class="clear"></div>
+                <div class="block portfolio-load-more-holder">
+                    <a  href="<?=base_url().'Welcome/product'?>" class="more-posts">LOAD MORE</a>
+                    <img src="<?=base_url().'assets/cms/images/icon_infinity.svg'?>" alt="Load more">
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
 
-		function addKarir() {
-			save_method = 'add';
-			$('#formJ')[0].reset();
-			$('.form-group').removeClass('has-error');
-			$('.help-block').empty();
-			$('label').hide();
-			$('#addLomba').modal('show');
-			$('.modal-title').text('Add carrer...');
-		}
 
-		function addClient() {
-			save_method = 'add';
-			$('#formJ')[0].reset();
-			$('.form-group').removeClass('has-error');
-			$('.help-block').empty();
-			$('label').hide();
-			$('#addClient').modal('show');
-			$('.modal-title').text('Add Client...');
-		}
+    <!-- About -->
+    <div id="about" class="section">
+        <div class="block content-1170 center-relative">
+            <div class="section-title-holder left">
+                <div class="section-num">
+                    <center>
+                        <span>About</span>
+                    </center>
+                </div>
+                <!-- <h2 class="entry-title">CRAFTERS</h2> -->
+            </div>
+            <div class="section-content-holder right">
+                <div class="content-wrapper">
+                    <div class="one_half ">
+                        <span style="color: #e54b76;">
+                            <strong>VISION</strong>
+                        </span>
+                        <br>
+                        <?=$setting->visi?>
+                    </div>
+                    <div class="one_half last ">
+                        <span style="color: #e54b76;">
+                            <strong>MISION</strong>
+                        </span>
+                        <br>
+                        <?=$setting->misi?>
+                            <br>
+                    </div>
+                    <div class="clear"></div>
+                    <br>
+                    <br>
+                </div>
 
-		function showDeskripsi(id) {
-			$.ajax({
-				url: "<?=base_url().'Welcome/getSubServis/'?>" + id,
-				type: "GET",
-				dataType: "JSON",
-				success: function (data) {
-					$('.modal-title').text(data.nama_sub_kategori);
-					$('#img_ket').attr('src', "<?=base_url().'img/servis/sub/'?>"+data.img_sub);
-					$('#deskripsi').html(data.deskripsi_sub_kategori);
-					$('#modalku').modal('show');
-				},
-				error: function (jqXHR, textStatus, errorThrown) {
-					alert('Error get data from ajax');
-				}
-			});
-		}
-	</script>
+                <div class="full-width ">
+                    <script>
+                        var aboutImage_speed = "500";
+                        var aboutImage_auto = "false";
+                        var aboutImage_hover = "true";
+                    </script>
+                    <div class="image-slider-wrapper relative img aboutImage">
+                        <a id="aboutImage_next" class="image_slider_next" href="#"></a>
+                        <div class="caroufredsel_wrapper">
+                            <ul id="aboutImage" class="image-slider slides">
+                                <li>
+                                    <img src="<?=base_url().'assets/cms/demo-images/about_img_06.jpg'?>" alt="">
+                                </li>
+                                <li>
+                                    <img src="<?=base_url().'assets/cms/demo-images/about_img_04.jpg'?>" alt="">
+                                </li>
+                                <li>
+                                    <img src="<?=base_url().'assets/cms/demo-images/building.jpg'?>" alt="">
+                                </li>
 
-	<div class="modal fade" id="addLomba" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content modal-sm">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">×</button>
-					<h4 class="modal-title"></h4>
-				</div>
-				<div class="modal-body">
-					<form class="form" id="formJ" action="#" method="post">
-						<input type="hidden" name="id" value="">
-						<div class="form-group">
-							<label class="ace-file-input ace-file-multiple">Image</label>
-							<input multiple="" id="dropify" type="file" name="image">
-						</div>
-						<div class="form-group">
-							<label for="">Email</label>
-							<input type="email" name="email" id="" placeholder="Email" class="form-control">
-							<p class="help-block mb-0"></p>
-						</div>
-				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-raised btn-primary" id="btnSave" onclick="">Save</button>
-					<button type="button" class="btn btn-raised btn-danger" data-dismiss="modal">Cancel</button>
-				</div>
-				</form>
-			</div>
-		</div>
-	</div>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
 
-	<div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog ">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">×</button>
-					<h4 class="modal-title"></h4>
-				</div>
-				<div class="modal-body">
-					<form class="form" id="formC" action="#" method="post">
-						<input type="hidden" name="id" value="">
-						<div class="form-group">
-							<label for="">Nama Client</label>
-							<input type="text" name="nama_client" id="" placeholder="Nama Client" class="form-control">
-							<p class="help-block mb-0"></p>
-						</div>
-						<div class="form-group">
-							<label for="">Email</label>
-							<input type="email" name="email" id="" placeholder="Email" class="form-control">
-							<p class="help-block mb-0"></p>
-						</div>
-						<div class="form-group">
-							<label for="">Tanggapan</label>
-							<textarea type="text" name="say" id="" placeholder="Tanggapan " class="form-control" rows="3" required></textarea>
-							<p class="help-block mb-0"></p>
-						</div>
-				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-raised btn-primary" id="btnSave1" onclick="">Save</button>
-					<button type="button" class="btn btn-raised btn-danger" data-dismiss="modal">Cancel</button>
-				</div>
-				</form>
-			</div>
-		</div>
-	</div>
+                    <script>
+                        var team1_speed = "500";
+                        var team1_auto = "false";
+                        var team1_hover = "true";
+                    </script>
+                    <div class="image-slider-wrapper relative team team1">
+                        <a id="team1_next" class="image_slider_next" href="#"></a>
+                        <div class="caroufredsel_wrapper">
+                            <ul id="team1" class="image-slider slides">
+                                <li>
+                                    <div class="member-content-holder">
+                                        <h4 class="member-name">Tali Cahaya Buana</h4>
+                                        <div class="member-content">
+                                            <?=$setting->deskripsi?>
+                                                <br>
+                                        </div>
+                                    </div>
+                                    <div class="member-image-holder">
+                                        <img src="<?=base_url().'assets/cms/demo-images/tcb.png'?>" alt="">
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
 
-	<div id="modalku" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Data Center Building</h4>
-				</div>
-				<div class="modal-body">
-					<center><img src="" class="img-responsive" id="img_ket"></center>
-					<p id="deskripsi"></p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+                                <!-- <li>
+                                    <div class="member-content-holder">
+                                        <h4 class="member-name">John Doe</h4>
+                                        <p class="member-position">SEO MASTER</p>
+                                        <div class="member-content">
+                                            Eiusmod tempor incididunt ut dolore magna labore eiusmod. Lorem ipsum dolor sit amet consectetur est lorem adipisicing elit,
+                                            sed do eiusmod tempor polor sit amet consectetur.
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="member-image-holder">
+                                        <img src="<?=base_url().'assets/cms/demo-images/about_img_02.jpg'?>" alt="">
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+
+                                <li>
+                                    <div class="member-content-holder">
+                                        <h4 class="member-name">John Doe</h4>
+                                        <p class="member-position">PSD GURU</p>
+                                        <div class="member-content">
+                                            Eiusmod tempor incididunt ut dolore magna labore eiusmod. Lorem ipsum dolor sit amet consectetur est lorem adipisicing elit,
+                                            sed do eiusmod tempor polor sit amet consectetur.
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="member-image-holder">
+                                        <img src="<?=base_url().'assets/cms/demo-images/about_img_03.jpg'?>" alt="">
+                                    </div>
+                                    <div class="clear"></div>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!-- end full-width div -->
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+
+    <!-- News -->
+    <div id="news" class="section">
+        <div class="block content-1170 center-relative">
+            <div class="section-title-holder right">
+                <div class="section-num">
+                    <span>
+                        <center>
+                            Information
+                        </center>
+                    </span>
+                </div>
+                <!-- <h2 class="entry-title">STORIES</h2> -->
+            </div>
+            <div class="section-content-holder left">
+                <div class="content-wrapper">
+                    <div class="blog-holder block center-relative">
+                        <?php $no=1; $info=$this->MModel->getData("select * from info");
+                    if($info) {
+                    foreach($info as $i) { ?>
+                        <article class="relative blog-item-holder center-relative">
+                            <div class="num">
+                                <?=$no++?>
+                            </div>
+                            <div class="info">
+                                <div class="author vcard "></div>
+                                <div class="cat-links">
+                                    <ul>
+                                        <li>
+                                            <br>
+                                            <button class="positive ui button" id="modallaunch">Launch</button>
+                                        </li>
+                                        <li>
+                                            <br>
+                                            <button class="negative ui button" href="javascript:void(0)" id="modallaunch">Download</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3 class="entry-title">
+                                <a href="#"><?=$i['judul_info']?></a>
+                            </h3>
+                            <div class="clear"></div>
+                        </article>
+                        <?php } } ?>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="block content-1170 center-relative">
+            <div class="extra-content-left">
+                <!-- <script> var text1_speed = "500";
+                    var text1_auto = "false";
+                    var text1_hover = "true";
+                </script>
+                <div class="text1 testimonial-slider-holder slider-holder">
+                    <div class="caroufredsel_wrapper">
+                        <ul id="text1" class="slides testimonial">
+                            <li>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">The difference between a Designer and Developer, when it
+                                        comes to design skills, is the difference between shooting a bullet and throwing
+                                        it.
+                                    </p>
+                                    <p class="testimonial-author">SCOTT HANSELMAN</p>
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </li>
+                            <li style="width: 500px;">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">To create anything–whether a short story or a magazine profile
+                                        or a film or a sitcom–is to believe, if only momentarily, you are capable of magic.</p>
+                                    <p class="testimonial-author">TOM BISSEL</p>
+                                </div>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">As a profession, graphic designers have been shamefully remiss
+                                        or ineffective about plying their craft for social or political betterment.</p>
+                                    <p class="testimonial-author">STEVEN HELLER</p>
+                                </div>
+                                <div class="clear"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a id="text1_next" class="carousel_text_next" href="#"></a>
+                    <div class="clear"></div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Video -->
+    <div id="video" class="section">
+        <div class="block content-1170 center-relative">
+            <div class="section-title-holder left">
+                <div class="section-num">
+                    <span>
+                        <center>
+                            Video
+                        </center>
+                    </span>
+                </div>
+                <!-- <h2 class="entry-title">OFFER</h2> -->
+            </div>
+            <div class="section-content-holder right">
+                <div class="content-wrapper">
+                    <?=$deskripsi->desc_data_center?>
+                        <div class="clear"></div>
+                        <br>
+                        <br>
+                </div>
+                <div class="full-width ">
+                    <video width="100%" controls>
+                        <source src="<?=base_url().'img/video/'.$video->video?>" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+        <div class="extra-content-full-width">
+            <script>
+                var fwslider1_speed = "500";
+                var fwslider1_auto = "false";
+                var fwslider1_hover = "true";
+                var fwslider1_start = "0";
+                var fwslider1_width = "400";
+                var fwslider1_num = "5";
+            </script>
+            <div class="fwslider1 fw-image-slider-holder list_carousel relative">
+                <div class="caroufredsel_wrapper">
+                    <ul id="fwslider1" class="fw-image-slider">
+                        <?php $mitra=$this->MModel->getData("select * from mitra"); 
+                    if($mitra){
+                    foreach($mitra as $m) {?>
+                        <li class="fw-slide">
+                            <img src="<?=base_url().'img/mitra/'.$m['foto_mitra']?>" alt="">
+                            <p class="fw-slide-text">
+                                <?=$m['nama_mitra']?>
+                            </p>
+                        </li>
+                        <?php } } ?>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <div id="fwslider1_fw_image_slide_pager" class="fw_carousel_pagination"></div>
+            </div>
+            <a id="fwslider1_fw_next" class="carousel_fw_next" href="#"></a>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+
+    <!-- Skills -->
+
+    <div id="skills" class="section">
+        <div class="block content-1170 center-relative">
+            <div class="section-title-holder right">
+                <div class="section-num">
+                    <center>
+                        <span>Partner</span>
+                    </center>
+                </div>
+                <!-- <h2 class="entry-title">EXPERTISE</h2> -->
+            </div>
+            <div class="section-content-holder left">
+                <div class="content-wrapper">
+                    <div class="extra-content-full-width">
+                        <script>
+                            var fwslider1_speed = "500";
+                            var fwslider1_auto = "false";
+                            var fwslider1_hover = "true";
+                            var fwslider1_start = "0";
+                            var fwslider1_width = "400";
+                            var fwslider1_num = "5";
+                        </script>
+                        <div class="fwslider1 fw-image-slider-holder list_carousel relative">
+                            <div class="caroufredsel_wrapper">
+                                <ul id="fwslider1" class="fw-image-slider">
+                                    <?php if($mitra){
+                                    foreach($mitra as $m) {?>
+                                    <li class="fw-slide">
+                                        <li class="fw-slide">
+                                            <a href="<?=$m['link_mitra']?>"><img src="<?=base_url().'img/mitra/'.$m['foto_mitra']?>"
+                                                    alt=""></a>
+
+                                        </li>
+                                    </li>
+                                    <?php } }?>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                            <div id="fwslider1_fw_image_slide_pager" class="fw_carousel_pagination"></div>
+                        </div>
+                        <a id="fwslider1_fw_next" class="carousel_fw_next" href="#"></a>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="section">
+        <div class="block content-1170 center-relative">
+            <div class="section-title-holder left">
+                <div class="section-num">
+                    <span>
+                        <center>
+                            Contact
+                        </center>
+                    </span>
+                </div>
+                <!-- <h2 class="entry-title">Contact</h2> -->
+            </div>
+            <div class="section-content-holder right">
+                <div class="content-wrapper">
+                    <div class="one_half ">
+                        <div class="ft-panel">
+                            <div class="head-ft-panel">
+                                <span style="color: #e54b76;">
+                                    <strong>
+                                        <i class="fa fa-map-marker"></i>
+                                        Address</strong>
+                                </span>
+                            </div>
+                            <hr class="hr-color">
+                            <div class="body-ft-panel">
+                                <?=$setting->alamat?>
+                                    </br>
+                                    </br>
+                                    </br>
+                                    </br>
+                                    <img src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>" style="width: 150px;" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="one_half last">
+                        <div class="ft-panel">
+                            <div class="head-ft-panel">
+                                <span style="color: #e54b76;">
+                                    <strong>
+                                        <i class="fa fa-address-book"></i>
+                                        Get In Touch</strong>
+                                </span>
+                            </div>
+                            <hr class="hr-color">
+                            <div class="body-ft-panel">
+                                <p>
+                                    <center>
+                                        <a href="tel:<?=$setting->telepon?>" class="circular ui huge icon button">
+                                            <i class="icon tty"></i>
+                                        </a>
+                                    </center>
+                                </p>
+                                <center>
+                                    <p>
+                                        <?=$setting->telepon?>
+                                    </p>
+                                </center>
+                                <center>
+                                    <p>
+                                        <center>
+                                            <a href="mailto:<?=$setting->email?>" class="circular ui huge icon button">
+                                                <i class="icon envelope"></i>
+                                            </a>
+                                        </center>
+                                    </p>
+                                    <p>
+                                        <?=$setting->email?>
+                                    </p>
+                                </center>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="full-width">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6339013182987!2d107.61740291436742!3d-6.934284894989952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e887161ff37b%3A0xd2022ea1b54061e0!2sTali+Cahaya+Buana!5e0!3m2!1sid!2sid!4v1535619159227"
+                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer content-1170 center-relative">
+            <ul>
+                <li class="copyright-footer">
+                    © 2018 All rights reserved. | Tali Cahaya Buana
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <!--Load JavaScript-->
+    <script type="text/javascript" src="<?=base_url().'assets/cms/js/jquery.js'?>"></script>
+    <script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky-kit.min.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.smartmenus.min.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.dryMenu.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/isotope.pkgd.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.carouFredSel-6.2.0-packed.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.mousewheel.min.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.touchSwipe.min.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.easing.1.3.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/imagesloaded.pkgd.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.prettyPhoto.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/main.js"?>'></script>
+    <script src="<?=base_url().'assets/cms/js/semantic.min.js'?>"></script>
+    <script>
+
+        jQuery(function ($) {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                animationLoop: true,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+                smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode  
+                startAt: 0,
+                directionNav: false,               //Integer: The slide that the slider should start on. Array notation (0 = first slide)
+                slideshow: true,
+                slideshowSpeed: 5000,
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+            $('#modallaunch').click(function () {
+                // $('.ui.modal')
+                //     .modal('setting', 'closable', false)
+                //     .modal('show');
+                $('.ui.modal')
+                    .modal({
+                        closable: false,
+                        onDeny: function () {
+                            window.alert('Wait not yet!');
+                            return false;
+                        },
+                        onApprove: function () {
+                            window.alert('Approved!');
+                        }
+                    })
+                    .modal('show')
+                    ;
+            });
+            $.fn.showDeskripsi = function (id) {
+                $.ajax({
+                    url: "<?=base_url().'Welcome/getSubServis/'?>" + id,
+                    type: "GET",
+                    dataType: "JSON",
+                    success: function (data) {
+                        $('.modal-title').text(data.nama_sub_kategori);
+                        $('#img_ket').attr('src', "<?=base_url().'img/servis/sub/'?>" + data.img_sub);
+                        $('#deskripsi').html(data.deskripsi_sub_kategori);
+                        $('#modalku').modal('show');
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert('Error get data from ajax');
+                    }
+                });
+            };
+
+        });
+
+    </script>
+
+    <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Magazine
+        </div>
+        <div class="image content">
+            <div>
+                <object style="width:auto" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
+                    id="fullscreen" align="middle">
+                    <param name="allowFullScreen" value="true" />
+                    <param name="movie" value="fullscreen.swf" />
+                    <param name="bgcolor" value="#fff" />
+                    <embed width="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
+                        type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                </object>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui button">Cancel</div>
+            <div class="ui button">OK</div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

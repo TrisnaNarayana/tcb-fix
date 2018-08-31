@@ -18,29 +18,36 @@ $this->load->view('include/header');
 	<section class="content">
 		<!-- Small boxes (Stat box) -->
 		<div class="row">
-        <div class="col-xs-12">
-          <div class="box box-primary">
-            <div class="box-header">
-							<h4><?=$detail->judul_info?> [<small><?=$detail->tgl_input?></small>]</h4>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-								<center>
-									<img src="<?=base_url().'img/info/'.$detail->img?>" class="img-responsive">
-								</center>
+			<div class="col-xs-12">
+				<div class="box box-primary">
+					<div class="box-header">
+						<h4>
+							<?=$detail->judul_info?> [<small><?=$detail->tgl_input?></small>]</h4>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<div class="embed-responsive embed-responsive-16by9">
+									<object class="embed-responsive embed-responsive-16by9" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
+									 id="fullscreen" align="middle">
+										<param name="allowFullScreen" value="true" />
+										<param name="movie" value="fullscreen.swf" />
+										<param name="bgcolor" value="#fff" />
+										<embed src="<?=base_url().'img/info/'.$detail->swf?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
+										 type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+									</object>
 								</div>
 							</div>
-							<?=$detail->deskripsi?>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
+						</div>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+				<!-- /.box -->
+			</div>
+			<!-- /.col -->
+		</div>
 
 		<!-- /.row -->
 

@@ -126,30 +126,30 @@
           </a>
         </li>
         <li><a href="<?=base_url().'Slider'?>"><i class="fa fa-home"></i> <span>Slider</span></a></li>
-        <li><a href="<?=base_url().'User'?>"><i class="fa fa-users"></i> <span>User</span></a></li>
+        <!-- <li><a href="<?=base_url().'User'?>"><i class="fa fa-users"></i> <span>Pengguna</span></a></li> -->
         <li><a href="<?=base_url().'Info'?>"><i class="fa fa-info"></i> <span>Informasi</span></a></li>
-        <li class="treeview"><a href="<?=base_url().'Product'?>"><i class="fa fa-product-hunt"></i> <span>Product</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
+        <li class="treeview"><a href="<?=base_url().'Product'?>"><i class="fa fa-product-hunt"></i> <span>Produk</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
           <ul class="treeview-menu">
             <li><a href="<?=base_url().'Product/deskripsi'?>"><i class="fa fa-angle-right"></i> <span>Deskripsi</span></a></li>
-            <li> <a href="<?=base_url().'Product'?>"><i class="fa fa-angle-right"></i> <span>Data Product</span></a></li>
+            <li> <a href="<?=base_url().'Product'?>"><i class="fa fa-angle-right"></i> <span>Data Produk</span></a></li>
           </ul>
         </li>
-        <li class="treeview"><a href=""><i class="fa fa-wrench"></i> <span>Solutions</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
+        <li class="treeview"><a href=""><i class="fa fa-wrench"></i> <span>Solusi</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
           <ul class="treeview-menu">
             <li><a href="<?=base_url().'Servis/deskripsi'?>"><i class="fa fa-angle-right"></i> <span>Deskripsi</span></a></li>
-              <li><a href="<?=base_url().'Servis'?>"><i class="fa fa-angle-right"></i> <span>Data Servis</span></a></li>
+              <li><a href="<?=base_url().'Servis'?>"><i class="fa fa-angle-right"></i> <span>Data Solusi</span></a></li>
               <!--<li> <a href="<?=base_url().'Product'?>"><i class="fa fa-angle-right"></i> <span>Data Product</span></a></li>-->
           </ul>
         </li>
-       <!-- <li class="treeview"><a href=""><i class="fa fa-database"></i> <span>Data Center</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
+       <li class="treeview"><a href=""><i class="fa fa-video-camera"></i> <span>Video</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
           <ul class="treeview-menu">
             <li><a href="<?=base_url().'Video/deskripsi'?>"><i class="fa fa-angle-right"></i> <span>Deskripsi</span></a></li>
-              <li><a href="<?=base_url().'Video'?>"><i class="fa fa-angle-right"></i> <span>Data Center</span></a></li>
+              <li><a href="<?=base_url().'Video'?>"><i class="fa fa-angle-right"></i> <span>Video</span></a></li>
           </ul>
-        </li> -->
-        <li><a href="<?=base_url().'Karir'?>"><i class="fa fa-graduation-cap"></i> <span>Karir</span></a></li>
+        </li>
+        <!-- <li><a href="<?=base_url().'Karir'?>"><i class="fa fa-graduation-cap"></i> <span>Karir</span></a></li> -->
         <li><a href="<?=base_url().'Mitra'?>"><i class="fa fa-male"></i> <span>Mitra</span></a></li>
-        <li><a href="<?=base_url().'Client'?>"><i class="fa fa-user-secret"></i> <span>Client</span></a></li>
+        <!-- <li><a href="<?=base_url().'Client'?>"><i class="fa fa-user-secret"></i> <span>Client</span></a></li> -->
         <li class="treeview"><a href="<?=base_url().'Product'?>"><i class="fa fa-cog"></i> <span>Profile</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
           <ul class="treeview-menu">
             <li><a href="<?=base_url().'Profile/visi'?>"><i class="fa fa-angle-right"></i> <span>Visi dan Misi</span></a></li>

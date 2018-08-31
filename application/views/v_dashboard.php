@@ -1,4 +1,8 @@
 <?php $this->load->view('include/header'); ?>
+<link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet">
+
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -23,14 +27,14 @@
         <div class="small-box bg-aqua">
           <div class="inner">
             <h3>
-              <?=$this->db->count_all_results('user')?>
+              <?=$this->db->count_all_results('servis')?>
             </h3>
-            <p>User</p>
+            <p>Solusi</p>
           </div>
           <div class="icon">
-            <i class="fa fa-users"></i>
+            <i class="fa fa-wrench"></i>
           </div>
-          <a href="<?=base_url().'User'?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?=base_url().'User'?>" class="small-box-footer">info lanjut <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -46,7 +50,7 @@
           <div class="icon">
             <i class="fa fa-male"></i>
           </div>
-          <a href="<?=base_url().'Mitra'?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?=base_url().'Mitra'?>" class="small-box-footer">info lanjut <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <div class="col-lg-3 col-xs-6">
@@ -61,7 +65,7 @@
           <div class="icon">
             <i class="fa fa-product-hunt"></i>
           </div>
-          <a href="<?=base_url().'Product'?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?=base_url().'Product'?>" class="small-box-footer">info lanjut <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <div class="col-lg-3 col-xs-6">
@@ -71,12 +75,12 @@
             <h3>
               <?=$this->db->count_all_results("info")?>
             </h3>
-            <p>Info</p>
+            <p>Informasi</p>
           </div>
           <div class="icon">
             <i class="fa fa-info"></i>
           </div>
-          <a href="<?=base_url().'Info'?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?=base_url().'Info'?>" class="small-box-footer"> info lanjut <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
 
@@ -86,13 +90,7 @@
       <div class="col-md-6 col-xs-12">
         <div class="panel panel-default table-responsive">
           <div class="panel-heading">
-            <ul class="nav nav-pills ranges">
-              <li class="active"><a href="#" data-range='1'>1 Days</a></li>
-              <li class="#"><a href="#" data-range='7'>7 Days</a></li>
-              <li><a href="#" data-range='30'>30 Days</a></li>
-              <li><a href="#" data-range='60'>60 Days</a></li>
-              <li><a href="#" data-range='90'>90 Days</a></li>
-            </ul>
+            Grafik Pengunjung
           </div>
           <div class="panel-body">
             <div id="stats-container"></div>
@@ -102,7 +100,7 @@
       <div class="col-md-6 col-xs-12">
         <div class="panel panel-default">
           <div class="panel-heading">
-            Area
+            Grafik Pengunjung
           </div>
           <div class="panel-body">
             <div class="chart tab-pane " id="line" style="position: relative; height: 300px;"></div>
@@ -113,11 +111,7 @@
     </div>
     <!-- /.row -->
 
-    <div class="row">
 
-
-
-    </div>
 
 
   </section>
@@ -126,7 +120,8 @@
 </div>
 <!-- /.content-wrapper -->
 <?php $this->load->view('include/footer'); ?>
-
+<script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
+<script> videojs.options.flash.swf = "<?=base_url().'img/Magazine.swf'?>" </script>
 <script>
   $(function () {
     // Create a function that will handle AJAX requests
@@ -199,3 +194,33 @@
 
   });
 </script>
+
+<div class="modal fade" id="viewVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-default">
+          <div class="embed-responsive embed-responsive-16by9">
+            <object class="embed-responsive embed-responsive-16by9" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
+              id="fullscreen" align="middle">
+              <param name="allowFullScreen" value="true" />
+              <param name="movie" value="fullscreen.swf" />
+              <param name="bgcolor" value="#fff" />
+              <embed src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
+                type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+            </object>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-raised btn-primary" data-dismiss="modal">Confirm</button>
+      </div>
+
+    </div>
+  </div>
+</div>

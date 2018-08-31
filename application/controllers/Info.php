@@ -72,9 +72,9 @@ class Info extends CI_Controller
 
     function add()
     {
-      $nmfile='info__'.time();
+      $nmfile='swf__'.time();
       $config['upload_path'] = './img/info/'; //path folder
-      $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+      $config['allowed_types'] = 'swf'; //type yang dapat diakses bisa anda sesuaikan
       $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
       $config['file_name']=$nmfile;
 
@@ -84,21 +84,20 @@ class Info extends CI_Controller
           if ($this->upload->do_upload('image')){
               $gbr = $this->upload->data();
               //Compress Image
-              $config['image_library']='gd2';
-              $config['source_image']='./img/info/'.$gbr['file_name'];
-              $config['create_thumb']= FALSE;
-              $config['maintain_ratio']= FALSE;
-              $config['width']= 640;
-              $config['height']= 426;
-              $config['new_image']= './img/info/'.$gbr['file_name'];
-              $this->load->library('image_lib', $config);
-              $this->image_lib->resize();
+              // $config['image_library']='gd2';
+              // $config['source_image']='./img/info/'.$gbr['file_name'];
+              // $config['create_thumb']= FALSE;
+              // $config['maintain_ratio']= FALSE;
+              // $config['width']= 640;
+              // $config['height']= 426;
+              // $config['new_image']= './img/info/'.$gbr['file_name'];
+              // $this->load->library('image_lib', $config);
+              // $this->image_lib->resize();
 
               $gambar=$gbr['file_name'];
               $data = array(
-              'img'=>$gambar,
-              'judul_info'=>$_POST['judul'],
-              'deskripsi'=>$_POST['deskripsi']
+              'swf'=>$gambar,
+              'judul_info'=>$_POST['judul']
             );
             $this->MModel->add("info",$data);
 
@@ -109,8 +108,7 @@ class Info extends CI_Controller
 
       }else{
               $data = array(
-              'judul_info'=>$_POST['judul'],
-              'deskripsi'=>$_POST['deskripsi']
+              'judul_info'=>$_POST['judul']
             );
             $this->MModel->add("info",$data);
             echo json_encode(array("status" => TRUE));
@@ -120,9 +118,9 @@ class Info extends CI_Controller
 
     function update()
     {
-      $nmfile='info__'.time();
+      $nmfile='swf__'.time();
       $config['upload_path'] = './img/info/'; //path folder
-      $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+      $config['allowed_types'] = 'swf'; //type yang dapat diakses bisa anda sesuaikan
       $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
       $config['file_name']=$nmfile;
 
@@ -132,21 +130,20 @@ class Info extends CI_Controller
           if ($this->upload->do_upload('image')){
               $gbr = $this->upload->data();
               //Compress Image
-              $config['image_library']='gd2';
-              $config['source_image']='./img/info/'.$gbr['file_name'];
-              $config['create_thumb']= FALSE;
-              $config['maintain_ratio']= FALSE;
-              $config['width']= 640;
-              $config['height']= 426;
-              $config['new_image']= './img/info/'.$gbr['file_name'];
-              $this->load->library('image_lib', $config);
-              $this->image_lib->resize();
+              // $config['image_library']='gd2';
+              // $config['source_image']='./img/info/'.$gbr['file_name'];
+              // $config['create_thumb']= FALSE;
+              // $config['maintain_ratio']= FALSE;
+              // $config['width']= 640;
+              // $config['height']= 426;
+              // $config['new_image']= './img/info/'.$gbr['file_name'];
+              // $this->load->library('image_lib', $config);
+              // $this->image_lib->resize();
 
               $gambar=$gbr['file_name'];
               $data = array(
-              'img'=>$gambar,
-              'judul_info'=>$_POST['judul'],
-              'deskripsi'=>$_POST['deskripsi']
+              'swf'=>$gambar,
+              'judul_info'=>$_POST['judul']
             );
             $this->MModel->update("id_info",$this->input->post('id'),"info",$data);
 
@@ -157,8 +154,7 @@ class Info extends CI_Controller
 
       }else{
               $data = array(
-              'judul_info'=>$_POST['judul'],
-              'deskripsi'=>$_POST['deskripsi']
+              'judul_info'=>$_POST['judul']
             );
             $this->MModel->update("id_info",$this->input->post('id'),"info",$data);
             echo json_encode(array("status" => TRUE));

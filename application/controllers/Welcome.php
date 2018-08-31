@@ -30,9 +30,9 @@ class Welcome extends CI_Controller
 
   }
 
-  function portofolio($page=0)
+  function product($page=0)
   {
-    $config['base_url'] = base_url().'Welcome/portofolio/';
+    $config['base_url'] = base_url().'Welcome/product/';
     $config['total_rows'] = $this->db->count_all_results('product');
     $config['per_page'] = '9';
     $from = $this->uri->segment(3);
@@ -70,7 +70,7 @@ class Welcome extends CI_Controller
     $data['data']=$this->MModel->getLimit($page,'id_product','9','product');
     $data['page']=$this->pagination->create_links();
 
-    $this->load->view('cms/portofolio',$data);
+    $this->load->view('cms/product',$data);
 
   }
 

@@ -202,10 +202,9 @@ $this->load->view('include/header');
             success: function (data) {
                 $('[name="id"]').val(data.id_mitra);
                 $('[name="nama_mitra"]').val(data.nama_mitra);
-                $('[name="alamat_mitra"]').val(data.alamat_mitra);
                 $('[name="email_mitra"]').val(data.email_mitra);
                 $('[name="kontak_mitra"]').val(data.kontak_mitra);
-                $('#editor').redactor('set', data.deskripsi);
+                $('[name="link_mitra"]').val(data.link_mitra);
                 $('.modal-title').text('Edit Mitra');
                 $('#addLomba').modal('show');
             },
@@ -277,18 +276,15 @@ $this->load->view('include/header');
                     </div>
                     <div class="form-group">
                         <label for="">Email Mitra</label>
-                        <input type="email" name="email_mitra" id="" placeholder="Email Mitra" class="form-control" required>
+                        <input type="text" name="email_mitra" id="" placeholder="Email Mitra" class="form-control" required>
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label for="">Alamat Mitra</label>
-                        <textarea type="text" name="alamat_mitra" rows="3" id="" placeholder="Alamat mitra" class="form-control" required></textarea>
+                        <label for="">Link Mitra</label>
+                        <input type="text" name="link_mitra" id="" placeholder="Link Mitra" class="form-control" required>
                         <p class="help-block mb-0"></p>
                     </div>
-                    <div class="form-group">
-                        <label class="">Description</label>
-                        <textarea name="deskripsi" id="editor" class="form-control" data-iconlibrary="fa" rows="10" required><?php echo htmlspecialchars(set_value('deskripsi'));?></textarea>
-                    </div>
+                    
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-raised btn-success" id="btnSave" onclick="">Save</button>

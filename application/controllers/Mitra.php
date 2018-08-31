@@ -85,24 +85,23 @@ class Mitra extends CI_Controller
           if ($this->upload->do_upload('image')){
               $gbr = $this->upload->data();
               //Compress Image
-              /*$config['image_library']='gd2';
+              $config['image_library']='gd2';
               $config['source_image']='./img/mitra/'.$gbr['file_name'];
               $config['create_thumb']= FALSE;
               $config['maintain_ratio']= FALSE;
-              $config['width']= 128;
-              $config['height']= 64;
+              $config['width']= 1001;
+              $config['height']= 1001;
               $config['new_image']= './img/mitra/'.$gbr['file_name'];
               $this->load->library('image_lib', $config);
-              $this->image_lib->resize();*/ 
+              $this->image_lib->resize();
 
               $gambar=$gbr['file_name'];
               $data = array(
-              'foto_mitra'=>$gambar,
-              'kontak_mitra'=>$this->input->post('kontak_mitra'),
-              'email_mitra'=>$this->input->post('email_mitra'),
-              'alamat_mitra'=>$this->input->post('alamat_mitra'),
-              'nama_mitra'=>$_POST['nama_mitra'],
-              'deskripsi'=>$_POST['deskripsi']
+                'foto_mitra'=>$gambar,
+                'kontak_mitra'=>$this->input->post('kontak_mitra'),
+                'email_mitra'=>$this->input->post('email_mitra'),
+                'nama_mitra'=>$_POST['nama_mitra'],
+                'link_mitra'=>$this->input->post('link_mitra')
             );
             $this->MModel->add("mitra",$data);
             echo json_encode(array("status" => TRUE));
@@ -112,11 +111,10 @@ class Mitra extends CI_Controller
 
       }else{
         $data = array(
-        'kontak_mitra'=>$this->input->post('kontak_mitra'),
-        'email_mitra'=>$this->input->post('email_mitra'),
-        'alamat_mitra'=>$this->input->post('alamat_mitra'),
-        'nama_mitra'=>$_POST['nama_mitra'],
-        'deskripsi'=>$_POST['deskripsi']
+          'kontak_mitra'=>$this->input->post('kontak_mitra'),
+          'email_mitra'=>$this->input->post('email_mitra'),
+          'nama_mitra'=>$_POST['nama_mitra'],
+          'link_mitra'=>$this->input->post('link_mitra')
       );
             $this->MModel->add("mitra",$data);
             echo json_encode(array("status" => TRUE));
@@ -138,24 +136,23 @@ class Mitra extends CI_Controller
           if ($this->upload->do_upload('image')){
               $gbr = $this->upload->data();
               //Compress Image
-             /* $config['image_library']='gd2';
+              $config['image_library']='gd2';
               $config['source_image']='./img/mitra/'.$gbr['file_name'];
               $config['create_thumb']= FALSE;
               $config['maintain_ratio']= FALSE;
-              $config['width']= 128;
-              $config['height']= 70;
+              $config['width']= 1001;
+              $config['height']= 1001;
               $config['new_image']= './img/mitra/'.$gbr['file_name'];
               $this->load->library('image_lib', $config);
-              $this->image_lib->resize();*/
+              $this->image_lib->resize();
 
               $gambar=$gbr['file_name'];
               $data = array(
               'foto_mitra'=>$gambar,
               'kontak_mitra'=>$this->input->post('kontak_mitra'),
               'email_mitra'=>$this->input->post('email_mitra'),
-              'alamat_mitra'=>$this->input->post('alamat_mitra'),
               'nama_mitra'=>$_POST['nama_mitra'],
-              'deskripsi'=>$_POST['deskripsi']
+              'link_mitra'=>$this->input->post('link_mitra')
             );
             $this->MModel->update("id_mitra",$this->input->post('id'),"mitra",$data);
 
@@ -166,11 +163,10 @@ class Mitra extends CI_Controller
 
       }else{
         $data = array(
-        'kontak_mitra'=>$this->input->post('kontak_mitra'),
-        'email_mitra'=>$this->input->post('email_mitra'),
-        'alamat_mitra'=>$this->input->post('alamat_mitra'),
-        'nama_mitra'=>$_POST['nama_mitra'],
-        'deskripsi'=>$_POST['deskripsi']
+          'kontak_mitra'=>$this->input->post('kontak_mitra'),
+          'email_mitra'=>$this->input->post('email_mitra'),
+          'nama_mitra'=>$_POST['nama_mitra'],
+          'link_mitra'=>$this->input->post('link_mitra')
       );
             $this->MModel->update("id_mitra",$this->input->post('id'),"mitra",$data);
             echo json_encode(array("status" => TRUE));

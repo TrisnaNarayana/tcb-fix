@@ -23,30 +23,19 @@ $this->load->view('include/header');
                 <div class="box">
                     <div class="box-header">
                         <button class="btn btn-danger btn-sm pull-left" onclick="addVideo()"><i class="fa fa-plus"></i>
-                            | Tambah Video</button>
+                            | Ubah Video</button>
 
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table-responsive">
-                            <table id="tabel" class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Judul</th>
-                                        <th>Video</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Judul</th>
-                                        <th>Video</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <h4><?=$detail->judul_video?></h4>
+                            <hr>
+                            <center>
+                            <video controls class="img-responsive">
+                                <source src="<?=base_url().'img/video/'.$detail->video?>" type="video/mp4" />
+                            </video>
+                            </center>
                         </div>
                     </div>
                     <!-- /.box-body -->
@@ -279,12 +268,12 @@ $this->load->view('include/header');
                 <form class="form" id="formJ" action="#" method="post">
                     <input type="hidden" name="id" value="">
                     <div class="form-group">
-                        <label class="ace-file-input ace-file-multiple">Video</label>
+                        <label class="ace-file-input ace-file-multiple" data-src="<?=$detail->video?>">Video</label>
                         <input multiple="" id="dropify" type="file" name="image">
                     </div>
                     <div class="form-group">
                         <label for="">Nama Video</label>
-                        <input type="text" name="nama_video" id="" placeholder="Judul Video" class="form-control" required>
+                        <input type="text" name="nama_video" id="" value="<?=$detail->judul_video?>" placeholder="Judul Video" class="form-control" required>
                         <p class="help-block mb-0"></p>
                     </div>
             </div>
@@ -293,30 +282,6 @@ $this->load->view('include/header');
                 <button type="button" class="btn btn-raised btn-danger" data-dismiss="modal">Cancel</button>
             </div>
             </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="viewVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title"></h4>
-            </div>
-            <div class="modal-body">
-            <div class="panel panel-default">
-            <div id="divVideo" >
-                <video controls class="img-responsive">
-                    <source src="test1.mp4" type="video/mp4" />
-                </video>
-            </div>
-            </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-raised btn-primary" onclick="CloseVideo()">Confirm</button>
-            </div>
-            
         </div>
     </div>
 </div>

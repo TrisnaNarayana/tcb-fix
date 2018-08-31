@@ -106,8 +106,8 @@ class Product extends CI_Controller
               $config['source_image']='./img/product/'.$gbr['file_name'];
               $config['create_thumb']= FALSE;
               $config['maintain_ratio']= FALSE;
-              $config['width']= 290;
-              $config['height']= 290;
+              $config['width']= 400;
+              $config['height']= 400;
               $config['new_image']= './img/product/'.$gbr['file_name'];
               $this->load->library('image_lib', $config);
               $this->image_lib->resize();
@@ -157,8 +157,8 @@ class Product extends CI_Controller
               $config['source_image']='./img/product/'.$gbr['file_name'];
               $config['create_thumb']= FALSE;
               $config['maintain_ratio']= FALSE;
-              $config['width']= 290;
-              $config['height']= 290;
+              $config['width']= 400;
+              $config['height']= 400;
               $config['new_image']= './img/product/'.$gbr['file_name'];
               $this->load->library('image_lib', $config);
               $this->image_lib->resize();
