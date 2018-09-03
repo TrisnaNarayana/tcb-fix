@@ -23,7 +23,7 @@ background-size: auto;">
             <div class="block x">
                 <a href="<?=site_url('Welcome');?>"><i class="reply icon"></i></a>
             </div>
-            <div class="block x1" style="background:url(<?=base_url();?>assets/cms/images/TE_logo.jpg);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
+            <div class="block x1" onclick="window.location='<?=site_url('welcome')?>';" style="background:url(<?=base_url();?>assets/cms/images/TE_logo.jpg);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
             <div class="block x2" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
             <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/esterline.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
             <div class="block x4" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/glenair.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
