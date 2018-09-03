@@ -18,30 +18,57 @@ $this->load->view('include/header');
 	<section class="content">
 		<!-- Small boxes (Stat box) -->
 		<div class="row">
-        <div class="col-xs-12">
-          <div class="box box-primary">
-            <div class="box-header">
-							<u><h4><?=$detail->nama_product?> [<small>Dibuat Pada : <?=$detail->dibuat_pada?></small>]</h4></u>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-								<center>
-									<img src="<?=base_url().'img/product/'.$detail->foto_product?>" class="img-responsive">
-								</center>
-								</div>
+			<div class="col-xs-12">
+				<div class="box box-primary">
+					<div class="box-header">
+						<u><h4>
+								<?=$detail->nama_product?> [<small>Dibuat Pada : <?=$detail->dibuat_pada?></small>]</h4></u>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-3 col-xs-12">
+								<img src="<?=base_url().'img/merk/'.$detail->img_merk ;?>" class="img-responsive">
 							</div>
-							<hr>
-							<?=$detail->deskripsi?>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
+							<div class="col-md-3 col-xs-12">
+									<img src="<?=base_url().'img/product/'.$detail->foto_product ;?>" class="img-responsive">
+								</div>
+							<div class="col-md-6 col-xs-12">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Nama Perusahaan</th>
+											<th>:</th>
+											<th>
+												<?=$detail->nama_merk?>
+											</th>
+										</tr>
+										<tr>
+											<th>Kategori</th>
+											<th>:</th>
+											<th>
+												<?=$detail->nama_kategori?>
+											</th>
+										</tr>
+										<tr>
+												<th>Nama Product</th>
+												<th>:</th>
+												<th>
+													<?=$detail->nama_product?>
+												</th>
+											</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+				<!-- /.box -->
+			</div>
+			<!-- /.col -->
+		</div>
 
 		<!-- /.row -->
 

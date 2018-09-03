@@ -130,8 +130,9 @@
         <li><a href="<?=base_url().'Info'?>"><i class="fa fa-info"></i> <span>Informasi</span></a></li>
         <li class="treeview"><a href="<?=base_url().'Product'?>"><i class="fa fa-product-hunt"></i> <span>Produk</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url().'Product/deskripsi'?>"><i class="fa fa-angle-right"></i> <span>Deskripsi</span></a></li>
-            <li> <a href="<?=base_url().'Product'?>"><i class="fa fa-angle-right"></i> <span>Data Produk</span></a></li>
+            <li><a href="<?=base_url().'Merk'?>"><i class="fa fa-angle-right"></i> <span>Perusahaan</span></a></li>
+            <li><a href="<?=base_url().'Kategori'?>"><i class="fa fa-angle-right"></i> <span>Kategori</span></a></li>
+            <li> <a href="<?=base_url().'Product'?>"><i class="fa fa-angle-right"></i> <span>Produk</span></a></li>
           </ul>
         </li>
         <li class="treeview"><a href=""><i class="fa fa-wrench"></i> <span>Solusi</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>

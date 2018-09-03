@@ -7,11 +7,11 @@ $this->load->view('include/header');
     <section class="content-header">
         <h1>
             Data
-            <small>Product</small>
+            <small>Merk</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Product</li>
+            <li class="active">Merk</li>
         </ol>
     </section>
 
@@ -22,47 +22,31 @@ $this->load->view('include/header');
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <button class="btn btn-danger btn-sm pull-left" onclick="addProduct()"><i class="fa fa-plus"></i>
-                            | Tambah Product</button>
+                        <button class="btn btn-danger btn-sm pull-left" onclick="addMerk()"><i class="fa fa-plus"></i>
+                            | Tambah Merk</button>
+
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <div class="col-sm-4">
-                            <label for=""> Filter Berdasarkan Kategori:</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <?php echo $form_kategori; ?>
-                        </div>
-                        <div class="col-sm-4">
-                            <button type="button" id="btn-filter" class="btn btn-raised btn-success btn-sm">Filter</button>
-                            <button type="button" id="btn-reset" class="btn btn-raised btn-danger btn-sm">Reset</button>
-                        </div>
-                        <hr>
-                        <div class="col-xs-12">
                         <div class="table-responsive">
                             <table id="tabel" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Dibuat Pada</th>
-                                        <th>Nama Product</th>
-                                        <th>Perusahaan</th>
-                                        <th>Kategori</th>
+                                        <th>Nama Merk</th>
+                                        <th>Image</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th>No</th>
-                                        <th>Dibuat Pada</th>
-                                        <th>Nama Product</th>
-                                        <th>Perusahaan</th>
-                                        <th>Kategori</th>
+                                        <th>Judul</th>
+                                        <th>Image</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
                         </div>
                     </div>
                     <!-- /.box-body -->
@@ -97,11 +81,8 @@ $this->load->view('include/header');
 
             // Load data for the table's content from an Ajax source
             "ajax": {
-                "url": "<?php echo base_url().'Product/ajax_list'?>",
-                "type": "POST",
-                "data": function ( data ) {
-						data.id_category= $('#id_category').val();
-		        }
+                "url": "<?php echo base_url().'Merk/ajax_list'?>",
+                "type": "POST"
             },
 
             //Set column definition initialisation properties.
@@ -113,15 +94,6 @@ $this->load->view('include/header');
             ]
 
         });
-        $('#btn-filter').click(function(){ //button filter event click
-       			 table.ajax.reload();  //just reload table
-    		   });
-
-        $('#btn-reset').click(function(){ //button reset event click
-            $('#form-filter')[0].reset();
-            table.ajax.reload();  //just reload table
-        });
-
 
     });
 </script>
@@ -140,17 +112,10 @@ $this->load->view('include/header');
             $(this).next().empty();
         });
 
-        $('#editor').redactor({
-            buttons: ["formatting", "|", "bold", "italic", "deleted", "|", "unorderedlist", "orderedlist", "outdent", "indent", "|", "image", "video", "link", "table", "|", "alignment", "|", "horizontalrule"],
-            plugins: ['fontcolor'],
-            minHeight: 200,
-        });
-
-
 
         $('#dropify').dropify({
             messages: {
-                default: 'Choose file Jpg/JPEG/PNG max(500 kb)',
+                default: 'Choose file JPG|PNG|SVG|JPEG|GIF max(2 MB)',
                 replace: 'Update',
                 remove: 'Remove',
                 error: 'error'
@@ -163,9 +128,9 @@ $this->load->view('include/header');
             $('#btnSave').attr('disabled', true);
             var url;
             if (save_method == 'add') {
-                url = "<?=base_url().'Product/add';?>";
+                url = "<?=base_url().'Merk/add';?>";
             } else {
-                url = "<?=base_url().'Product/update';?>";
+                url = "<?=base_url().'Merk/update';?>";
             }
             e.preventDefault();
             $.ajax({
@@ -204,17 +169,17 @@ $this->load->view('include/header');
 
     });
 
-    function addProduct() {
+    function addMerk() {
         save_method = 'add';
         $('#formJ')[0].reset();
         $('.form-group').removeClass('has-error');
         $('.help-block').empty();
         $('label').hide();
         $('#addLomba').modal('show');
-        $('.modal-title').text('Tambah Product');
+        $('.modal-title').text('Tambah Merk');
     }
 
-    function updateProduct(id) {
+    function updateMerk(id) {
 
         save_method = 'update';
         $('#formJ')[0].reset();
@@ -223,16 +188,13 @@ $this->load->view('include/header');
         $('label').show();
 
         $.ajax({
-            url: "<?=base_url().'Product/get/'?>" + id,
+            url: "<?=base_url().'Merk/get/'?>" + id,
             type: "GET",
             dataType: "JSON",
             success: function (data) {
-                $('[name="id"]').val(data.id_product);
-                $('[name="nama_product"]').val(data.nama_product);
-                $('[name="id_sub_kategori"]').val(data.id_sub_kategori);
-                $('[name="dibuat_pada"]').val(data.dibuat_pada);
-                $('#editor').redactor('set', data.deskripsi);
-                $('.modal-title').text('Edit Product');
+                $('[name="id"]').val(data.id_merk);
+                $('[name="nama_merk"]').val(data.nama_merk);
+                $('.modal-title').text('Edit Merk');
                 $('#addLomba').modal('show');
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -241,7 +203,7 @@ $this->load->view('include/header');
         });
     }
 
-    function removeProduct(id) {
+    function removeMerk(id) {
         swal({
             title: "Confirmation",
             text: "Are you sure?",
@@ -253,14 +215,14 @@ $this->load->view('include/header');
         },
             function () {
                 $.ajax({
-                    url: "<?=base_url().'Product/hapus/'?>" + id,
+                    url: "<?=base_url().'Merk/hapus/'?>" + id,
                     type: "POST",
                     dataType: "JSON",
                     success: function (data) {
                         $('#confirm').modal('hide');
                         swal({
                             title: 'Success!',
-                            text: 'Product berhasil dihapus!!!',
+                            text: 'Merk berhasil dihapus!!!',
                             type: 'success'
                         },
                             function () {
@@ -288,35 +250,13 @@ $this->load->view('include/header');
                 <form class="form" id="formJ" action="#" method="post">
                     <input type="hidden" name="id" value="">
                     <div class="form-group">
-                        <label for="">Kategori</label>
-                        <select name="id_kategori" class="form-control" required>
-                            <?php $kategori=$this->MModel->getData("select * from kategori a inner join merk b on b.id_merk=a.id_merk");
-                        if($kategori){
-                        foreach($kategori as $k){ ?>
-                            <option value="<?=$k['id_kategori']?>">
-                                <?=$k['nama_merk'].' || '.$k['nama_kategori']?>
-                            </option>
-                            <?php } } ?>
-                        </select>
-                        <p class="help-block mb-0"></p>
-                    </div>
-                    <div class="form-group">
                         <label class="ace-file-input ace-file-multiple">Image</label>
                         <input multiple="" id="dropify" type="file" name="image">
                     </div>
                     <div class="form-group">
-                        <label for="">Nama Product</label>
-                        <input type="text" name="nama_product" id="" placeholder="Nama Product" class="form-control" required>
+                        <label for="">Nama Merk</label>
+                        <input type="text" name="nama_merk" id="" placeholder="Judul Merk" class="form-control" required>
                         <p class="help-block mb-0"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Dibuat pada</label>
-                        <input type="text" name="dibuat_pada" id="" placeholder="Dibuat Pada" class="form-control" required>
-                        <p class="help-block mb-0"></p>
-                    </div>
-                    <div class="form-group">
-                        <label class="">Description</label>
-                        <textarea name="deskripsi" id="editor" class="form-control" data-iconlibrary="fa" rows="10" required><?php echo htmlspecialchars(set_value('deskripsi'));?></textarea>
                     </div>
             </div>
             <div class="modal-footer">
