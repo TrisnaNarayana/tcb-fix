@@ -18,7 +18,6 @@ class Product extends CI_Controller
   {
     $this->load->view('product/v_product');
   }
-
   public function ajax_list()
   {
         $table = 'product';

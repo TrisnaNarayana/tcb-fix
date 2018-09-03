@@ -29,7 +29,9 @@ class Welcome extends CI_Controller
     $this->load->view('cms/contact');
 
   }
-
+  public function kategori(){
+    $this->load->view('cms/kategori');
+  }
   function product($page=0)
   {
     $config['base_url'] = base_url().'Welcome/product/';
