@@ -9,9 +9,8 @@
     <meta name="author" content="Colorlib" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="shortcut icon" href="<?=base_url().'assets/cms/images/favicon.png'?> />
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet'
-        type='text/css'>
+    <link rel="shortcut icon" href="<?=base_url().'assets/cms/images/favicon.png'?>" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet' type='text/css' >
     <link rel=" stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/clear.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/common.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/font-awesome.min.css "?>' />
@@ -61,13 +60,7 @@
                     <a href="#about">About</a>
                 </li>
                 <li>
-                    <a href="#news">Information</a>
-                </li>
-                <li>
                     <a href="#video">Video</a>
-                </li>
-                <li>
-                    <a href="#skills">Partner</a>
                 </li>
                 <li>
                     <a href="#contact">Contact</a>
@@ -76,7 +69,7 @@
         </nav>
     </div>
 
-    <!-- Home -->
+    <!-- Slider Home -->
     <div class="flexslider">
         <ul class="slides">
             <?php $data=$this->MModel->getData("select * from slider where tampilkan='Y'");
@@ -106,7 +99,6 @@
             <div class="section-title-holder left">
                 <div class="section-num">
                     <center>
-
                         <span>Solutions</span>
                     </center>
                 </div>
@@ -237,7 +229,6 @@
                         <span>Product</span>
                     </center>
                 </div>
-                <!-- <h2 class="entry-title">Product</h2> -->
             </div>
             <div class="section-content-holder portfolio-holder left">
                 <div class="grid" id="portfolio-grid">
@@ -288,7 +279,6 @@
         </div>
         <div class="clear"></div>
     </div>
-
 
     <!-- About -->
     <div id="about" class="section">
@@ -414,9 +404,8 @@
         </div>
     </div>
 
-
     <!-- News -->
-    <div id="news" class="section">
+    <!-- <div id="news" class="section">
         <div class="block content-1170 center-relative">
             <div class="section-title-holder right">
                 <div class="section-num">
@@ -426,7 +415,6 @@
                         </center>
                     </span>
                 </div>
-                <!-- <h2 class="entry-title">STORIES</h2> -->
             </div>
             <div class="section-content-holder left">
                 <div class="content-wrapper">
@@ -468,49 +456,9 @@
 
         <div class="block content-1170 center-relative">
             <div class="extra-content-left">
-                <!-- <script> var text1_speed = "500";
-                    var text1_auto = "false";
-                    var text1_hover = "true";
-                </script>
-                <div class="text1 testimonial-slider-holder slider-holder">
-                    <div class="caroufredsel_wrapper">
-                        <ul id="text1" class="slides testimonial">
-                            <li>
-                                <div class="testimonial-content">
-                                    <p class="testimonial-text">The difference between a Designer and Developer, when it
-                                        comes to design skills, is the difference between shooting a bullet and throwing
-                                        it.
-                                    </p>
-                                    <p class="testimonial-author">SCOTT HANSELMAN</p>
-                                </div>
-                                <div class="clear">
-                                </div>
-                            </li>
-                            <li style="width: 500px;">
-                                <div class="testimonial-content">
-                                    <p class="testimonial-text">To create anything–whether a short story or a magazine profile
-                                        or a film or a sitcom–is to believe, if only momentarily, you are capable of magic.</p>
-                                    <p class="testimonial-author">TOM BISSEL</p>
-                                </div>
-                                <div class="clear"></div>
-                            </li>
-                            <li>
-                                <div class="testimonial-content">
-                                    <p class="testimonial-text">As a profession, graphic designers have been shamefully remiss
-                                        or ineffective about plying their craft for social or political betterment.</p>
-                                    <p class="testimonial-author">STEVEN HELLER</p>
-                                </div>
-                                <div class="clear"></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <a id="text1_next" class="carousel_text_next" href="#"></a>
-                    <div class="clear"></div>
-                </div> -->
             </div>
         </div>
-    </div>
-
+    </div> -->
 
     <!-- Video -->
     <div id="video" class="section">
@@ -540,9 +488,7 @@
             </div>
             <div class="clear"></div>
         </div>
-
-
-        <div class="extra-content-full-width">
+        <!-- <div class="extra-content-full-width">
             <script>
                 var fwslider1_speed = "500";
                 var fwslider1_auto = "false";
@@ -571,13 +517,12 @@
             </div>
             <a id="fwslider1_fw_next" class="carousel_fw_next" href="#"></a>
             <div class="clear"></div>
-        </div>
+        </div> -->
     </div>
-
 
     <!-- Skills -->
 
-    <div id="skills" class="section">
+    <!-- <div id="skills" class="section">
         <div class="block content-1170 center-relative">
             <div class="section-title-holder right">
                 <div class="section-num">
@@ -585,7 +530,6 @@
                         <span>Partner</span>
                     </center>
                 </div>
-                <!-- <h2 class="entry-title">EXPERTISE</h2> -->
             </div>
             <div class="section-content-holder left">
                 <div class="content-wrapper">
@@ -623,7 +567,7 @@
             </div>
             <div class="clear"></div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Contact -->
     <div id="contact" class="section">
