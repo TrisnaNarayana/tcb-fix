@@ -44,6 +44,7 @@ $this->load->view('include/header');
                                     <tr>
                                         <th>No</th>
                                         <th>Perusahaan</th>
+                                        <th>Icon/Thumbnail</th>
                                         <th>Nama Kategori</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -52,6 +53,7 @@ $this->load->view('include/header');
                                     <tr>
                                         <th>No</th>
                                         <th>Merk</th>
+                                        <th>Icon/Thumbnail</th>
                                         <th>Nama Kategori</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -133,6 +135,14 @@ $this->load->view('include/header');
         $('select').change(function () {
             $(this).parent().parent().removeClass('has-error');
             $(this).next().empty();
+        });
+        $('#dropify').dropify({
+            messages: {
+                default: 'Choose file JPG|PNG|SVG|JPEG|GIF max(2 MB)',
+                replace: 'Update',
+                remove: 'Remove',
+                error: 'error'
+            }
         });
 
         $('#formJ').on('submit', function (e) {
@@ -262,6 +272,10 @@ $this->load->view('include/header');
             <div class="modal-body">
                 <form class="form" id="formJ" action="#" method="post">
                     <input type="hidden" name="id" value="">
+                    <div class="form-group">
+                        <label class="ace-file-input ace-file-multiple">Image</label>
+                        <input multiple="" id="dropify" type="file" name="image">
+                    </div>
                     <div class="form-group">
                         <label for="">Merk</label>
                         <select class="form-control" name="id_merk">

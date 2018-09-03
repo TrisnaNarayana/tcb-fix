@@ -55,6 +55,7 @@ class Kategori extends CI_Controller
             $row = array();
             $row[] = $no;
             $row[] = '<img src="'.base_url().'img/merk/'.$l->img_merk.'" class="img-thumbnail" height="80px" width="80px"> <span>' .$l->nama_merk.'</span>';
+            $row[] = '<img src="'.base_url().'img/kategori/'.$l->icon.'" class="img-thumbnail" height="80px" width="80px">';
             $row[] = $l->nama_kategori;
             //if($this->session->userdata('id_anggota_sess')!=0) {
             
@@ -84,13 +85,51 @@ class Kategori extends CI_Controller
 
     function add()
     {
+      $judul="kategori";
+      $nmfile=$judul.'--'.time();
+      $config['upload_path'] = './img/kategori/'; //path folder
+      $config['allowed_types'] = 'png|jpg|gif|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+      //$config['encrypt_name'] = TRUE; //Enkripsi nama yang terslider
+      $config['file_name']=$nmfile;
 
-      $data = array(
-        'id_merk'=>$this->input->post('id_merk'),
-        'nama_kategori'=>$this->input->post('nama_kategori')
-      );
-      $this->MModel->add("kategori",$data);
-      echo json_encode(array("status" => TRUE));
+      $this->upload->initialize($config);
+      if(!empty($_FILES['image']['name'])){
+
+          if ($this->upload->do_upload('image')){
+              $gbr = $this->upload->data();
+              //Compress Image
+              $config['image_library']='gd2';
+              $config['source_image']='./img/kategori/'.$gbr['file_name'];
+              $config['create_thumb']= FALSE;
+              $config['maintain_ratio']= FALSE;
+              $config['width']= 400 ;//1145; //;
+              $config['height']=400; //456;//
+              $config['new_image']= './img/kategori/'.$gbr['file_name'];
+              $this->load->library('image_lib', $config);
+              $this->image_lib->resize();
+
+              $gambar=$gbr['file_name'];
+              $data = array(
+                'icon'=>$gambar,
+                'id_merk'=>$this->input->post('id_merk'),
+                'nama_kategori'=>$this->input->post('nama_kategori')
+              );
+              $this->MModel->add("kategori",$data);
+              echo json_encode(array("status" => TRUE));
+      }
+
+
+      }else{
+        $data = array(
+          'id_merk'=>$this->input->post('id_merk'),
+          'nama_kategori'=>$this->input->post('nama_kategori')
+        );
+        $this->MModel->add("kategori",$data);
+        echo json_encode(array("status" => TRUE));
+
+    }
+
+      
       
 
 
@@ -99,12 +138,50 @@ class Kategori extends CI_Controller
 
     function update()
     {
-      $data = array(
-        'id_merk'=>$this->input->post('id_merk'),
-        'nama_kategori'=>$this->input->post('nama_kategori')
-      );
-      $this->MModel->update("id_kategori",$this->input->post('id'),"kategori",$data);
-      echo json_encode(array("status" => TRUE));
+      $judul="kategori";
+      $nmfile=$judul.'--'.time();
+      $config['upload_path'] = './img/kategori/'; //path folder
+      $config['allowed_types'] = 'png|jpg|gif|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+      //$config['encrypt_name'] = TRUE; //Enkripsi nama yang terslider
+      $config['file_name']=$nmfile;
+
+      $this->upload->initialize($config);
+      if(!empty($_FILES['image']['name'])){
+
+          if ($this->upload->do_upload('image')){
+              $gbr = $this->upload->data();
+              //Compress Image
+              $config['image_library']='gd2';
+              $config['source_image']='./img/kategori/'.$gbr['file_name'];
+              $config['create_thumb']= FALSE;
+              $config['maintain_ratio']= FALSE;
+              $config['width']= 400 ;//1145; //;
+              $config['height']=400; //456;//
+              $config['new_image']= './img/kategori/'.$gbr['file_name'];
+              $this->load->library('image_lib', $config);
+              $this->image_lib->resize();
+
+              $gambar=$gbr['file_name'];
+              $data = array(
+                'icon'=>$gambar,
+                'id_merk'=>$this->input->post('id_merk'),
+                'nama_kategori'=>$this->input->post('nama_kategori')
+              );
+              $this->MModel->update("id_kategori",$this->input->post('id'),"kategori",$data);
+              echo json_encode(array("status" => TRUE));
+      }
+
+
+      }else{
+        $data = array(
+          'id_merk'=>$this->input->post('id_merk'),
+          'nama_kategori'=>$this->input->post('nama_kategori')
+        );
+        $this->MModel->update("id_kategori",$this->input->post('id'),"kategori",$data);
+        echo json_encode(array("status" => TRUE));
+
+    }
+      
     }
 
     public function get($id)
