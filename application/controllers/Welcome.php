@@ -29,8 +29,15 @@ class Welcome extends CI_Controller
     $this->load->view('cms/contact');
 
   }
+<<<<<<< HEAD
 
   function product()
+=======
+  public function kategori(){
+    $this->load->view('cms/kategori');
+  }
+  function product($page=0)
+>>>>>>> 95a133fbdc8c4886142582df47329ea1a157c9e2
   {
     
 

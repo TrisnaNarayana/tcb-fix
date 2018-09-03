@@ -235,40 +235,10 @@
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
                         <a href="single-portfolio.html">
-                            <img src="<?=base_url().'assets/cms/demo-images/gambar1.jpg'?>" alt="">
-                            <div class="portfolio-text-holder">
-                                <div class="portfolio-text-wrapper">
-                                    <p class="portfolio-type">
-                                        <img src="<?=base_url().'assets/cms/images/icon_post.svg'?>" alt="">
-                                    </p>
-                                    <p class="portfolio-text">Harness</p>
-                                    <p class="portfolio-sec-text">Cable</p>
-                                </div>
-                            </div>
+                            <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
                         </a>
                     </div>
-                    <?php $product=$this->MModel->getData("select * from product order by RAND() limit 4");
-                    if($product) { 
-                    foreach($product as $p) { ?>
-                    <div class="grid-item element-item p_one_half">
-                        <a href="single-portfolio2.html">
-                            <img src="<?=base_url().'img/product/'.$p['foto_product']?>" alt="">
-                            <div class="portfolio-text-holder">
-                                <div class="portfolio-text-wrapper">
-                                    <p class="portfolio-type">
-                                        <img src="<?=base_url().'assets/cms/images/icon_post.svg'?>" alt="">
-                                    </p>
-                                    <p class="portfolio-text">
-                                        <?=$p['nama_product']?>
-                                    </p>
-                                    <p class="portfolio-sec-text">Cable</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <?php } } ?>
                 </div>
-
                 <div class="clear"></div>
                 <div class="block portfolio-load-more-holder">
                     <a  href="<?=base_url().'Welcome/product'?>" class="more-posts">LOAD MORE</a>
@@ -356,7 +326,10 @@
                                         </div>
                                     </div>
                                     <div class="member-image-holder">
-                                        <img src="<?=base_url().'assets/cms/demo-images/tcb.png'?>" alt="">
+                                        <img style="padding:50px; margin-top:100px;" src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>" alt="">
+                                        <center>
+                                        <h3>Company Profile</h3>
+                                       <button class="ui primary button">Launch</button></center>
                                     </div>
                                     <div class="clear"></div>
                                 </li>

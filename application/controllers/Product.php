@@ -25,7 +25,6 @@ class Product extends CI_Controller
 
     $this->load->view('product/v_product',$data);
   }
-
   public function ajax_list()
   {
         $table = 'product a , merk b , kategori c';
