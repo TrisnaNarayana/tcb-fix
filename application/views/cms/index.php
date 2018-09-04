@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="shortcut icon" href="<?=base_url().'assets/cms/images/favicon.png'?>" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet' type='text/css' >
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet'
+        type='text/css'>
     <link rel=" stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/clear.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/common.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/font-awesome.min.css "?>' />
@@ -152,11 +154,14 @@
 					$no_hasil=$no++;
 					if($no_hasil % 2 == 0) { 
 						$id_servis=$s['id_servis'];?>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div id="button">
-                                                <ul>
+                                                <ul class="hover">
                                                     <li class="top">
-                                                        <a class="btn btn-data-center form-control btn-md"><?=$s['nama_servis']?> <i class="fa fa-angle-down pull-right"></i></a>
+                                                        <a class="btn btn-data-center form-control btn-md">
+                                                            <?=$s['nama_servis']?>
+                                                                <i class="fa fa-angle-down pull-right"></i>
+                                                        </a>
                                                     </li>
                                                     <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
 									if($sub){
@@ -164,12 +169,16 @@
 									$hasil_no=$noo++; 
 									if($hasil_no==1) { ?>
                                                     <li class="item">
-                                                        <div class="triangle"></div><a class="btn btn-data-center-sub form-control btn-md"
-                                                            href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                        <div class="triangle"></div>
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                            <?=$b['nama_sub_kategori']?>
+                                                        </a>
                                                     </li>
                                                     <?php } else { ?>
                                                     <li class="item">
-                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                            <?=$b['nama_sub_kategori']?>
+                                                        </a>
                                                     </li>
                                                     <?php } } } ?>
 
@@ -179,11 +188,14 @@
                                         </div>
                                         <?php } if($no_hasil % 2 != 0 ) { 
 						$id_servis=$s['id_servis']; ?>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div id="button">
-                                                <ul>
+                                                <ul class="hover">
                                                     <li class="top">
-                                                        <a class="btn btn-data-center form-control btn-md"><?=$s['nama_servis']?> <i class="fa fa-angle-down pull-right"></i></a>
+                                                        <a class="btn btn-data-center form-control btn-md">
+                                                            <?=$s['nama_servis']?>
+                                                                <i class="fa fa-angle-down pull-right"></i>
+                                                        </a>
                                                     </li>
                                                     <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
 									if($sub){
@@ -191,12 +203,16 @@
 									$hasil_no=$noo++; 
 									if($hasil_no==1) { ?>
                                                     <li class="item">
-                                                        <div class="triangle"></div><a class="btn btn-data-center-sub form-control btn-md"
-                                                            href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                        <div class="triangle"></div>
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                            <?=$b['nama_sub_kategori']?>
+                                                        </a>
                                                     </li>
                                                     <?php } else { ?>
                                                     <li class="item">
-                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                            <?=$b['nama_sub_kategori']?>
+                                                        </a>
                                                     </li>
                                                     <?php } } } ?>
                                                 </ul>
@@ -235,14 +251,22 @@
                 <div class="grid" id="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
-                        <a href="<?=site_url('Welcome/product')?>">
+                        <a href="javascript:void(0);">
+                            <img src="<?=base_url().'assets/cms/demo-images/banner-product-sm.png'?>" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="grid" id="portfolio-grid">
+                    <div class="grid-sizer"></div>
+                    <div class="grid-item element-item p_one">
+                        <a href="javascript:void(0);">
                             <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="clear"></div>
                 <div class="block portfolio-load-more-holder">
-                    <a  href="<?=base_url().'Welcome/product'?>" class="more-posts">LOAD MORE</a>
+                    <a href="<?=base_url().'Welcome/product'?>" class="more-posts">LOAD MORE</a>
                     <img src="<?=base_url().'assets/cms/images/icon_infinity.svg'?>" alt="Load more">
                 </div>
             </div>
@@ -329,8 +353,9 @@
                                     <div class="member-image-holder">
                                         <img style="padding:50px; margin-top:100px;" src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>" alt="">
                                         <center>
-                                        <h3>Company Profile</h3>
-                                       <button class="ui primary button">Launch</button></center>
+                                            <h3>Company Profile</h3>
+                                            <button class="ui primary button">Launch</button>
+                                        </center>
                                     </div>
                                     <div class="clear"></div>
                                 </li>
@@ -688,7 +713,7 @@
                             window.alert('Approved!');
                         }
                     })
-                .modal('show');
+                    .modal('show');
             });
             $.fn.showDeskripsi = function (id) {
                 $.ajax({
@@ -712,18 +737,18 @@
     </script>
 
     <script type="text/javascript">
- 
-        function showModal(swf)
-        {
-            var url = "<?=base_url().'img/info/'?>"+swf;
-            <!-- alert(url); -->
-            jQuery(function ($) {
-            $('#magazine').attr('src',url);
-             $('.ui.modal').modal('show');
-            });
-            
+
+        function showModal(swf) {
+            var url = "<?=base_url().'img/info/'?>" + swf;
+            < !--alert(url); -->
+                jQuery(function ($) {
+                    $('#magazine').attr('src', url);
+                    $('.ui.modal').modal('show');
+                });
+
         }
     </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <div class="ui modal">
         <i class="close icon"></i>
@@ -731,16 +756,17 @@
             Magazine
         </div>
         <!-- <div class="image content"> -->
-            <div>
-                <object style="width:100%" height="100%" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
-                    id="fullscreen" align="middle">
-                    <param name="allowFullScreen" value="true" />
-                    <param name="movie" value="fullscreen.swf" />
-                    <param name="bgcolor" value="#fff" />
-                    <embed id="magazine" width="100%" height="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
-                        type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-                </object>
-            </div>
+        <div>
+            <object style="width:100%" height="100%" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
+                id="fullscreen" align="middle">
+                <param name="allowFullScreen" value="true" />
+                <param name="movie" value="fullscreen.swf" />
+                <param name="bgcolor" value="#fff" />
+                <embed id="magazine" width="100%" height="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333"
+                    name="fullscreen" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                />
+            </object>
+        </div>
         <!-- </div> -->
         <div class="actions">
             <div class="ui button">Cancel</div>
@@ -748,11 +774,18 @@
         </div>
     </div>
 
-<div class="menu-button"><i class="share alternate icon"></i>
-    <a href="#"><i class="whatsapp icon"></i></a>
-    <a href="#"><i class="envelope icon"></i></a>
-    <a href="#"><i class="phone icon"></i>   </a>
-</div>
+    <div class="menu-button">
+        <i class="share alternate icon"></i>
+        <a href="#">
+            <i class="whatsapp icon"></i>
+        </a>
+        <a href="#">
+            <i class="envelope icon"></i>
+        </a>
+        <a href="#">
+            <i class="phone icon"></i>
+        </a>
+    </div>
 
 
 </body>

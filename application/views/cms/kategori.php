@@ -15,7 +15,7 @@
 </head>
 
 <body style="background-color: rgb(20, 51, 111);
-background-image: url(<?=base_url();?>assets/cms/demo-images/background_img_05b.jpg);
+background-image: url(<?=base_url();?>assets/cms/demo-images/bg-product.png);
 background-repeat: no-repeat;
 background-position: center top;
 background-position-x: center;
