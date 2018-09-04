@@ -6,7 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Tali Cahaya Buana</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Template by Colorlib" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
+    <meta name="author" content="Colorlib" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/kategori.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/breadcrumb.css">

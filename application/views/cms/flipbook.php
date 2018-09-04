@@ -1,7 +1,12 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Service Box Style</title>
+    <title>Tali Cahaya Buana</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Template by Colorlib" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
+    <meta name="author" content="Colorlib" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -14,6 +19,13 @@ background-position: center top;
 background-position-x: center;
 background-position-y: top;
 background-size: 100% auto;">
+<table class="doc-loader">
+        <tr>
+            <td>
+                <img src="<?=base_url().'assets/cms/images/tcb_loading.gif'?>" alt="Loading..." />
+            </td>
+        </tr>
+    </table>
 <div class="container" style="margin-top:15%;">
     
     
