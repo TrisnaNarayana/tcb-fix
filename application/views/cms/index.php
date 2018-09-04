@@ -20,6 +20,7 @@
     <link rel="stylesheet " href="<?=base_url(). 'assets/cms/css/flexslider.css'?>">
     <link rel="stylesheet" href="<?=base_url().'assets/cms/css/semantic.min.css'?>">
     <link rel="stylesheet" type="text/css" href='<?=base_url()."assets/cms/style.css"?>' />
+    <link rel="stylesheet" type="text/css" href='<?=base_url()."assets/cms/css/contact.css"?>' />
 
 
     <!--[if lt IE 9]>
@@ -234,7 +235,7 @@
                 <div class="grid" id="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
-                        <a href="single-portfolio.html">
+                        <a href="<?=site_url('Welcome/product')?>">
                             <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
                         </a>
                     </div>
@@ -436,7 +437,7 @@
     <!-- Video -->
     <div id="video" class="section">
         <div class="block content-1170 center-relative">
-            <div class="section-title-holder left">
+            <div class="section-title-holder right">
                 <div class="section-num">
                     <span>
                         <center>
@@ -446,7 +447,7 @@
                 </div>
                 <!-- <h2 class="entry-title">OFFER</h2> -->
             </div>
-            <div class="section-content-holder right">
+            <div class="section-content-holder left">
                 <div class="content-wrapper">
                     <?=$deskripsi->desc_data_center?>
                         <div class="clear"></div>
@@ -747,7 +748,11 @@
         </div>
     </div>
 
-
+<div class="menu-button"><i class="share alternate icon"></i>
+    <a href="#"><i class="whatsapp icon"></i></a>
+    <a href="#"><i class="envelope icon"></i></a>
+    <a href="#"><i class="phone icon"></i>   </a>
+</div>
 
 
 </body>

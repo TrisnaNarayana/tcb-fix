@@ -9,6 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/kategori.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/breadcrumb.css">
 
 
 </head>
@@ -19,9 +20,16 @@ background-repeat: no-repeat;
 background-position: center top;
 background-position-x: center;
 background-position-y: top;
-background-size: auto;">
+background-size: 100% auto;">
     <div class="wrapper">
-        <h1>Parallax Flipping Cards</h1>
+        <div class="page__section">
+            <ul class="breadcrumbs breadcrumbs_type5">
+            <li class="breadcrumbs__item"><a href="#0" class="breadcrumbs__element">Home</a></li>
+            <li class="breadcrumbs__item"><a href="#0" class="breadcrumbs__element">Product</a></li>
+            <li class="breadcrumbs__item breadcrumbs__item_active"><span class="breadcrumbs__element">TE</span></li>
+            </ul>
+        </div>   
+        <br>
         <div class="cols">
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
@@ -35,6 +43,7 @@ background-size: auto;">
                         <div class="inner">
                             <p>Connector, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
                                 c.</p>
+                                <p><a href="<?=site_url('welcome/flipbook')?>" class="btn btn-kategori"><i class="arrow right icon"></i></a></p>
                         </div>
                     </div>
                 </div>

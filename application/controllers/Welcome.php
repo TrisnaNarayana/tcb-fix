@@ -32,6 +32,9 @@ class Welcome extends CI_Controller
   public function kategori(){
     $this->load->view('cms/kategori');
   }
+  public function flipbook(){
+    $this->load->view('cms/flipbook');
+  }
   function product($page=0)
   {
     $config['base_url'] = base_url().'Welcome/product/';
