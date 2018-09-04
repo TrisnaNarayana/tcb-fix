@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/components/grid.min.css"> -->
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/style.css">
-    <title>Document</title>
+    <title>Merk / Perusahaan : TCB</title>
 </head>
 
 <body style="background-color: rgb(20, 51, 111);
@@ -31,20 +31,32 @@ background-size: auto;">
                             </div>
                         </div>
                     </div>
+                    <?php if($data) { 
+                    $no=1;
+                    foreach($data as $d) { 
+                    $nomor=$no++; ?>
                     <div class="one column row">
+                        <?php if($nomor==1) { ?>
                         <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
-                            <div class="block x1" onclick="window.location='<?=site_url('welcome')?>';" style="background:url(<?=base_url();?>assets/cms/images/TE_logo.jpg);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
+                            <div class="block x1" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
                         </div>
+                        <?php } ?>
                     </div>
+                    <?php } ?>
                     <div class="duo column row">
-                        <div class="sixteen wide mobile eight wide tablet eight wide computer column">
-                            <div class="block x4" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                        <div class="sixteen wide mobile eight wide tablet eight wide computer column">
-                            <div class="block x4" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
+                    <?php
+                        $no1=1;
+                        foreach($data as $d) { 
+                        $nomor1=$no1++; ?>
+                        <?php if($nomor1>=2) { ?>
+                            <div class="sixteen wide mobile eight wide tablet eight wide computer column">
+                                <div class="block x4" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
+                            </div>
+                        <?php } 
+                        }?>
                     </div>
-                    <div class="duo column row">
+                    <?php } ?>
+                    <!-- <div class="duo column row">
                         <div class="sixteen wide mobile four wide tablet four wide computer column">
                             <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
                         </div>
@@ -62,7 +74,7 @@ background-size: auto;">
                         <div class="sixteen wide mobile seven wide tablet seven wide computer column">
                             <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

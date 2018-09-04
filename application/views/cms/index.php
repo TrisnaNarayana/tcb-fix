@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="shortcut icon" href="<?=base_url().'assets/cms/images/favicon.png'?>" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet' type='text/css' >
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet'
+        type='text/css'>
     <link rel=" stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/clear.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/common.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/font-awesome.min.css "?>' />
@@ -30,6 +31,7 @@
 <?php $setting=$this->MModel->get("select * from profile where id_profile='1'"); ?>
 <?php $deskripsi=$this->MModel->get("select * from deskripsi where id_deskripsi='1'"); ?>
 <?php $video=$this->MModel->get("select * from video where id_video='1'"); ?>
+<?php $about=$this->MModel->get("select * from about_swf where id_about='1'"); ?>
 
 <body>
 
@@ -130,7 +132,9 @@
                                                 <br />
                                                 <br>
                                                 <div class="ui button" tabindex="0">
-                                                    <div class="visible content">Read More</div>
+                                                    <div onclick="showDeskripsi('<?=$s['id_sub_kategori']?>')" class="visible content">Read
+                                                        More
+                                                    </div>
                                                     <div class="hidden content">
                                                         <i class="right arrow icon"></i>
                                                     </div>
@@ -241,7 +245,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="block portfolio-load-more-holder">
-                    <a  href="<?=base_url().'Welcome/product'?>" class="more-posts">LOAD MORE</a>
+                    <a href="<?=base_url().'Welcome/product'?>" class="more-posts">LOAD MORE</a>
                     <img src="<?=base_url().'assets/cms/images/icon_infinity.svg'?>" alt="Load more">
                 </div>
             </div>
@@ -328,8 +332,8 @@
                                     <div class="member-image-holder">
                                         <img style="padding:50px; margin-top:100px;" src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>" alt="">
                                         <center>
-                                        <h3>Company Profile</h3>
-                                       <button class="ui primary button">Launch</button></center>
+                                            <h3>Company Profile</h3>
+                                            <button class="ui primary button" onclick="showComPro()">Launch</button></center>
                                     </div>
                                     <div class="clear"></div>
                                 </li>
@@ -687,7 +691,7 @@
                             window.alert('Approved!');
                         }
                     })
-                .modal('show');
+                    .modal('show');
             });
             $.fn.showDeskripsi = function (id) {
                 $.ajax({
@@ -711,35 +715,101 @@
     </script>
 
     <script type="text/javascript">
- 
-        function showModal(swf)
-        {
-            var url = "<?=base_url().'img/info/'?>"+swf;
-            <!-- alert(url); -->
+
+        function showModal(swf) {
+            var url = "<?=base_url().'img/info/'?>" + swf;
+
             jQuery(function ($) {
-            $('#magazine').attr('src',url);
-             $('.ui.modal').modal('show');
+                $('#magazine').attr('src', url);
+                $('.ui.modal').modal('show');
             });
-            
+
+        }
+
+        function showComPro() {
+            var url = "<?=base_url().'img/profile/'.$about->swf?>";
+
+            jQuery(function ($) {
+                $('#magazine').attr('src', url);
+                $('#about').modal('show');
+            });
+
+        }
+
+        function showDeskripsi(id) {
+            jQuery(function ($) {
+                $.ajax({
+                    url: "<?=base_url().'Welcome/getSubServis/'?>" + id,
+                    type: "GET",
+                    dataType: "JSON",
+                    success: function (data) {
+                        $('#title').html(data.nama_sub_kategori);
+                        $('#img_ket').attr('src', "<?=base_url().'img/servis/sub/'?>" + data.img_sub);
+                        $('#deskripsi').html(data.deskripsi_sub_kategori);
+                        jQuery(function ($) {
+                            $('#desc').modal('show');
+                        });
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert('Error get data from ajax');
+                    }
+                });
+            });
+
         }
     </script>
 
-    <div class="ui modal">
+    <!-- <div class="ui modal" id="desc">
+        <i class="close icon"></i>
+        <div id="title" class="header"></div>
+        <div class="image content">
+            <div class="ui huge image">
+                <img id="img_ket" src="/images/avatar/large/chris.jpg">
+            </div>
+        </div>
+        <div class="description">
+                <p id="deskripsi">Is it okay to use this photo?</p>
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                Confirm
+            </div>
+        </div>
+    </div> -->
+
+    <div class="ui basic modal" id="desc">
+            
+            <div class="content">
+              <img src="" id="img_ket" width="100%" alt="">
+              <p id="deskripsi">Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+            </div>
+            <div class="actions">
+              
+              <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Confirm
+              </div>
+            </div>
+          </div>
+
+
+    <div class="ui modal" id="about">
         <i class="close icon"></i>
         <div class="header">
-            Magazine
+            Company Profile
         </div>
         <!-- <div class="image content"> -->
-            <div>
-                <object style="width:100%" height="100%" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
-                    id="fullscreen" align="middle">
-                    <param name="allowFullScreen" value="true" />
-                    <param name="movie" value="fullscreen.swf" />
-                    <param name="bgcolor" value="#fff" />
-                    <embed id="magazine" width="100%" height="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle"
-                        type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-                </object>
-            </div>
+        <div>
+            <object style="width:100%" height="100%" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
+                id="fullscreen" align="middle">
+                <param name="allowFullScreen" value="true" />
+                <param name="movie" value="fullscreen.swf" />
+                <param name="bgcolor" value="#fff" />
+                <embed id="magazine" width="100%" height="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333"
+                    name="fullscreen" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                />
+            </object>
+        </div>
         <!-- </div> -->
         <div class="actions">
             <div class="ui button">Cancel</div>
@@ -760,7 +830,7 @@
             whatsapp: "+628988600980", // WhatsApp number
             call_to_action: "Hubungi Kami", // Call to action
             position: "left",
-            text : "Trisna Narayana" // Position may be 'right' or 'left'
+            text: "Trisna Narayana" // Position may be 'right' or 'left'
         };
         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';

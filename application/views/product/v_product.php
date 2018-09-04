@@ -44,7 +44,6 @@ $this->load->view('include/header');
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Dibuat Pada</th>
                                         <th>Nama Product</th>
                                         <th>Perusahaan</th>
                                         <th>Kategori</th>
@@ -54,7 +53,6 @@ $this->load->view('include/header');
                                 <tbody>
                                     <tr>
                                         <th>No</th>
-                                        <th>Dibuat Pada</th>
                                         <th>Nama Product</th>
                                         <th>Perusahaan</th>
                                         <th>Kategori</th>
@@ -140,17 +138,17 @@ $this->load->view('include/header');
             $(this).next().empty();
         });
 
-        $('#editor').redactor({
-            buttons: ["formatting", "|", "bold", "italic", "deleted", "|", "unorderedlist", "orderedlist", "outdent", "indent", "|", "image", "video", "link", "table", "|", "alignment", "|", "horizontalrule"],
-            plugins: ['fontcolor'],
-            minHeight: 200,
-        });
-
-
-
-        $('#dropify').dropify({
+         $('#dropify').dropify({
             messages: {
-                default: 'Choose file Jpg/JPEG/PNG max(500 kb)',
+                default: 'Only SWF file',
+                replace: 'Update',
+                remove: 'Remove',
+                error: 'error'
+            }
+        });
+        $('#dropify1').dropify({
+            messages: {
+                default: 'Only PDF file',
                 replace: 'Update',
                 remove: 'Remove',
                 error: 'error'
@@ -301,22 +299,17 @@ $this->load->view('include/header');
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label class="ace-file-input ace-file-multiple">Image</label>
-                        <input multiple="" id="dropify" type="file" name="image">
-                    </div>
-                    <div class="form-group">
                         <label for="">Nama Product</label>
                         <input type="text" name="nama_product" id="" placeholder="Nama Product" class="form-control" required>
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label for="">Dibuat pada</label>
-                        <input type="text" name="dibuat_pada" id="" placeholder="Dibuat Pada" class="form-control" required>
-                        <p class="help-block mb-0"></p>
+                        <label class="ace-file-input ace-file-multiple">Image</label>
+                        <input multiple="" id="dropify" type="file" name="image">
                     </div>
                     <div class="form-group">
-                        <label class="">Description</label>
-                        <textarea name="deskripsi" id="editor" class="form-control" data-iconlibrary="fa" rows="10" required><?php echo htmlspecialchars(set_value('deskripsi'));?></textarea>
+                        <label class="ace-file-input ace-file-multiple">Image</label>
+                        <input multiple="" id="dropify1" type="file" name="pdf">
                     </div>
             </div>
             <div class="modal-footer">

@@ -127,7 +127,7 @@
         </li>
         <li><a href="<?=base_url().'Slider'?>"><i class="fa fa-home"></i> <span>Slider</span></a></li>
         <!-- <li><a href="<?=base_url().'User'?>"><i class="fa fa-users"></i> <span>Pengguna</span></a></li> -->
-        <li><a href="<?=base_url().'Info'?>"><i class="fa fa-info"></i> <span>Informasi</span></a></li>
+        <!-- <li><a href="<?=base_url().'Info'?>"><i class="fa fa-info"></i> <span>Informasi</span></a></li> -->
         <li class="treeview"><a href="<?=base_url().'Product'?>"><i class="fa fa-product-hunt"></i> <span>Produk</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
           <ul class="treeview-menu">
             <li><a href="<?=base_url().'Merk'?>"><i class="fa fa-angle-right"></i> <span>Perusahaan</span></a></li>
@@ -149,11 +149,12 @@
           </ul>
         </li>
         <!-- <li><a href="<?=base_url().'Karir'?>"><i class="fa fa-graduation-cap"></i> <span>Karir</span></a></li> -->
-        <li><a href="<?=base_url().'Mitra'?>"><i class="fa fa-male"></i> <span>Mitra</span></a></li>
+        <!-- <li><a href="<?=base_url().'Mitra'?>"><i class="fa fa-male"></i> <span>Mitra</span></a></li> -->
         <!-- <li><a href="<?=base_url().'Client'?>"><i class="fa fa-user-secret"></i> <span>Client</span></a></li> -->
         <li class="treeview"><a href="<?=base_url().'Product'?>"><i class="fa fa-cog"></i> <span>Profile</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url().'Profile/visi'?>"><i class="fa fa-angle-right"></i> <span>Visi dan Misi</span></a></li>
+              <li><a href="<?=base_url().'Profile/swf'?>"><i class="fa fa-angle-right"></i> <span>About Swf</span></a></li>
+              <li><a href="<?=base_url().'Profile/visi'?>"><i class="fa fa-angle-right"></i> <span>Visi dan Misi</span></a></li>
               <li><a href="<?=base_url().'Profile'?>"><i class="fa fa-angle-right"></i> <span>Data Profile</span></a></li>
           </ul>
         </li>

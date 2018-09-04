@@ -146,6 +146,49 @@ class Profile extends CI_Controller
       echo json_encode($data);
     }
 
+    public function swf()
+    {
+      $data['detail']=$this->MModel->get("select * from about_swf where id_about='1'");
+      $this->load->view('profile/swf',$data);
+    }
+
+
+    public function editswf()
+    {
+      if(!empty($_FILES['image']['name'])){
+        $nmfile='swf__'.time();
+        $config['upload_path'] = './img/profile/'; //path folder
+        $config['allowed_types'] = 'swf'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
+        $config['file_name']=$nmfile;
+  
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload('image')){
+            $gbr = $this->upload->data();
+            $swf=$gbr['file_name'];
+        }
+        else
+        {
+          $swf= "#";
+        }
+
+    }
+    else
+    {
+      $swf = '#';
+    }
+
+    if($swf != "#")
+    {
+      $data = array(
+        'swf'=>$swf
+      );
+      $this->MModel->update("id_about",1,"about_swf",$data);
+      echo json_encode(array("status" => TRUE));
+    }
+    
+    }
+
 
 
 

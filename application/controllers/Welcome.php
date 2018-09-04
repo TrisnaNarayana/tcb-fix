@@ -29,21 +29,18 @@ class Welcome extends CI_Controller
     $this->load->view('cms/contact');
 
   }
-<<<<<<< HEAD
 
-  function product()
-=======
-  public function kategori(){
-    $this->load->view('cms/kategori');
+  public function kategori($id){
+    $data['detail']= $this->MModel->get("select * from merk where id_merk='$id'");
+    $data['data']= $this->MModel->getData("select * from kategori where id_merk='$id'");
+    $this->load->view('cms/kategori',$data);
   }
+  
   function product($page=0)
->>>>>>> 95a133fbdc8c4886142582df47329ea1a157c9e2
   {
-    
-
-
+  
     $data['data']=$this->MModel->getData("select * from merk");
-    $data['page']=$this->pagination->create_links();
+  //  $data['page']=$this->pagination->create_links();
 
     $this->load->view('cms/product',$data);
 

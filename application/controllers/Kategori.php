@@ -60,6 +60,7 @@ class Kategori extends CI_Controller
             //if($this->session->userdata('id_anggota_sess')!=0) {
             
               $row[] = '
+                      <a href="'.base_url().'Kategori/detail/'.$l->id_kategori.'"  class="btn btn-success btn-xs" title="Edit"><i class="fa fa-edit"></i></a>
                       <a href="javascript:void(0)" onclick="updateKategori('.$l->id_kategori.')" class="btn btn-success btn-xs" title="Edit"><i class="fa fa-edit"></i></a>
                       <a href="javascript:void(0)" onclick="removeKategori('.$l->id_kategori.')" class="btn btn-danger btn-xs" title="Hapus"><i class="fa fa-trash"></i></a>';
             //}
@@ -112,7 +113,8 @@ class Kategori extends CI_Controller
               $data = array(
                 'icon'=>$gambar,
                 'id_merk'=>$this->input->post('id_merk'),
-                'nama_kategori'=>$this->input->post('nama_kategori')
+                'nama_kategori'=>$this->input->post('nama_kategori'),
+                'deskripsi'=>$this->input->post('deskripsi')
               );
               $this->MModel->add("kategori",$data);
               echo json_encode(array("status" => TRUE));
@@ -122,7 +124,8 @@ class Kategori extends CI_Controller
       }else{
         $data = array(
           'id_merk'=>$this->input->post('id_merk'),
-          'nama_kategori'=>$this->input->post('nama_kategori')
+          'nama_kategori'=>$this->input->post('nama_kategori'),
+          'deskripsi'=>$this->input->post('deskripsi')
         );
         $this->MModel->add("kategori",$data);
         echo json_encode(array("status" => TRUE));
@@ -165,7 +168,8 @@ class Kategori extends CI_Controller
               $data = array(
                 'icon'=>$gambar,
                 'id_merk'=>$this->input->post('id_merk'),
-                'nama_kategori'=>$this->input->post('nama_kategori')
+                'nama_kategori'=>$this->input->post('nama_kategori'),
+                'deskripsi'=>$this->input->post('deskripsi')
               );
               $this->MModel->update("id_kategori",$this->input->post('id'),"kategori",$data);
               echo json_encode(array("status" => TRUE));
@@ -175,7 +179,8 @@ class Kategori extends CI_Controller
       }else{
         $data = array(
           'id_merk'=>$this->input->post('id_merk'),
-          'nama_kategori'=>$this->input->post('nama_kategori')
+          'nama_kategori'=>$this->input->post('nama_kategori'),
+          'deskripsi'=>$this->input->post('deskripsi')
         );
         $this->MModel->update("id_kategori",$this->input->post('id'),"kategori",$data);
         echo json_encode(array("status" => TRUE));

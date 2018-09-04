@@ -80,15 +80,15 @@ class Merk extends CI_Controller
           if ($this->upload->do_upload('image')){
               $gbr = $this->upload->data();
               //Compress Image
-              $config['image_library']='gd2';
+             /* $config['image_library']='gd2';
               $config['source_image']='./img/merk/'.$gbr['file_name'];
               $config['create_thumb']= FALSE;
               $config['maintain_ratio']= FALSE;
               $config['width']= 1001 ;//1145; //;
-              $config['height']=1001; //456;//
+              $config['height']=472; //456;//
               $config['new_image']= './img/merk/'.$gbr['file_name'];
               $this->load->library('image_lib', $config);
-              $this->image_lib->resize();
+              $this->image_lib->resize();*/
 
               $gambar=$gbr['file_name'];
               $data = array(
@@ -124,15 +124,15 @@ class Merk extends CI_Controller
 
           if ($this->upload->do_upload('image')){
               $gbr = $this->upload->data();
-              $config['image_library']='gd2';
-              $config['source_image']='./img/merk/'.$gbr['file_name'];
-              $config['create_thumb']= FALSE;
-              $config['maintain_ratio']= FALSE;
-              $config['width']= 1001 ;//1145; //;
-              $config['height']=1001; //456;//
-              $config['new_image']= './img/merk/'.$gbr['file_name'];
-              $this->load->library('image_lib', $config);
-              $this->image_lib->resize();
+              // $config['image_library']='gd2';
+              // $config['source_image']='./img/merk/'.$gbr['file_name'];
+              // $config['create_thumb']= FALSE;
+              // $config['maintain_ratio']= FALSE;
+              // $config['width']= 1001 ;//1145; //;
+              // $config['height']=1001; //456;//
+              // $config['new_image']= './img/merk/'.$gbr['file_name'];
+              // $this->load->library('image_lib', $config);
+              // $this->image_lib->resize();
 
               $gambar=$gbr['file_name'];
               $data = array(

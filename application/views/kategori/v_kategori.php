@@ -144,6 +144,12 @@ $this->load->view('include/header');
                 error: 'error'
             }
         });
+        $('#editor').redactor({
+            buttons: ["formatting", "|", "bold", "italic", "deleted", "|", "unorderedlist", "orderedlist", "outdent", "indent", "|", "image", "video", "link", "table", "|", "alignment", "|", "horizontalrule"],
+            plugins: ['fontcolor'],
+            minHeight: 100,
+        });
+
 
         $('#formJ').on('submit', function (e) {
             $('#btnSave').text('Menyimpan...');
@@ -291,6 +297,10 @@ $this->load->view('include/header');
                         <label for="">Nama Kategori</label>
                         <input type="text" name="nama_kategori" id="" placeholder="Nama Kategori" class="form-control" required>
                         <p class="help-block mb-0"></p>
+                    </div>
+                    <div class="form-group">
+                        <label class="">Description</label>
+                        <textarea name="deskripsi" id="editor" class="form-control" data-iconlibrary="fa" rows="10" required><?php echo htmlspecialchars(set_value('deskripsi'));?></textarea>
                     </div>
             </div>
             <div class="modal-footer">

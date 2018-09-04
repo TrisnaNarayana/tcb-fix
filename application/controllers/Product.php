@@ -60,7 +60,6 @@ class Product extends CI_Controller
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $l->dibuat_pada;
             $row[] = $l->nama_product;
             $row[] = $l->nama_merk;
             $row[] = $l->nama_kategori;
@@ -110,106 +109,170 @@ class Product extends CI_Controller
 
     function add()
     {
-      $nmfile='product__'.time();
+      if(!empty($_FILES['image']['name'])){
+        $nmfile='swf__'.time();
+        $config['upload_path'] = './img/product/'; //path folder
+        $config['allowed_types'] = 'swf'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
+        $config['file_name']=$nmfile;
+
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload('image')){
+            $gbr = $this->upload->data();
+            $swf=$gbr['file_name'];
+        }
+        else
+        {
+          $swf= "#";
+        }
+
+    }
+    else
+    {
+      $swf = '#';
+    }
+    if(!empty($_FILES['pdf']['name'])){
+      $nmfile='pdf__'.time();
       $config['upload_path'] = './img/product/'; //path folder
-      $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+      $config['allowed_types'] = 'pdf'; //type yang dapat diakses bisa anda sesuaikan
       $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
       $config['file_name']=$nmfile;
 
       $this->upload->initialize($config);
-      if(!empty($_FILES['image']['name'])){
-
-          if ($this->upload->do_upload('image')){
-              $gbr = $this->upload->data();
-              //Compress Image
-              $config['image_library']='gd2';
-              $config['source_image']='./img/product/'.$gbr['file_name'];
-              $config['create_thumb']= FALSE;
-              $config['maintain_ratio']= FALSE;
-              $config['width']= 400;
-              $config['height']= 400;
-              $config['new_image']= './img/product/'.$gbr['file_name'];
-              $this->load->library('image_lib', $config);
-              $this->image_lib->resize();
-
-              $gambar=$gbr['file_name'];
-              $data = array(
-              'foto_product'=>$gambar,
-              'dibuat_pada'=>$this->input->post('dibuat_pada'),
-              'nama_product'=>$_POST['nama_product'],
-              'deskripsi'=>$_POST['deskripsi'],
-              'id_kategori'=>$_POST['id_kategori']
-            );
-            $this->MModel->add("product",$data);
-            echo json_encode(array("status" => TRUE));
-
+      if ($this->upload->do_upload('pdf')){
+          $gbr = $this->upload->data();
+          $pdf=$gbr['file_name'];
       }
+      else 
+      {
+        $pdf="#" ;
+      }
+    }
+    else
+    {
+      $swf = '#';
+    }
 
-
-      }else{
-        $data = array(
-        'dibuat_pada'=>$this->input->post('dibuat_pada'),
-        'nama_product'=>$_POST['nama_product'],
-        'deskripsi'=>$_POST['deskripsi'],
-        'id_sub_kategori'=>$_POST['id_sub_kategori']
+    if($pdf != "#" && $swf != "#")
+    {
+      $data = array(
+        'swf'=>$swf,
+        'pdf'=>$pdf,
+        'nama_product'=>$this->input->post('nama_product'),
+        'id_kategori'=>$this->input->post('id_kategori')
       );
-            $this->MModel->add("product",$data);
-            echo json_encode(array("status" => TRUE));
+    }
+    else if($pdf != "#" && $swf=="#")
+    {
+      $data = array(
+        'pdf'=>$pdf,
+        'nama_product'=>$this->input->post('nama_product'),
+        'id_kategori'=>$this->input->post('id_kategori')
+      );
+    }
+    else if($pdf == "#" && $swf != "#")
+    {
+      $data = array(
+        'swf'=>$swf,
+        'nama_product'=>$this->input->post('nama_product'),
+        'id_kategori'=>$this->input->post('id_kategori')
+      );
+    }else
+    {
+      $data = array(
+        'nama_product'=>$this->input->post('nama_product'),
+        'id_kategori'=>$this->input->post('id_kategori')
+      );
+    }
+      
+      $this->MModel->add("product",$data);
+      echo json_encode(array("status" => TRUE));
+    }
 
-    }
-    }
+  
 
     function update()
     {
-      $nmfile='product__'.time();
+      if(!empty($_FILES['image']['name'])){
+        $nmfile='swf__'.time();
+        $config['upload_path'] = './img/product/'; //path folder
+        $config['allowed_types'] = 'swf'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
+        $config['file_name']=$nmfile;
+
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload('image')){
+            $gbr = $this->upload->data();
+            $swf=$gbr['file_name'];
+        }
+        else
+        {
+          $swf= "#";
+        }
+
+    }
+    else
+    {
+      $swf = '#';
+    }
+    if(!empty($_FILES['pdf']['name'])){
+      $nmfile='pdf__'.time();
       $config['upload_path'] = './img/product/'; //path folder
-      $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+      $config['allowed_types'] = 'pdf'; //type yang dapat diakses bisa anda sesuaikan
       $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
       $config['file_name']=$nmfile;
 
       $this->upload->initialize($config);
-      if(!empty($_FILES['image']['name'])){
-
-          if ($this->upload->do_upload('image')){
-              $gbr = $this->upload->data();
-              //Compress Image
-              $config['image_library']='gd2';
-              $config['source_image']='./img/product/'.$gbr['file_name'];
-              $config['create_thumb']= FALSE;
-              $config['maintain_ratio']= FALSE;
-              $config['width']= 400;
-              $config['height']= 400;
-              $config['new_image']= './img/product/'.$gbr['file_name'];
-              $this->load->library('image_lib', $config);
-              $this->image_lib->resize();
-
-              $gambar=$gbr['file_name'];
-              $data = array(
-              'foto_product'=>$gambar,
-              'dibuat_pada'=>$this->input->post('dibuat_pada'),
-              'nama_product'=>$_POST['nama_product'],
-              'deskripsi'=>$_POST['deskripsi'],
-              'id_kategori'=>$_POST['id_kategori']
-            );
-            $this->MModel->update("id_product",$this->input->post('id'),"product",$data);
-
-            echo json_encode(array("status" => TRUE));
-
+      if ($this->upload->do_upload('pdf')){
+          $gbr = $this->upload->data();
+          $pdf=$gbr['file_name'];
       }
-
-
-      }else{
-              $data = array(
-              'dibuat_pada'=>$this->input->post('dibuat_pada'),
-              'nama_product'=>$_POST['nama_product'],
-              'deskripsi'=>$_POST['deskripsi'],
-              'id_sub_kategori'=>$_POST['id_sub_kategori']
-            );
-            $this->MModel->update("id_product",$this->input->post('id'),"product",$data);
-            echo json_encode(array("status" => TRUE));
-
+      else 
+      {
+        $pdf="#" ;
+      }
     }
+    else
+    {
+      $swf = '#';
     }
+
+    if($pdf != "#" && $swf != "#")
+    {
+      $data = array(
+        'swf'=>$swf,
+        'pdf'=>$pdf,
+        'nama_product'=>$this->input->post('nama_product'),
+        'id_kategori'=>$this->input->post('id_kategori')
+      );
+    }
+    else if($pdf != "#" && $swf=="#")
+    {
+      $data = array(
+        'pdf'=>$pdf,
+        'nama_product'=>$this->input->post('nama_product'),
+        'id_kategori'=>$this->input->post('id_kategori')
+      );
+    }
+    else if($pdf == "#" && $swf!="#")
+    {
+      $data = array(
+        'swf'=>$swf,
+        'nama_product'=>$this->input->post('nama_product'),
+        'id_kategori'=>$this->input->post('id_kategori')
+      );
+    }else
+    {
+      $data = array(
+        'nama_product'=>$this->input->post('nama_product'),
+        'id_kategori'=>$this->input->post('id_kategori')
+      );
+    }
+    $this->MModel->update("id_product",$this->input->post('id'),"product",$data);
+    echo json_encode(array("status" => TRUE));
+    }
+
+
 
     public function updateDeskripsi()
     {
