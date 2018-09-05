@@ -198,11 +198,11 @@ background-size: 100% auto;">
         $('.help-block').empty();
         $('label').hide();
         $('#addClient').modal('show');
-        $('.modal-title').text('Add Client...');
+        $('.modal-title').text('Please Fill in for download');
     }
 </script>
 <div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog ">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">×</button>
@@ -212,8 +212,8 @@ background-size: 100% auto;">
                 <form class="form" id="formC" action="#" method="post">
                     <input type="hidden" name="id" value="">
                     <div class="form-group">
-                        <label for="">Nama Client</label>
-                        <input type="text" name="nama_client" id="" placeholder="Nama Client" class="form-control">
+                        <label for="">Name</label>
+                        <input type="text" name="name" id="" placeholder="Name" class="form-control">
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
@@ -222,8 +222,24 @@ background-size: 100% auto;">
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label for="">Tanggapan</label>
-                        <textarea type="text" name="say" id="" placeholder="Tanggapan " class="form-control" rows="3" required></textarea>
+                        <label for="">Contact</label>
+                        <input type="number" name="contact" id="" placeholder="Contact" class="form-control">
+                        <p class="help-block mb-0"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Company</label>
+                        <input type="text" name="company" id="" placeholder="Company" class="form-control">
+                        <p class="help-block mb-0"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="">The type of Company</label>
+                        <input type="text" name="type_company" id="" placeholder="The type of Company" class="form-control">
+                        <p class="help-block mb-0"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Address</label>
+                        <textarea type="text" name="address" id="" placeholder="Address " class="form-control" rows="3" required></textarea>
                         <p class="help-block mb-0"></p>
                     </div>
             </div>
