@@ -7,14 +7,18 @@
     <!-- <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/components/grid.min.css"> -->
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/style.css">
+
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
     <title>Merk / Perusahaan : TCB</title>
 
@@ -33,7 +37,7 @@ background-position: center top;
 background-position-x: center;
 background-position-y: top;
 background-size: 100% 100%;">
-<table class="doc-loader">
+    <table class="doc-loader">
         <tr>
             <td>
                 <img src="<?=base_url().'assets/cms/images/tcb_loading.gif'?>" alt="Loading..." />
@@ -66,61 +70,46 @@ background-size: 100% 100%;">
                     </div>
                     <?php } ?>
                     <div class="duo column row">
-                    <?php
+                        <?php
                         $no1=1;
                         foreach($data as $d) { 
                         $nomor1=$no1++; ?>
                         <?php if($nomor1>=2) { ?>
-                            <div class="sixteen wide mobile eight wide tablet eight wide computer column">
-                                <div class="block x4" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                            </div>
+                        <div class="sixteen wide mobile eight wide tablet eight wide computer column">
+                            <div class="block x4" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
+                        </div>
                         <?php } 
                         }?>
                     </div>
                     <?php } ?>
                     <div class="one column row">
-                        <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
+                        <div class="sixteen wide mobile eight wide tablet sixteen wide computer column">
                             <?=$page?>
+
                         </div>
                     </div>
-                    <!-- <div class="duo column row">
-                        <div class="sixteen wide mobile four wide tablet four wide computer column">
-                            <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                        <div class="sixteen wide mobile twelve wide tablet twelve wide computer column">
-                            <div class="block x4" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                    </div>
-                    <div class="three column row">
-                        <div class="sixteen wide mobile four wide tablet four wide computer column">
-                            <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                        <div class="sixteen wide mobile five wide tablet five wide computer column">
-                            <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                        <div class="sixteen wide mobile seven wide tablet seven wide computer column">
-                            <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                    </div> -->
+
                 </div>
-                
+
             </div>
         </div>
     </div>
 </body>
+
 <script type="text/javascript" src="<?=base_url().'assets/cms/js/jquery.js'?>"></script>
-    <script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky-kit.min.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.smartmenus.min.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.dryMenu.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/isotope.pkgd.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.carouFredSel-6.2.0-packed.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.mousewheel.min.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.touchSwipe.min.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.easing.1.3.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/imagesloaded.pkgd.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.prettyPhoto.js"?>'></script>
-    <script type='text/javascript' src='<?=base_url()."assets/cms/js/main.js"?>'></script>
+<script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky-kit.min.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.smartmenus.min.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.dryMenu.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/isotope.pkgd.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.carouFredSel-6.2.0-packed.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.mousewheel.min.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.touchSwipe.min.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.easing.1.3.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/imagesloaded.pkgd.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.prettyPhoto.js"?>'></script>
+<script type='text/javascript' src='<?=base_url()."assets/cms/js/main.js"?>'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </html>

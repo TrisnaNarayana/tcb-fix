@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/flip.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/swt/sweetalert.css">
 </head>
 
 <body style="background-color: rgb(20, 51, 111);
@@ -24,7 +25,6 @@ background-position-x: center;
 background-position-y: top;
 background-size: 100% auto;">
     <div class="container" style="margin-top:15%;">
-
 
         <div class="row">
             <div class="col-md-3 col-sm-6 ">
@@ -68,6 +68,7 @@ background-size: 100% auto;">
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, debitis.</p>
                         <a href="javascript:void(0)" onclick="addClient()" class="btn btn-primary btn-lg" style="margin-top:5%;">Download</a>
 
+
                     </div>
                 </div>
             </div>
@@ -78,7 +79,6 @@ background-size: 100% auto;">
                         <div class="front-content">
                             <i class="fa fa-error"></i>
                             <h3>No Data</h3>
-
                         </div>
                     </div>
                     <div class="service-content">
@@ -144,6 +144,7 @@ background-size: 100% auto;">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#formC').on('submit', function (e) {
@@ -234,6 +235,8 @@ background-size: 100% auto;">
         </div>
     </div>
 </div>
+
+<!-- <script src="<?=base_url();?>assets/swt/sweetalert.min.js"></script> -->
 
 
 </html>
