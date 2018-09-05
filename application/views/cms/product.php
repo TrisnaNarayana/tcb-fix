@@ -70,6 +70,11 @@ background-size: 100% 100%;">
                         }?>
                     </div>
                     <?php } ?>
+                    <div class="one column row">
+                        <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
+                            <?=$page?>
+                        </div>
+                    </div>
                     <!-- <div class="duo column row">
                         <div class="sixteen wide mobile four wide tablet four wide computer column">
                             <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
@@ -90,6 +95,7 @@ background-size: 100% 100%;">
                         </div>
                     </div> -->
                 </div>
+                
             </div>
         </div>
     </div>

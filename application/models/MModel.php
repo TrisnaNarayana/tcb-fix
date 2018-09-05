@@ -116,7 +116,7 @@
     if($this->where!==''){
         $this->db->where($this->where);
     }
-    $this->db->order_by($order,'DESC')->limit($limit,$page);
+    $this->db->order_by($order,'ASC')->limit($limit,$page);
 
     $query=$this->db->get($table);
 

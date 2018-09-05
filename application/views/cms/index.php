@@ -721,23 +721,6 @@
                     })
                     .modal('show');
             });
-            $.fn.showDeskripsi = function (id) {
-                $.ajax({
-                    url: "<?=base_url().'Welcome/getSubServis/'?>" + id,
-                    type: "GET",
-                    dataType: "JSON",
-                    success: function (data) {
-                        $('.modal-title').text(data.nama_sub_kategori);
-                        $('#img_ket').attr('src', "<?=base_url().'img/servis/sub/'?>" + data.img_sub);
-                        $('#deskripsi').html(data.deskripsi_sub_kategori);
-                        $('#modalku').modal('show');
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        alert('Error get data from ajax');
-                    }
-                });
-            };
-
         });
 
     </script>
@@ -748,17 +731,16 @@
             var url = "<?=base_url().'img/info/'?>" + swf;
             jQuery(function ($) {
                 $('#magazine').attr('src', url);
-                $('.ui.modal').modal('show');
+                $('#modal').modal('show');
             });
 
         }
 
         function showComPro() {
             var url = "<?=base_url().'img/profile/'.$about->swf?>";
-
             jQuery(function ($) {
                 $('#magazine').attr('src', url);
-                $('#about').modal('show');
+                $('#compro').modal('show');
             });
 
         }
@@ -825,7 +807,7 @@
           </div>
 
 
-    <div class="ui modal" id="about">
+    <div class="ui modal" id="compro">
         <i class="close icon"></i>
         <div class="header">
             Company Profile

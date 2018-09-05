@@ -23,7 +23,6 @@ background-position: center top;
 background-position-x: center;
 background-position-y: top;
 background-size: 100% auto;">
-<<<<<<< HEAD
     <div class="container" style="margin-top:15%;">
 
 
@@ -37,7 +36,7 @@ background-size: 100% auto;">
                         </div>
                     </div>
                     <div class="service-content">
-                        <a href="<?=site_url('Welcome/kategori/'.$detail->id_kategori);?>" class="btn btn-primary btn-lg" style="margin-top:30%;">Back</a>
+                        <a href="<?=site_url('Welcome/kategori/'.$detail->id_merk);?>" class="btn btn-primary btn-lg" style="margin-top:30%;">Back</a>
                     </div>
                 </div>
             </div>
