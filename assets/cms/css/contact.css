@@ -1,8 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
-body {
-  background: #A7FFEB;
-}
-
 h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -26,7 +22,7 @@ h1 {
   text-align: center;
   line-height: 60px;
   border-radius: 50%;
-  background-color: rgb(233, 30, 30);
+  background: #e74c3c;
   color: #FFFFFF;
   font-size: 24px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.22);
@@ -123,4 +119,58 @@ h1 {
     padding: 15px;
     font-size: 25px;
   }
+}
+
+ul li.item {
+  transition: 0.5s;
+  display: none;
+}
+
+ul.hover:hover li.item{
+  transition: 0.5s;
+  display: block;
+  /* padding: 5px; */
+}
+ul li.item:hover .triangle{
+  transition: 0.5s;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgb(125, 159, 201);;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #A6C1E2;
+  float: right;
+  top: 5px;
+  position: relative;
+}
+.btn-data-center {
+  text-align: left;
+  background: #3070A4;
+  color: #f8f8f8;
+  font-family: 'Roboto Condensed', sans-serif;
+  /* border-radius: 20px; */
+  border-radius: 0px;
+  margin: 5px;
+}
+.btn-data-center:hover{
+  background: rgb(31, 93, 145);
+  color: #fff;
+}
+
+.btn-data-center-sub{
+  text-align: left;
+  background: #A6C1E2;
+  font-family: 'Roboto Condensed', sans-serif;
+  /* border-radius: 20px; */
+  border-radius: 0px;
+  margin: 5px;
+  color: #2f2f2f;
+}
+.btn-data-center-sub:hover{
+  background: rgb(125, 159, 201);
+  color: #2f2f2f;
 }

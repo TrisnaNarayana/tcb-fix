@@ -2,7 +2,12 @@
 
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Service Box Style</title>
+    <title>Tali Cahaya Buana</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Template by Colorlib" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
+    <meta name="author" content="Colorlib" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css"
     />
@@ -18,6 +23,7 @@ background-position: center top;
 background-position-x: center;
 background-position-y: top;
 background-size: 100% auto;">
+<<<<<<< HEAD
     <div class="container" style="margin-top:15%;">
 
 
@@ -32,6 +38,25 @@ background-size: 100% auto;">
                     </div>
                     <div class="service-content">
                         <a href="<?=site_url('Welcome/kategori/'.$detail->id_kategori);?>" class="btn btn-primary btn-lg" style="margin-top:30%;">Back</a>
+=======
+<table class="doc-loader">
+        <tr>
+            <td>
+                <img src="<?=base_url().'assets/cms/images/tcb_loading.gif'?>" alt="Loading..." />
+            </td>
+        </tr>
+    </table>
+<div class="container" style="margin-top:15%;">
+    
+    
+    <div class="row">
+        <div class="col-md-3 col-sm-6 ">
+            <div class="service-box">
+                <div class="service-icon yellow">
+                    <div class="front-content">
+                        <i class="fa fa-arrow-left"></i>
+                        <h3>Back</h3>
+>>>>>>> 9a82de62d37b89a5c2bfd9f5976d30ca2eced499
                     </div>
                 </div>
             </div>

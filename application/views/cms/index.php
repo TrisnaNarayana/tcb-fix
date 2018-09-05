@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="shortcut icon" href="<?=base_url().'assets/cms/images/favicon.png'?>" />
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet'
         type='text/css'>
     <link rel=" stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/clear.css "?>' />
@@ -156,24 +157,31 @@
 					$no_hasil=$no++;
 					if($no_hasil % 2 == 0) { 
 						$id_servis=$s['id_servis'];?>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div id="button">
-                                                <ul>
+                                                <ul class="hover">
                                                     <li class="top">
-                                                        <a class="btn btn-data-center form-control btn-md"><?=$s['nama_servis']?> <i class="fa fa-angle-down pull-right"></i></a>
+                                                        <a class="btn btn-data-center form-control btn-md">
+                                                            <?=$s['nama_servis']?>
+                                                                <i class="fa fa-angle-down pull-right"></i>
+                                                        </a>
                                                     </li>
                                                     <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
-									if($sub){
-									foreach($sub as $b) { 
-									$hasil_no=$noo++; 
-									if($hasil_no==1) { ?>
+                                                    if($sub){
+                                                    foreach($sub as $b) { 
+                                                    $hasil_no=$noo++; 
+                                                    if($hasil_no==1) { ?>
                                                     <li class="item">
-                                                        <div class="triangle"></div><a class="btn btn-data-center-sub form-control btn-md"
-                                                            href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                        <div class="triangle"></div>
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                            <?=$b['nama_sub_kategori']?>
+                                                        </a>
                                                     </li>
                                                     <?php } else { ?>
                                                     <li class="item">
-                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                            <?=$b['nama_sub_kategori']?>
+                                                        </a>
                                                     </li>
                                                     <?php } } } ?>
 
@@ -183,11 +191,14 @@
                                         </div>
                                         <?php } if($no_hasil % 2 != 0 ) { 
 						$id_servis=$s['id_servis']; ?>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div id="button">
-                                                <ul>
+                                                <ul class="hover">
                                                     <li class="top">
-                                                        <a class="btn btn-data-center form-control btn-md"><?=$s['nama_servis']?> <i class="fa fa-angle-down pull-right"></i></a>
+                                                        <a class="btn btn-data-center form-control btn-md">
+                                                            <?=$s['nama_servis']?>
+                                                                <i class="fa fa-angle-down pull-right"></i>
+                                                        </a>
                                                     </li>
                                                     <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
 									if($sub){
@@ -195,12 +206,16 @@
 									$hasil_no=$noo++; 
 									if($hasil_no==1) { ?>
                                                     <li class="item">
-                                                        <div class="triangle"></div><a class="btn btn-data-center-sub form-control btn-md"
-                                                            href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                        <div class="triangle"></div>
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                            <?=$b['nama_sub_kategori']?>
+                                                        </a>
                                                     </li>
                                                     <?php } else { ?>
                                                     <li class="item">
-                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)"><?=$b['nama_sub_kategori']?></a>
+                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                            <?=$b['nama_sub_kategori']?>
+                                                        </a>
                                                     </li>
                                                     <?php } } } ?>
                                                 </ul>
@@ -239,7 +254,15 @@
                 <div class="grid" id="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
-                        <a href="<?=site_url('Welcome/product')?>">
+                        <a href="javascript:void(0);">
+                            <img src="<?=base_url().'assets/cms/demo-images/banner-product-sm.png'?>" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="grid" id="portfolio-grid">
+                    <div class="grid-sizer"></div>
+                    <div class="grid-item element-item p_one">
+                        <a href="javascript:void(0);">
                             <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
                         </a>
                     </div>
@@ -334,7 +357,11 @@
                                         <img style="padding:50px; margin-top:100px;" src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>" alt="">
                                         <center>
                                             <h3>Company Profile</h3>
+
                                             <button class="ui primary button" onclick="showComPro()">Launch</button></center>
+
+                            
+                                        </center>
                                     </div>
                                     <div class="clear"></div>
                                 </li>
@@ -719,7 +746,6 @@
 
         function showModal(swf) {
             var url = "<?=base_url().'img/info/'?>" + swf;
-
             jQuery(function ($) {
                 $('#magazine').attr('src', url);
                 $('.ui.modal').modal('show');
@@ -757,8 +783,13 @@
                 });
             });
 
+            
+                
+
+
         }
     </script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
     <!-- <div class="ui modal" id="desc">
         <i class="close icon"></i>
@@ -823,6 +854,7 @@
     <a href="mailto:<?=$setting->email?>"><i class="envelope icon"></i></a>
     <a href="tel:<?=$setting->telepon?>"><i class="phone icon"></i>   </a>
 </div>
+
 
 
 </body>

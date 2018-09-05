@@ -19,12 +19,19 @@
 </head>
 
 <body style="background-color: rgb(20, 51, 111);
-background-image: url(<?=base_url();?>assets/cms/demo-images/background_img_05b.jpg);
+background-image: url(<?=base_url();?>assets/cms/demo-images/product.png);
 background-repeat: no-repeat;
 background-position: center top;
 background-position-x: center;
 background-position-y: top;
 background-size: 100% 100%;">
+<table class="doc-loader">
+        <tr>
+            <td>
+                <img src="<?=base_url().'assets/cms/images/tcb_loading.gif'?>" alt="Loading..." />
+            </td>
+        </tr>
+    </table>
     <div class="background">
         <div class="ui container">
             <div class="content">
@@ -87,5 +94,19 @@ background-size: 100% 100%;">
         </div>
     </div>
 </body>
+<script type="text/javascript" src="<?=base_url().'assets/cms/js/jquery.js'?>"></script>
+    <script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky-kit.min.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.smartmenus.min.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.dryMenu.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/isotope.pkgd.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.carouFredSel-6.2.0-packed.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.mousewheel.min.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.touchSwipe.min.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.easing.1.3.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/imagesloaded.pkgd.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.prettyPhoto.js"?>'></script>
+    <script type='text/javascript' src='<?=base_url()."assets/cms/js/main.js"?>'></script>
 
 </html>

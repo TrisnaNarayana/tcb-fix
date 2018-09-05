@@ -333,13 +333,17 @@ h1.big-title
 
 #services
 {
-    background-color: rgb(51, 89, 167);
+    background-color: #14336F; 
+    background-image: url("demo-images/solution.png"); 
+    background-repeat: no-repeat; 
+    background-position: center top; 
+    background-size: 100% auto;
     z-index: 9;
 }
 
 #services .section-title-holder
 {
-    background-color: #14336F;
+    background-color: rgb(34, 73, 150);
 }
 
 #services .section-title-holder span
