@@ -365,38 +365,6 @@
                                     </div>
                                     <div class="clear"></div>
                                 </li>
-
-                                <!-- <li>
-                                    <div class="member-content-holder">
-                                        <h4 class="member-name">John Doe</h4>
-                                        <p class="member-position">SEO MASTER</p>
-                                        <div class="member-content">
-                                            Eiusmod tempor incididunt ut dolore magna labore eiusmod. Lorem ipsum dolor sit amet consectetur est lorem adipisicing elit,
-                                            sed do eiusmod tempor polor sit amet consectetur.
-                                            <br>
-                                        </div>
-                                    </div>
-                                    <div class="member-image-holder">
-                                        <img src="<?=base_url().'assets/cms/demo-images/about_img_02.jpg'?>" alt="">
-                                    </div>
-                                    <div class="clear"></div>
-                                </li>
-
-                                <li>
-                                    <div class="member-content-holder">
-                                        <h4 class="member-name">John Doe</h4>
-                                        <p class="member-position">PSD GURU</p>
-                                        <div class="member-content">
-                                            Eiusmod tempor incididunt ut dolore magna labore eiusmod. Lorem ipsum dolor sit amet consectetur est lorem adipisicing elit,
-                                            sed do eiusmod tempor polor sit amet consectetur.
-                                            <br>
-                                        </div>
-                                    </div>
-                                    <div class="member-image-holder">
-                                        <img src="<?=base_url().'assets/cms/demo-images/about_img_03.jpg'?>" alt="">
-                                    </div>
-                                    <div class="clear"></div>
-                                </li> -->
                             </ul>
                         </div>
                         <div class="clear"></div>
