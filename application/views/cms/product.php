@@ -70,25 +70,21 @@ background-size: 100% 100%;">
                         }?>
                     </div>
                     <?php } ?>
-                    <!-- <div class="duo column row">
-                        <div class="sixteen wide mobile four wide tablet four wide computer column">
-                            <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                        <div class="sixteen wide mobile twelve wide tablet twelve wide computer column">
-                            <div class="block x4" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                    </div>
-                    <div class="three column row">
-                        <div class="sixteen wide mobile four wide tablet four wide computer column">
-                            <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                        <div class="sixteen wide mobile five wide tablet five wide computer column">
-                            <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                        <div class="sixteen wide mobile seven wide tablet seven wide computer column">
-                            <div class="block x3" style="background:url(<?=base_url();?>assets/cms/demo-images/partner/hellerman.png);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                    </div> -->
+                    <center>
+
+                    <div class="demo">
+      <nav class="pagination pagination_type2 pagination_type3">
+        <ol class="pagination__list">
+          <li class="pagination__group"><a href="#0" class="pagination__item pagination__control pagination__control_prev">prev</a></li>
+          <li class="pagination__group"><a href="#0" class="pagination__item">1</a></li>
+          <li class="pagination__group"><span class="pagination__item pagination__item_active">2</span></li>
+          <li class="pagination__group"><a href="#0" class="pagination__item">3</a></li>
+          <li class="pagination__group"><a href="#0" class="pagination__item pagination__control pagination__control_next">next</a></li>
+        </ol>
+      </nav>
+    </div>
+    </center>
+
                 </div>
             </div>
         </div>
