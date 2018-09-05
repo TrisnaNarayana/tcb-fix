@@ -707,6 +707,50 @@
 
     <script type="text/javascript">
 
+        $('#formC').on('submit', function (e) {
+            $('#btnSave1').text('Menyimpan...');
+            $('#btnSave1').attr('disabled', true);
+            var url;
+            if (save_method == 'add') {
+                url = "<?=base_url().'Client/add';?>";
+            } else {
+                url = "<?=base_url().'Client/update';?>";
+            }
+            e.preventDefault();
+            $.ajax({
+                url: url,
+                method: "POST",
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data) {
+                    if (save_method == 'add') {
+                        $('#addClient').modal('hide');
+                        swal({
+                            title: 'Sukses!',
+                            text: 'Data berhasil di simpan',
+                            type: 'success'
+                        },
+                            function () {
+                                location.reload();
+                            });
+                    }
+                    else {
+                        $('#addClient').modal('hide');
+                        swal({
+                            title: 'Sukses!',
+                            text: 'Data berhasil di ubah',
+                            type: 'success'
+                        },
+                            function () {
+                                location.reload();
+                            });
+                    }
+                }
+            });
+        });
+
         function showModal(swf) {
             var url = "<?=base_url().'img/info/'?>" + swf;
             jQuery(function ($) {
@@ -723,6 +767,16 @@
                 $('#compro').modal('show');
             });
 
+        }
+
+        function addClient() {
+            save_method = 'add';
+            $('#formJ')[0].reset();
+            $('.form-group').removeClass('has-error');
+            $('.help-block').empty();
+            $('label').hide();
+            $('#addClient').modal('show');
+            $('.modal-title').text('Add Client...');
         }
 
         function showDeskripsi(id) {
@@ -812,6 +866,7 @@
         <a href="tel:<?=$setting->telepon?>"><i class="phone icon"></i> </a>
     </div>
 
+   
 
 
 </body>
