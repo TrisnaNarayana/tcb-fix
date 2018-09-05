@@ -32,10 +32,25 @@ class Welcome extends CI_Controller
 
   public function kategori($id){
     $data['detail']= $this->MModel->get("select * from merk where id_merk='$id'");
-    $data['data']= $this->MModel->getData("select * from kategori where id_merk='$id'");
-    $this->load->view('cms/kategori',$data);
+    $hasil= $this->MModel->getData("select * from kategori where id_merk='$id'");
+    if($hasil)
+    {
+      $data['data']=$hasil;
+      $this->load->view('cms/kategori',$data);
+    }
+    else{
+      redirect(base_url().'Welcome/product');
+    }
+    
   }
-  
+
+  public function flipbook($id){
+    $data['detail']=$this->MModel->get("select * from kategori where id_kategori='$id'");
+    $data['data']=$this->MModel->get("select * from product where id_kategori='$id'");
+    
+    $this->load->view('cms/flipbook',$data);
+  }
+
   function product($page=0)
   {
   

@@ -9,6 +9,7 @@
     <title>Category <?=$detail->nama_merk?></title>
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/kategori.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/breadcrumb.css">
 
 
 </head>
@@ -19,9 +20,19 @@ background-repeat: no-repeat;
 background-position: center top;
 background-position-x: center;
 background-position-y: top;
-background-size: auto;">
+background-size: 100% auto;">
     <div class="wrapper">
+
         <h1>Category : <?=$detail->nama_merk?></h1>
+
+        <div class="page__section">
+            <ul class="breadcrumbs breadcrumbs_type5">
+            <li class="breadcrumbs__item"><a href="<?=base_url().'Welcome'?>" class="breadcrumbs__element">Home</a></li>
+            <li class="breadcrumbs__item"><a href="<?=base_url().'Welcome/product'?>" class="breadcrumbs__element">Product</a></li>
+            <li class="breadcrumbs__item breadcrumbs__item_active"><span class="breadcrumbs__element">TE</span></li>
+            </ul>
+        </div>   
+        <br>
         <div class="cols">
         <?php if($data) {
         foreach($data as $d) { ?>
@@ -36,6 +47,9 @@ background-size: auto;">
                     <div class="back">
                         <div class="inner">
                             <p><?=$d['deskripsi']?></p>
+                            <p>Connector, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                                c.</p>
+                                <p><a href="<?=site_url('welcome/flipbook/'.$d['id_kategori'])?>" class="btn btn-kategori"><i class="arrow right icon"></i></a></p>
                         </div>
                     </div>
                 </div>

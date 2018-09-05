@@ -21,6 +21,7 @@
     <link rel="stylesheet " href="<?=base_url(). 'assets/cms/css/flexslider.css'?>">
     <link rel="stylesheet" href="<?=base_url().'assets/cms/css/semantic.min.css'?>">
     <link rel="stylesheet" type="text/css" href='<?=base_url()."assets/cms/style.css"?>' />
+    <link rel="stylesheet" type="text/css" href='<?=base_url()."assets/cms/css/contact.css"?>' />
 
 
     <!--[if lt IE 9]>
@@ -85,7 +86,7 @@
                         </center>
                         <br>
                         <h1 class="big-title">Tali Cahaya Buana
-                            <span>-</span>
+                            
                         </h1>
                         <p class="title-desc">Support bright Technology today for a better tomorrow</p>
                     </div>
@@ -238,7 +239,7 @@
                 <div class="grid" id="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
-                        <a href="single-portfolio.html">
+                        <a href="<?=site_url('Welcome/product')?>">
                             <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
                         </a>
                     </div>
@@ -440,7 +441,7 @@
     <!-- Video -->
     <div id="video" class="section">
         <div class="block content-1170 center-relative">
-            <div class="section-title-holder left">
+            <div class="section-title-holder right">
                 <div class="section-num">
                     <span>
                         <center>
@@ -450,7 +451,7 @@
                 </div>
                 <!-- <h2 class="entry-title">OFFER</h2> -->
             </div>
-            <div class="section-content-holder right">
+            <div class="section-content-holder left">
                 <div class="content-wrapper">
                     <?=$deskripsi->desc_data_center?>
                         <div class="clear"></div>
@@ -817,24 +818,14 @@
         </div>
     </div>
 
-
+<div class="menu-button"><i class="share alternate icon"></i>
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=628988600980&text=Hai Tali Cahaya Buana"><i class="whatsapp icon"></i></a>
+    <a href="mailto:<?=$setting->email?>"><i class="envelope icon"></i></a>
+    <a href="tel:<?=$setting->telepon?>"><i class="phone icon"></i>   </a>
+</div>
 
 
 </body>
 
 </html>
 
-<script type="text/javascript">
-    (function () {
-        var options = {
-            whatsapp: "+628988600980", // WhatsApp number
-            call_to_action: "Hubungi Kami", // Call to action
-            position: "left",
-            text: "Trisna Narayana" // Position may be 'right' or 'left'
-        };
-        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();
-</script>

@@ -288,7 +288,7 @@ $this->load->view('include/header');
                     <div class="form-group">
                         <label for="">Kategori</label>
                         <select name="id_kategori" class="form-control" required>
-                            <?php $kategori=$this->MModel->getData("select * from kategori a inner join merk b on b.id_merk=a.id_merk");
+                            <?php //$kategori=$this->MModel->getData("select * from kategori a inner join merk b on b.id_merk=a.id_merk");
                         if($kategori){
                         foreach($kategori as $k){ ?>
                             <option value="<?=$k['id_kategori']?>">

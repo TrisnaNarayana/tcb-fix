@@ -3,12 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/components/grid.min.css"> -->
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/style.css">
+
     <title>Merk / Perusahaan : TCB</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Template by Colorlib" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
+    <meta name="author" content="Colorlib" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 </head>
 
 <body style="background-color: rgb(20, 51, 111);
@@ -17,14 +24,14 @@ background-repeat: no-repeat;
 background-position: center top;
 background-position-x: center;
 background-position-y: top;
-background-size: auto;">
+background-size: 100% 100%;">
     <div class="background">
         <div class="ui container">
             <div class="content">
                 <div class="ui grid">
                     <div class="one column row">
                         <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
-                            <div class="block x">
+                            <div class="block x" onclick="window.location='<?=site_url('welcome')?>';">
                                 <a href="<?=site_url('Welcome');?>">
                                     <i class="reply icon"></i>
                                 </a>

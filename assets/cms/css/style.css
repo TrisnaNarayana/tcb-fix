@@ -14,7 +14,6 @@
     z-index: -1;
     display: block;
     background-size: 100% 100%;
-    background-image: url('<?=base_url();?>assets/cms/demo-images/background_img_05b.jpg');
     width: 150%;
     height: 150%;
     top: -20px;
@@ -75,6 +74,7 @@ body {
     position: relative; */
     line-height: 200px;
     cursor: pointer;
+    z-index: 99999;
 }
 
 .x2 {

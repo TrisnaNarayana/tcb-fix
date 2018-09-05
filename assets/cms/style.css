@@ -660,7 +660,7 @@ div.pp_default .pp_loaderIcon
     background-repeat: no-repeat; 
     background-position: center center; 
     background-size: cover; 
-    z-index: 6;
+    z-index: 5;
 }
 
 .blog-item-holder
@@ -771,7 +771,7 @@ div.pp_default .pp_loaderIcon
     background-repeat: repeat-x; 
     background-position: center center; 
     background-size: auto; 
-    z-index: 5;
+    z-index: 6;
 }
 
 #video .section-title-holder
