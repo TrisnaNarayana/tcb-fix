@@ -87,7 +87,7 @@
                         </center>
                         <br>
                         <h1 class="big-title">Tali Cahaya Buana
-                            
+
                         </h1>
                         <p class="title-desc">Support bright Technology today for a better tomorrow</p>
                     </div>
@@ -313,8 +313,8 @@
 
                 <div class="full-width ">
                     <script>
-                        var aboutImage_speed = "500";
-                        var aboutImage_auto = "false";
+                        var aboutImage_speed = "1000";
+                        var aboutImage_auto = "true";
                         var aboutImage_hover = "true";
                     </script>
                     <div class="image-slider-wrapper relative img aboutImage">
@@ -322,13 +322,25 @@
                         <div class="caroufredsel_wrapper">
                             <ul id="aboutImage" class="image-slider slides">
                                 <li>
-                                    <img src="<?=base_url().'assets/cms/demo-images/about_img_06.jpg'?>" alt="">
+                                    <img src="<?=base_url().'assets/cms/demo-images/about/about1.png'?>" alt="">
                                 </li>
                                 <li>
-                                    <img src="<?=base_url().'assets/cms/demo-images/about_img_04.jpg'?>" alt="">
+                                    <img src="<?=base_url().'assets/cms/demo-images/about/about2.png'?>" alt="">
                                 </li>
                                 <li>
-                                    <img src="<?=base_url().'assets/cms/demo-images/building.jpg'?>" alt="">
+                                    <img src="<?=base_url().'assets/cms/demo-images/about/about3.png'?>" alt="">
+                                </li>
+                                <li>
+                                    <img src="<?=base_url().'assets/cms/demo-images/about/about4.png'?>" alt="">
+                                </li>
+                                <li>
+                                    <img src="<?=base_url().'assets/cms/demo-images/about/about5.png'?>" alt="">
+                                </li>
+                                <li>
+                                    <img src="<?=base_url().'assets/cms/demo-images/about/about6.png'?>" alt="">
+                                </li>
+                                <li>
+                                    <img src="<?=base_url().'assets/cms/demo-images/about/about7.png'?>" alt="">
                                 </li>
 
                             </ul>
@@ -360,7 +372,7 @@
 
                                             <button class="ui primary button" onclick="showComPro()">Launch</button></center>
 
-                            
+
                                         </center>
                                     </div>
                                     <div class="clear"></div>
@@ -733,8 +745,8 @@
                 });
             });
 
-            
-                
+
+
 
 
         }
@@ -760,28 +772,22 @@
     </div> -->
 
     <div class="ui basic modal" id="desc">
-            
-            <div class="content">
-              <img src="" id="img_ket" width="100%" alt="">
-              <p id="deskripsi">Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
-            </div>
-            <div class="actions">
-              
-              <div class="ui green ok inverted button">
+
+        <div class="content">
+            <img src="" id="img_ket" width="100%" alt="">
+            <p id="deskripsi">Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+        </div>
+        <div class="actions">
+            <div class="ui green ok inverted button">
                 <i class="checkmark icon"></i>
                 Confirm
-              </div>
             </div>
-          </div>
-
-
-    <div class="ui modal" id="compro">
-        <i class="close icon"></i>
-        <div class="header">
-            Company Profile
         </div>
-        <!-- <div class="image content"> -->
-        <div>
+    </div>
+
+
+    <div class="ui basic modal" id="compro">
+        <div class="content">
             <object style="width:100%" height="100%" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0"
                 id="fullscreen" align="middle">
                 <param name="allowFullScreen" value="true" />
@@ -792,22 +798,22 @@
                 />
             </object>
         </div>
-        <!-- </div> -->
         <div class="actions">
-            <div class="ui button">Cancel</div>
-            <div class="ui button">OK</div>
+            <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Confirm
+            </div>
         </div>
     </div>
 
-<div class="menu-button"><i class="share alternate icon"></i>
-    <a target="_blank" href="https://api.whatsapp.com/send?phone=628988600980&text=Hai Tali Cahaya Buana"><i class="whatsapp icon"></i></a>
-    <a href="mailto:<?=$setting->email?>"><i class="envelope icon"></i></a>
-    <a href="tel:<?=$setting->telepon?>"><i class="phone icon"></i>   </a>
-</div>
+    <div class="menu-button"><i class="share alternate icon"></i>
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=628988600980&text=Hai Tali Cahaya Buana"><i class="whatsapp icon"></i></a>
+        <a href="mailto:<?=$setting->email?>"><i class="envelope icon"></i></a>
+        <a href="tel:<?=$setting->telepon?>"><i class="phone icon"></i> </a>
+    </div>
 
 
 
 </body>
 
 </html>
-
