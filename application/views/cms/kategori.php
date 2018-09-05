@@ -34,7 +34,7 @@ background-size: 100% auto;">
             <ul class="breadcrumbs breadcrumbs_type5">
             <li class="breadcrumbs__item"><a href="<?=base_url().'Welcome'?>" class="breadcrumbs__element">Home</a></li>
             <li class="breadcrumbs__item"><a href="<?=base_url().'Welcome/product'?>" class="breadcrumbs__element">Product</a></li>
-            <li class="breadcrumbs__item breadcrumbs__item_active"><span class="breadcrumbs__element">TE</span></li>
+            <li class="breadcrumbs__item breadcrumbs__item_active"><span class="breadcrumbs__element"><?=$detail->nama_merk?></span></li>
             </ul>
         </div>   
         <br>

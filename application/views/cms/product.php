@@ -7,6 +7,8 @@
     <!-- <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/components/grid.min.css"> -->
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
 
     <title>Merk / Perusahaan : TCB</title>
 
@@ -70,26 +72,20 @@ background-size: 100% 100%;">
                         }?>
                     </div>
                     <?php } ?>
-                    <center>
-
-                    <div class="demo">
-      <nav class="pagination pagination_type2 pagination_type3">
-        <ol class="pagination__list">
-          <li class="pagination__group"><a href="#0" class="pagination__item pagination__control pagination__control_prev">prev</a></li>
-          <li class="pagination__group"><a href="#0" class="pagination__item">1</a></li>
-          <li class="pagination__group"><span class="pagination__item pagination__item_active">2</span></li>
-          <li class="pagination__group"><a href="#0" class="pagination__item">3</a></li>
-          <li class="pagination__group"><a href="#0" class="pagination__item pagination__control pagination__control_next">next</a></li>
-        </ol>
-      </nav>
-    </div>
-    </center>
-
+                    <div class="one column row">
+                        <div class="sixteen wide mobile eight wide tablet sixteen wide computer column">
+                        <?=$page?>
+                    
+                        </div>
+                    </div>
+                   
                 </div>
+                
             </div>
         </div>
     </div>
 </body>
+
 <script type="text/javascript" src="<?=base_url().'assets/cms/js/jquery.js'?>"></script>
     <script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
     <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky-kit.min.js"?>'></script>
@@ -104,5 +100,6 @@ background-size: 100% 100%;">
     <script type='text/javascript' src='<?=base_url()."assets/cms/js/imagesloaded.pkgd.js"?>'></script>
     <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.prettyPhoto.js"?>'></script>
     <script type='text/javascript' src='<?=base_url()."assets/cms/js/main.js"?>'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </html>

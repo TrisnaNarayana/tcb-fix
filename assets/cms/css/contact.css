@@ -121,7 +121,7 @@ h1 {
   }
 }
 
-ul li.item {
+/* ul li.item {
   transition: 0.5s;
   display: none;
 }
@@ -129,7 +129,6 @@ ul li.item {
 ul.hover:hover li.item{
   transition: 0.5s;
   display: block;
-  /* padding: 5px; */
 }
 ul li.item:hover .triangle{
   transition: 0.5s;
@@ -152,7 +151,6 @@ ul li.item:hover .triangle{
   background: #3070A4;
   color: #f8f8f8;
   font-family: 'Roboto Condensed', sans-serif;
-  /* border-radius: 20px; */
   border-radius: 0px;
   margin: 5px;
 }
@@ -165,7 +163,6 @@ ul li.item:hover .triangle{
   text-align: left;
   background: #A6C1E2;
   font-family: 'Roboto Condensed', sans-serif;
-  /* border-radius: 20px; */
   border-radius: 0px;
   margin: 5px;
   color: #2f2f2f;
@@ -173,4 +170,4 @@ ul li.item:hover .triangle{
 .btn-data-center-sub:hover{
   background: rgb(125, 159, 201);
   color: #2f2f2f;
-}
+} */

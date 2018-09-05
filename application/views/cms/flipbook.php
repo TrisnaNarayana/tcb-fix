@@ -36,7 +36,7 @@ background-size: 100% auto;">
                         </div>
                     </div>
                     <div class="service-content">
-                        <a href="<?=site_url('Welcome/kategori/'.$detail->id_kategori);?>" class="btn btn-primary btn-lg" style="margin-top:30%;">Back</a>
+                        <a href="<?=site_url('Welcome/kategori/'.$detail->id_merk);?>" class="btn btn-primary btn-lg" style="margin-top:30%;">Back</a>
                     </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@ background-size: 100% auto;">
 <!-- <script src="<?=base_url();?>assets/swt/sweetalert.min.js"></script> -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    var name, email, contact;
+    var name, email, contact, company, address;
     $('#download').click(function () {
         swal("Write Name here:", {
             content: {
@@ -199,7 +199,35 @@ background-size: 100% auto;">
                             })
                                 .then((value) => {
                                     contact = value;
-                                    swal('You Name: ' + name + ' Email : ' + email + ' Contact : ' + contact);
+                                    swal("Write Company here:", {
+                                        content: {
+                                            element: "input",
+                                            attributes: {
+                                                type: "text",
+                                                required: true
+                                            }
+                                        },
+                                        button: {
+                                            text: "Done",
+                                        },
+                                    })
+                                        .then((value) => {
+                                            company = value;
+                                            swal("Write Address here:", {
+                                                content: {
+                                                    element: "textarea",
+                                                    attributes: {
+                                                        rows: "5",
+                                                    }
+                                                },
+                                                button: {
+                                                    text: "Done",
+                                                },
+                                            })
+                                            .then((value) => {
+                                              swal()  
+                                            })
+                                        });
                                 });
                         });
                 }
