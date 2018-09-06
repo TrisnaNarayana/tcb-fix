@@ -32,7 +32,7 @@ class Welcome extends CI_Controller
 
   public function kategori($id){
     $data['detail']= $this->MModel->get("select * from merk where id_merk='$id'");
-    $hasil= $this->MModel->getData("select * from kategori where id_merk='$id'");
+    $hasil= $this->MModel->getData("select * from kategori a inner join product b on b.id_kategori=a.id_kategori where id_merk='$id'");
     if($hasil)
     {
       $data['data']=$hasil;
@@ -234,6 +234,21 @@ class Welcome extends CI_Controller
     $data=$this->MModel->get("select * from sub_kategori where id_sub_kategori='$id'");
     echo json_encode($data);
   }
+
+  function add()
+    {
+     // $this->_validateClient();
+      $data = array(
+        'email'=>$this->input->post("email"),
+        'nama_client'=>$this->input->post('name'),
+        'alamat'=>$this->input->post('address'),
+        'kontak'=>$this->input->post('contact'),
+        'bidang_perusahaan'=>$this->input->post('type_company'),
+        'kantor'=>$this->input->post('company')
+      );
+      $this->MModel->add("client",$data);
+      echo json_encode(array("status" => TRUE));
+    }
 
   
 

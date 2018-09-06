@@ -52,8 +52,7 @@ background-size: 100% auto;">
                     <div class="back">
                         <div class="inner">
                             <p><?=$d['deskripsi']?></p>
-                            <p>Connector, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
-                                c.</p>
+                            
                                 <p><a href="<?=site_url('welcome/flipbook/'.$d['id_kategori'])?>" class="btn btn-kategori"><i class="arrow right icon"></i></a></p>
                         </div>
                     </div>

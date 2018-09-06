@@ -19,27 +19,20 @@ class Product extends CI_Controller
     $countries=$this->MModel->getData("select * from kategori a inner join merk b on b.id_merk=a.id_merk");
     $opt = array('' => 'Semua Kategori');
     foreach ($countries as $country) {
-          $opt[$country['id_kategori']] = $country['nama_merk'].' || '.$country['nama_kategori'];
+          $id=$country['id_kategori'];
+          $cek=$this->MModel->get("select * from product where id_kategori='$id'");
+          if($cek)
+          {
+            $opt[$country['id_kategori']] = $country['nama_merk'].' || '.$country['nama_kategori'];
+          }
+          
     }
     $data['form_kategori'] = form_dropdown('',$opt,'','id="id_category" class="form-control"');
 
-    $kategori=$this->MModel->getData("select * from product");
-    $hasil = array();
-    foreach($kategori as $k)
-    {
-     $id = $k['id_kategori'] ;
-     $ko=$this->MModel->get("select * from kategori a inner join merk b on b.id_merk=a.id_merk where id_kategori != '$id'");
-     if($ko)
-     {
-       $row=array();
-       $row['id_kategori'] = $ko->id_kategori;
-       $row['nama_kategori'] = $ko->nama_kategori;
-       $row['nama_merk'] = $ko->nama_merk;
-       $hasil[] = $row;
-     }
-    }
+    
+    
 
-    $data['kategori']=$hasil;
+    $data['kategori']=$this->MModel->getData("select * from kategori a inner join merk b on b.id_merk=a.id_merk");
 
    
 

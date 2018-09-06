@@ -43,9 +43,24 @@ $this->load->view('include/header');
 										<th><?=$detail->email?></th>
 									</tr>
 									<tr>
-										<th>Tanggapan</th>
+										<th>Kontak</th>
 										<th>:</th>
-										<th><?=$detail->say?></th>
+										<th><?=$detail->kontak?></th>
+									</tr>
+									<tr>
+										<th>Alamat</th>
+										<th>:</th>
+										<th><?=$detail->alamat?></th>
+									</tr>
+									<tr>
+										<th>Perusahaan</th>
+										<th>:</th>
+										<th><?=$detail->kantor?></th>
+									</tr>
+									<tr>
+										<th>Bidang Perushanaan</th>
+										<th>:</th>
+										<th><?=$detail->bidang_perusahaan?></th>
 									</tr>
 								</thead>
 							</table>

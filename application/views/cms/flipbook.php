@@ -130,7 +130,7 @@ background-size: 100% auto;">
                 <?php } else {?>
                 <div class="embed-responsive embed-responsive-16by9">
 
-                    <iframe width='1000' height='800' src='<?=base_url().' img/product/ '.$data->pdf?>' frameborder='0' allowfullscreen></iframe>
+                    <iframe width='1000' height='800' src='<?=base_url().'img/product/'.$data->pdf?>' frameborder='0' allowfullscreen></iframe>
 
                 </div>
                 <?php } ?>
@@ -145,5 +145,106 @@ background-size: 100% auto;">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#formC').on('submit', function (e) {
+            $('#btnSave1').text('Menyimpan...');
+            $('#btnSave1').attr('disabled', true);
+            var url;
+            if (save_method == 'add') {
+                url = "<?=base_url().'Welcome/add';?>";
+            }
+            e.preventDefault();
+            $.ajax({
+                url: url,
+                method: "POST",
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data) {
+                    if (save_method == 'add') {
+                        $('#addClient').modal('hide');
+                        swal("Download Here")
+                            .then((value) => {
+                                if(value === true)
+                                {
+                                    var filePath = window.prompt("Enter a file URL", "<?=base_url().'img/product/'.$data->pdf?>");
+                                    $('<form></form>').attr('action', filePath).appendTo('body').submit().remove();
+                               
+                                }
+                                
+                            });
+                    }
+                }
+            });
+        });
+    });
+
+    function downloadPdf() {
+        alert("success");
+    }
+    function addClient() {
+        save_method = 'add';
+        $('#formC')[0].reset();
+        $('.form-group').removeClass('has-error');
+        $('.help-block').empty();
+        $('label').hide();
+        $('#addClient').modal('show');
+        $('.modal-title').text('Please Fill in for download');
+    }
+</script>
+<div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form" id="formC" action="#" method="post">
+                    <input type="hidden" name="id" value="">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" name="name" id="" placeholder="Name" class="form-control" required>
+                        <p class="help-block mb-0"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" name="email" id="" placeholder="Email" class="form-control" required>
+                        <p class="help-block mb-0"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Contact</label>
+                        <input type="number" name="contact" id="" placeholder="Contact" class="form-control" required>
+                        <p class="help-block mb-0"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Company</label>
+                        <input type="text" name="company" id="" placeholder="Company" class="form-control" required>
+                        <p class="help-block mb-0"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="">The type of Company</label>
+                        <input type="text" name="type_company" id="" placeholder="The type of Company" class="form-control" required>
+                        <p class="help-block mb-0"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Address</label>
+                        <textarea type="text" name="address" id="" placeholder="Address " class="form-control" rows="3" required></textarea>
+                        <p class="help-block mb-0"></p>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-raised btn-primary" id="btnSave1" onclick="">Save</button>
+                <button type="button" class="btn btn-raised btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 </html>

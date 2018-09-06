@@ -150,7 +150,7 @@
         </li>
         <!-- <li><a href="<?=base_url().'Karir'?>"><i class="fa fa-graduation-cap"></i> <span>Karir</span></a></li> -->
         <!-- <li><a href="<?=base_url().'Mitra'?>"><i class="fa fa-male"></i> <span>Mitra</span></a></li> -->
-        <!-- <li><a href="<?=base_url().'Client'?>"><i class="fa fa-user-secret"></i> <span>Client</span></a></li> -->
+        <li><a href="<?=base_url().'Client'?>"><i class="fa fa-user-secret"></i> <span>Client</span></a></li>
         <li class="treeview"><a href="<?=base_url().'Product'?>"><i class="fa fa-cog"></i> <span>Profile</span><span class="pull-right-container"><i class="fa fa-angle-left"></i> </span></a>
           <ul class="treeview-menu">
               <li><a href="<?=base_url().'Profile/swf'?>"><i class="fa fa-angle-right"></i> <span>About Swf</span></a></li>

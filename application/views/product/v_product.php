@@ -290,11 +290,15 @@ $this->load->view('include/header');
                         <select name="id_kategori" class="form-control" required>
                             <?php //$kategori=$this->MModel->getData("select * from kategori a inner join merk b on b.id_merk=a.id_merk");
                         if($kategori){
-                        foreach($kategori as $k){ ?>
+                        foreach($kategori as $k){ 
+                        $id=$k['id_kategori'] ;
+                        $hasil=$this->MModel->get("select * from product where id_kategori='$id'");
+                        
+                        if($hasil) {} else {?>
                             <option value="<?=$k['id_kategori']?>">
                                 <?=$k['nama_merk'].' || '.$k['nama_kategori']?>
                             </option>
-                            <?php } } ?>
+                            <?php } } } ?>
                         </select>
                         <p class="help-block mb-0"></p>
                     </div>
@@ -304,11 +308,11 @@ $this->load->view('include/header');
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label class="ace-file-input ace-file-multiple">Image</label>
+                        <label class="ace-file-input ace-file-multiple">SWF</label>
                         <input multiple="" id="dropify" type="file" name="image">
                     </div>
                     <div class="form-group">
-                        <label class="ace-file-input ace-file-multiple">Image</label>
+                        <label class="ace-file-input ace-file-multiple">Pdf</label>
                         <input multiple="" id="dropify1" type="file" name="pdf">
                     </div>
             </div>
