@@ -60,7 +60,7 @@ class Kategori extends CI_Controller
             //if($this->session->userdata('id_anggota_sess')!=0) {
             
               $row[] = '
-                      <a href="'.base_url().'Kategori/detail/'.$l->id_kategori.'"  class="btn btn-success btn-xs" title="Edit"><i class="fa fa-edit"></i></a>
+                      <a href="'.base_url().'Kategori/detail/'.$l->id_kategori.'"  class="btn btn-success btn-xs" title="view"><i class="fa fa-eye"></i></a>
                       <a href="javascript:void(0)" onclick="updateKategori('.$l->id_kategori.')" class="btn btn-success btn-xs" title="Edit"><i class="fa fa-edit"></i></a>
                       <a href="javascript:void(0)" onclick="removeKategori('.$l->id_kategori.')" class="btn btn-danger btn-xs" title="Hapus"><i class="fa fa-trash"></i></a>';
             //}
@@ -80,7 +80,7 @@ class Kategori extends CI_Controller
 
     function Detail($id)
     {
-      $data['detail']=$this->MModel->get("select * from kategori where id_kategori='$id'");
+      $data['detail']=$this->MModel->get("select * from kategori a inner join merk b on b.id_merk=a.id_merk where id_kategori='$id'");
       $this->load->view('kategori/v_detail_kategori',$data);
     }
 

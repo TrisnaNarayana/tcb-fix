@@ -62,6 +62,31 @@ body a:hover
     line-height: 0;
 }
 
+.text {
+    position: relative;
+    font-size: 14px;
+    color: black;
+    width: 250px;
+    /* Could be anything you like. */
+}
+
+.text-concat {
+    position: relative;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 5.6em;
+    /* (Number of lines you want visible) * (line-height) */
+    line-height: 1.2em;
+    text-align: justify;
+}
+
+.text.ellipsis::after {
+    content: "...";
+    position: absolute;
+    right: -12px;
+    bottom: 4px;
+}
 
 
 /* TOP MENU */
@@ -310,7 +335,7 @@ h1.big-title
 
 .title-desc
 {
-    font-family: 'PT Serif', serif;
+    font-family: 'Asap', sans-serif;
     font-size: 22px;
     line-height: 26px;
     max-width: 333px; 

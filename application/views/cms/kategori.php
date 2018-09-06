@@ -27,9 +27,6 @@ background-position-x: center;
 background-position-y: top;
 background-size: 100% auto;">
     <div class="wrapper">
-
-        <h1>Category : <?=$detail->nama_merk?></h1>
-
         <div class="page__section">
             <ul class="breadcrumbs breadcrumbs_type5">
             <li class="breadcrumbs__item"><a href="<?=base_url().'Welcome'?>" class="breadcrumbs__element">Home</a></li>
@@ -51,8 +48,7 @@ background-size: 100% auto;">
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <p><?=$d['deskripsi']?></p>
-                            
+                            <p><?=$d['deskripsi']?></p>                
                                 <p><a href="<?=site_url('welcome/flipbook/'.$d['id_kategori'])?>" class="btn btn-kategori"><i class="arrow right icon"></i></a></p>
                         </div>
                     </div>

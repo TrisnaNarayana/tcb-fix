@@ -223,6 +223,7 @@ $this->load->view('include/header');
                 $('[name="id"]').val(data.id_kategori);
                 $('[name="id_merk"]').val(data.id_merk);
                 $('[name="nama_kategori"]').val(data.nama_kategori);
+                $('#editor').redactor('set', data.deskripsi);
                 $('.modal-title').text('Edit Kategori');
                 $('#addLomba').modal('show');
             },

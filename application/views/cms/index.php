@@ -13,6 +13,7 @@
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet'
         type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
     <link rel=" stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/clear.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/common.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/font-awesome.min.css "?>' />
@@ -130,7 +131,9 @@
                                             <?=$s['nama_sub_kategori']?>
                                         </div>
                                         <div class="service-content">
+                                        <div class="text text-concat ellipsis">
                                             <?=$s['deskripsi_sub_kategori']?>
+                                        </div>
                                                 <br />
                                                 <br>
                                                 <div class="ui button" tabindex="0">

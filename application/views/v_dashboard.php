@@ -27,12 +27,12 @@
         <div class="small-box bg-aqua">
           <div class="inner">
             <h3>
-              <?=$this->db->count_all_results('servis')?>
+              <?=$this->db->count_all_results('client')?>
             </h3>
-            <p>Solusi</p>
+            <p>User Download</p>
           </div>
           <div class="icon">
-            <i class="fa fa-wrench"></i>
+            <i class="fa fa-download"></i>
           </div>
           <a href="<?=base_url().'User'?>" class="small-box-footer">info lanjut <i class="fa fa-arrow-circle-right"></i></a>
         </div>
