@@ -140,7 +140,7 @@ class Video extends CI_Controller
       }*/
 
 
-      $judul="video";
+     /* $judul="video";
       $nmfile= time();
       $config['upload_path'] = './img/video/'; //path folder
       $config['allowed_types'] = 'mov|mpeg|mp4|avi|wmv'; //type yang dapat diakses bisa anda sesuaikan
@@ -163,7 +163,7 @@ class Video extends CI_Controller
               $this->load->library('image_lib', $config);
               $this->image_lib->resize();*/
 
-              $gambar=$gbr['file_name'];
+/*              $gambar=$gbr['file_name'];
               $data = array(
               'video'=>$gambar,
               'judul_video'=>$this->input->post('nama_video'),
@@ -171,18 +171,19 @@ class Video extends CI_Controller
             $this->MModel->update("id_video",1,"video",$data);
 
             echo json_encode(array("status" => TRUE));
-      }
+      }*/
 
 
-      }else{
-        $data = array(
-        'nama_video'=>$this->input->post('nama_video'),
-      );
-      $this->MModel->update("id_video",1,"video",$data);
+      // }else{ 
+            $data = array(
+              'judul_video'=>$this->input->post('nama_video'),
+              'video'=>$this->input->post('video')
+            );
+            $this->MModel->update("id_video",1,"video",$data);
 
             echo json_encode(array("status" => TRUE));
 
-      }
+     // }
     }
 
     function update()

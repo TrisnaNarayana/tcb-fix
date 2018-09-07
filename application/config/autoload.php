@@ -105,8 +105,8 @@ $autoload['helper'] = array(
 	'parsing',
 	'widget',
 	'language',
-  'gcm',
-  'visitor'
+  	'gcm',
+  	'visitor'
 );
 
 /*

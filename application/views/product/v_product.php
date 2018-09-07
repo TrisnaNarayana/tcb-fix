@@ -227,7 +227,7 @@ $this->load->view('include/header');
             success: function (data) {
                 $('[name="id"]').val(data.id_product);
                 $('[name="nama_product"]').val(data.nama_product);
-                $('[name="id_sub_kategori"]').val(data.id_sub_kategori);
+                $('[name="id_kategori"]').hide();
                 $('[name="dibuat_pada"]').val(data.dibuat_pada);
                 $('#editor').redactor('set', data.deskripsi);
                 $('.modal-title').text('Edit Product');
@@ -286,8 +286,7 @@ $this->load->view('include/header');
                 <form class="form" id="formJ" action="#" method="post">
                     <input type="hidden" name="id" value="">
                     <div class="form-group">
-                        <label for="">Kategori</label>
-                        <select name="id_kategori" class="form-control" required>
+                        <select name="id_kategori" class="form-control" >
                             <?php //$kategori=$this->MModel->getData("select * from kategori a inner join merk b on b.id_merk=a.id_merk");
                         if($kategori){
                         foreach($kategori as $k){ 

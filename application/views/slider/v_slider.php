@@ -227,7 +227,7 @@ $this->load->view('include/header');
                         $('#confirm').modal('hide');
                         swal({
                             title: 'Success!',
-                            text: 'Slider berhasil dihapus!!!',
+                            text: 'Data berhasil dihapus!!!',
                             type: 'success'
                         },
                             function () {

@@ -32,9 +32,7 @@ $this->load->view('include/header');
                             <h4><?=$detail->judul_video?></h4>
                             <hr>
                             <center>
-                            <video controls class="img-responsive">
-                                <source src="<?=base_url().'img/video/'.$detail->video?>" type="video/mp4" />
-                            </video>
+                            <iframe class="img-responsive" src="<?=$detail->video?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </center>
                         </div>
                     </div>
@@ -268,8 +266,9 @@ $this->load->view('include/header');
                 <form class="form" id="formJ" action="#" method="post">
                     <input type="hidden" name="id" value="">
                     <div class="form-group">
-                        <label class="ace-file-input ace-file-multiple" data-src="<?=$detail->video?>">Video</label>
-                        <input multiple="" id="dropify" type="file" name="image">
+                        <label for="">Link Video</label>
+                        <input type="text" name="video" id="" value="<?=$detail->video?>" placeholder="Judul Video" class="form-control" required>
+                        <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
                         <label for="">Nama Video</label>

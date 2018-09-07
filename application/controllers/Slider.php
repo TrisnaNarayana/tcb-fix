@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+
 class Slider extends CI_Controller
 {
 
@@ -122,7 +124,7 @@ class Slider extends CI_Controller
       $config['allowed_types'] = 'png|jpg|gif|jpeg'; //type yang dapat diakses bisa anda sesuaikan
     //  $config['encrypt_name'] = TRUE; //Enkripsi nama yang terslider
       $config['file_name']=$nmfile;
-
+      $id=$this->input->post('id');
       $this->upload->initialize($config);
       if(!empty($_FILES['image']['name'])){
 
@@ -142,10 +144,12 @@ class Slider extends CI_Controller
               $data = array(
               'image'=>$gambar,
               'nama_slider'=>$this->input->post('nama_slider'),
-            );
-            $this->MModel->update("id_slider",$this->input->post('id'),"slider",$data);
-
-            echo json_encode(array("status" => TRUE));
+              );
+              $hasil=$this->MModel->get("select * from slider where id_slider='$id'");
+              $file = PUBPATH.'img/slider/'.$hasil->image;
+              if(unlink($file)){}else{}
+              $this->MModel->update("id_slider",$this->input->post('id'),"slider",$data);
+              echo json_encode(array("status" => TRUE));
 
       }
 
@@ -168,10 +172,11 @@ class Slider extends CI_Controller
 
     public function hapus($id)
     {
-      $hasil=$this->MModel->getData("select * from slider where id_slider='$id'");
+      $hasil=$this->MModel->get("select * from slider where id_slider='$id'");
+      $file = PUBPATH.'img/slider/'.$hasil->image;
+      if(unlink($file)){}else{}
       $this->MModel->hapus("id_slider",$id,"slider");
       echo json_encode(array("status"=>TRUE));
-
     }
 
 

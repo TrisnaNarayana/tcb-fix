@@ -117,6 +117,9 @@ class Profile extends CI_Controller
                 'fax'=>$_POST['fax'],
                 'jam_kerja'=>$_POST['jam_kerja']
               );
+              $hasil=$this->MModel->get("select * from profile where id_profile='1'");
+              $file = PUBPATH.'img/profile/'.$hasil->foto_profile;
+              if(unlink($file)){}else{}
             $this->MModel->update("id_profile",1,"profile",$data);
             echo json_encode(array("status" => TRUE));
 
@@ -183,6 +186,9 @@ class Profile extends CI_Controller
       $data = array(
         'swf'=>$swf
       );
+      $hasil=$this->MModel->get("select * from about_swf where id_about='1'");
+      $file = PUBPATH.'img/profile/'.$hasil->swf;
+      if(unlink($file)){}else{}
       $this->MModel->update("id_about",1,"about_swf",$data);
       echo json_encode(array("status" => TRUE));
     }

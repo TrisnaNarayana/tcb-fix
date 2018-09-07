@@ -171,6 +171,10 @@ class Kategori extends CI_Controller
                 'nama_kategori'=>$this->input->post('nama_kategori'),
                 'deskripsi'=>$this->input->post('deskripsi')
               );
+              $id=$this->input->post('id');
+              $hasil=$this->MModel->get("select * from kategori where id_kategori='$id'");
+              $file = PUBPATH.'img/kategori/'.$hasil->icon;
+              if(unlink($file)){}else{}
               $this->MModel->update("id_kategori",$this->input->post('id'),"kategori",$data);
               echo json_encode(array("status" => TRUE));
       }
@@ -197,7 +201,9 @@ class Kategori extends CI_Controller
 
     public function hapus($id)
     {
-      $hasil=$this->MModel->getData("select * from kategori where id_kategori='$id'");
+      $hasil=$this->MModel->get("select * from kategori where id_kategori='$id'");
+      $file = PUBPATH.'img/kategori/'.$hasil->icon;
+      if(unlink($file)){}else{}
       $this->MModel->hapus("id_kategori",$id,"kategori");
       echo json_encode(array("status"=>TRUE));
 

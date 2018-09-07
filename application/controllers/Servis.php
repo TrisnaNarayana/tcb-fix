@@ -71,97 +71,25 @@ class Servis extends CI_Controller
 
     function add()
     {
-      $nmfile='servis__'.time();
-      $config['upload_path'] = './img/servis/'; //path folder
-      $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-      $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
-      $config['file_name']=$nmfile;
-
-      $this->upload->initialize($config);
-      if(!empty($_FILES['image']['name'])){
-
-          if ($this->upload->do_upload('image')){
-              $gbr = $this->upload->data();
-              //Compress Image
-              $config['image_library']='gd2';
-              $config['source_image']='./img/servis/'.$gbr['file_name'];
-              $config['create_thumb']= FALSE;
-              $config['maintain_ratio']= FALSE;
-              $config['width']= 1680;
-              $config['height']= 1000;
-              $config['new_image']= './img/servis/'.$gbr['file_name'];
-              $this->load->library('image_lib', $config);
-              $this->image_lib->resize();
-
-              $gambar=$gbr['file_name'];
-              $data = array(
-              'img_servis'=>$gambar,
-              'nama_servis'=>$this->input->post('nama_servis'),
-              'deskripsi'=>$this->input->post('deskripsi')
-            );
-            $this->MModel->add("servis",$data);
-            echo json_encode(array("status" => TRUE));
-
-      }
-
-
-      }else{
+      
         $data = array(
           'nama_servis'=>$this->input->post('nama_servis'),
           'deskripsi'=>$this->input->post('deskripsi')
         );
-            $this->MModel->add("servis",$data);
-            echo json_encode(array("status" => TRUE));
+        $this->MModel->add("servis",$data);
+        echo json_encode(array("status" => TRUE));
 
-    }
+    
     }
 
     function update()
     {
-      $nmfile='servis__'.time();
-      $config['upload_path'] = './img/servis/'; //path folder
-      $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-      $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
-      $config['file_name']=$nmfile;
-
-      $this->upload->initialize($config);
-      if(!empty($_FILES['image']['name'])){
-
-          if ($this->upload->do_upload('image')){
-              $gbr = $this->upload->data();
-              //Compress Image
-              $config['image_library']='gd2';
-              $config['source_image']='./img/servis/'.$gbr['file_name'];
-              $config['create_thumb']= FALSE;
-              $config['maintain_ratio']= FALSE;
-              $config['width']= 1680;
-              $config['height']= 1000;
-              $config['new_image']= './img/servis/'.$gbr['file_name'];
-              $this->load->library('image_lib', $config);
-              $this->image_lib->resize();
-
-              $gambar=$gbr['file_name'];
-              $data = array(
-                'img_servis'=>$gambar,
-                'nama_servis'=>$this->input->post('nama_servis'),
-                'deskripsi'=>$this->input->post('deskripsi')
-              );
-            $this->MModel->update("id_servis",$this->input->post('id'),"servis",$data);
-
-            echo json_encode(array("status" => TRUE));
-
-      }
-
-
-      }else{
         $data = array(
           'nama_servis'=>$this->input->post('nama_servis'),
           'deskripsi'=>$this->input->post('deskripsi')
         );
-            $this->MModel->update("id_servis",$this->input->post('id'),"servis",$data);
-            echo json_encode(array("status" => TRUE));
-
-    }
+        $this->MModel->update("id_servis",$this->input->post('id'),"servis",$data);
+        echo json_encode(array("status" => TRUE));
     }
 
     function deskripsi()
@@ -282,6 +210,10 @@ class Servis extends CI_Controller
                // 'id_servis'=>$this->input->post("id_servis"),
                 'img_sub'=>$gambar
               );
+              $id=$this->input->post('id');
+              $hasil=$this->MModel->get("select * from sub_kategori where id_sub_kategori='$id'");
+              $file = PUBPATH.'img/servis/sub/'.$hasil->img_sub;
+              if(unlink($file)){}else{}
               $this->MModel->update("id_sub_kategori",$this->input->post('id'),"sub_kategori",$data);
               echo json_encode(array("status" => TRUE));
 
@@ -312,6 +244,9 @@ class Servis extends CI_Controller
 
     public function hapusSubServis($id)
     {
+      $hasil=$this->MModel->get("select * from sub_kategori where id_sub_kategori='$id'");
+      $file = PUBPATH.'img/servis/sub/'.$hasil->img_sub;
+      if(unlink($file)){}else{}
       $this->MModel->hapus("id_sub_kategori",$id,"sub_kategori");
       echo json_encode(array("status"=>TRUE));
 

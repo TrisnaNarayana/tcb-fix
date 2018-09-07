@@ -139,6 +139,10 @@ class Merk extends CI_Controller
               'img_merk'=>$gambar,
               'nama_merk'=>$this->input->post('nama_merk'),
             );
+            $id=$this->input->post('id');
+            $hasil=$this->MModel->get("select * from merk where id_merk='$id'");
+            $file = PUBPATH.'img/merk/'.$hasil->img_merk;
+            if(unlink($file)){}else{}
             $this->MModel->update("id_merk",$this->input->post('id'),"merk",$data);
 
             echo json_encode(array("status" => TRUE));
@@ -164,7 +168,9 @@ class Merk extends CI_Controller
 
     public function hapus($id)
     {
-      $hasil=$this->MModel->getData("select * from merk where id_merk='$id'");
+      $hasil=$this->MModel->get("select * from merk where id_merk='$id'");
+      $file = PUBPATH.'img/merk/'.$hasil->img_merk;
+      if(unlink($file)){}else{}
       $this->MModel->hapus("id_merk",$id,"merk");
       echo json_encode(array("status"=>TRUE));
 

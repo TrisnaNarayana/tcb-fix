@@ -255,32 +255,35 @@ class Product extends CI_Controller
       $data = array(
         'swf'=>$swf,
         'pdf'=>$pdf,
-        'nama_product'=>$this->input->post('nama_product'),
-        'id_kategori'=>$this->input->post('id_kategori')
+        'nama_product'=>$this->input->post('nama_product')
       );
     }
     else if($pdf != "#" && $swf=="#")
     {
       $data = array(
         'pdf'=>$pdf,
-        'nama_product'=>$this->input->post('nama_product'),
-        'id_kategori'=>$this->input->post('id_kategori')
+        'nama_product'=>$this->input->post('nama_product')
       );
     }
     else if($pdf == "#" && $swf!="#")
     {
       $data = array(
         'swf'=>$swf,
-        'nama_product'=>$this->input->post('nama_product'),
-        'id_kategori'=>$this->input->post('id_kategori')
+        'nama_product'=>$this->input->post('nama_product')
       );
     }else
     {
       $data = array(
-        'nama_product'=>$this->input->post('nama_product'),
-        'id_kategori'=>$this->input->post('id_kategori')
+        'nama_product'=>$this->input->post('nama_product')
       );
+    
     }
+    $id=$this->input->post('id');
+    $hasil=$this->MModel->get("select * from product where id_product='$id'");
+    $file = PUBPATH.'img/product/'.$hasil->swf;
+    $file2 = PUBPATH.'img/product/'.$hasil->pdf;
+    if(unlink($file)){}else{}
+    if(unlink($file2)){}else{}
     $this->MModel->update("id_product",$this->input->post('id'),"product",$data);
     echo json_encode(array("status" => TRUE));
     }
@@ -304,6 +307,11 @@ class Product extends CI_Controller
 
     public function hapus($id)
     {
+      $hasil=$this->MModel->get("select * from product where id_product='$id'");
+      $file = PUBPATH.'img/product/'.$hasil->swf;
+      $file2 = PUBPATH.'img/product/'.$hasil->pdf;
+      if(unlink($file)){}else{}
+      if(unlink($file2)){}else{}
       $this->MModel->hapus("id_product",$id,"product");
       echo json_encode(array("status"=>TRUE));
 
