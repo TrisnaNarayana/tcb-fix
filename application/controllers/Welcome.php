@@ -30,17 +30,53 @@ class Welcome extends CI_Controller
 
   }
 
-  public function kategori($id){
+  public function kategori($id,$page=0){
     $data['detail']= $this->MModel->get("select * from merk where id_merk='$id'");
     $hasil= $this->MModel->getData("select * from kategori a inner join product b on b.id_kategori=a.id_kategori where id_merk='$id'");
     if($hasil)
     {
-      $data['data']=$hasil;
-      $this->load->view('cms/kategori',$data);
+      $config['base_url'] = base_url().'Welcome/kategori/'.$id.'/';
+    $config['total_rows'] = $this->db->count_all_results('kategori');
+    $config['per_page'] = '8';
+    $from = $this->uri->segment(3);
+
+    $config['query_string_segment'] = 'start';
+
+    $config['full_tag_open'] = '<nav><ul class="pagination pull-right">';
+    $config['full_tag_close'] = '</ul></nav>';
+
+    $config['first_link'] = 'First';
+    $config['first_tag_open'] = '<li>';
+    $config['first_tag_close'] = '</li>';
+
+    $config['last_link'] = 'Last';
+    $config['last_tag_open'] = '<li>';
+    $config['last_tag_close'] = '</li>';
+
+    $config['next_link'] = 'Next';
+    $config['next_tag_open'] = '<li>';
+    $config['next_tag_close'] = '</li>';
+
+    $config['prev_link'] = 'Prev';
+    $config['prev_tag_open'] = '<li>';
+    $config['prev_tag_close'] = '</li>';
+
+    $config['cur_tag_open'] = '<li class="active"><a>';
+    $config['cur_tag_close'] = '</a></li>';
+
+    $config['num_tag_open'] = '<li>';
+    $config['num_tag_close'] = '</li>';
+
+    $this->pagination->initialize($config);
+    $where="id_merk='$id'";
+    $this->MModel->set_data('where',$where);
+    $data['data']=$this->MModel->getLimit($page,'id_kategori','8','kategori');
+    $data['page']=$this->pagination->create_links();
+    $this->load->view('cms/kategori',$data);
     }
     else{
       $this->session->set_flashdata('nodata', 'Data not found');
-      redirect(base_url().'Welcome/product');
+      redirect(base_url().'Welcome/product/');
     }
     
   }

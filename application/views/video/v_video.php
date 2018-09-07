@@ -32,7 +32,8 @@ $this->load->view('include/header');
                             <h4><?=$detail->judul_video?></h4>
                             <hr>
                             <center>
-                            <iframe class="img-responsive" src="<?=$detail->video?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe width="100%" height="500" src="https://www.youtube.com/embed/<?=$detail->video?>?rel=0&amp;showinfo=0"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </center>
                         </div>
                     </div>

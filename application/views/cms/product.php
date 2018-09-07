@@ -15,7 +15,7 @@
     <!-- Optional theme -->
 
     <!-- Latest compiled and minified JavaScript -->
-        crossorigin="anonymous"></script>
+     
 
     <title>Merk / Perusahaan : TCB</title>
 
@@ -26,17 +26,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="<?=base_url();?>assets/swt/sweetalert.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+ 
 </head>
-<?php if($this->session->flashdata('nodata')){ ?>
-    <script>
-    swal("No Data", "Data not found", "error");
-    </script>
-<?php } ?>
+
 
 <body style="background-color: rgb(20, 51, 111);
 background-image: url(<?=base_url();?>assets/cms/demo-images/product.png);
@@ -93,7 +87,8 @@ background-size: 100% 100%;">
 </body>
 
 <script type="text/javascript" src="<?=base_url().'assets/cms/js/jquery.js'?>"></script>
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
 <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky-kit.min.js"?>'></script>
 <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.smartmenus.min.js"?>'></script>
@@ -108,5 +103,9 @@ background-size: 100% 100%;">
 <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.prettyPhoto.js"?>'></script>
 <script type='text/javascript' src='<?=base_url()."assets/cms/js/main.js"?>'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<?php if($this->session->flashdata('nodata')){ ?>
+    <script>
+    swal("No Data", "Data not found", "error");
+    </script>
+<?php } ?>
 </html>

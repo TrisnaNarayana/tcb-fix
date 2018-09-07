@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/kategori.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/breadcrumb.css">
+    
 
 
 </head>
@@ -56,6 +57,7 @@ background-size: 100% auto;">
             </div>
         <?php } } ?>
         </div>
+        <?=$page?>
     </div>
 </body>
 
