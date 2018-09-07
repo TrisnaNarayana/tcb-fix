@@ -13,11 +13,8 @@
         crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 
     <title>Merk / Perusahaan : TCB</title>
@@ -27,8 +24,19 @@
     <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
     <meta name="author" content="Colorlib" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="<?=base_url();?>assets/swt/sweetalert.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
 </head>
+<?php if($this->session->flashdata('nodata')){ ?>
+    <script>
+    swal("No Data", "Data not found", "error");
+    </script>
+<?php } ?>
 
 <body style="background-color: rgb(20, 51, 111);
 background-image: url(<?=base_url();?>assets/cms/demo-images/product.png);
@@ -58,27 +66,15 @@ background-size: 100% 100%;">
                         </div>
                     </div>
                     <?php if($data) { 
-                    $no=1;
-                    foreach($data as $d) { 
-                    $nomor=$no++; ?>
-                    <div class="one column row">
-                        <?php if($nomor==1) { ?>
-                        <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
-                            <div class="block x1" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-                        </div>
-                        <?php } ?>
-                    </div>
-                    <?php } ?>
+                    $no=1; ?>
                     <div class="duo column row">
                         <?php
                         $no1=1;
-                        foreach($data as $d) { 
-                        $nomor1=$no1++; ?>
-                        <?php if($nomor1>=2) { ?>
+                        foreach($data as $d) { ?>
                         <div class="sixteen wide mobile eight wide tablet eight wide computer column">
                             <div class="block x4" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
                         </div>
-                        <?php } 
+                        <?php 
                         }?>
                     </div>
                     <?php } ?>
@@ -97,6 +93,7 @@ background-size: 100% 100%;">
 </body>
 
 <script type="text/javascript" src="<?=base_url().'assets/cms/js/jquery.js'?>"></script>
+
 <script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
 <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky-kit.min.js"?>'></script>
 <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.smartmenus.min.js"?>'></script>

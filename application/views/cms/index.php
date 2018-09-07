@@ -11,9 +11,11 @@
 
     <link rel="shortcut icon" href="<?=base_url().'assets/cms/images/favicon.png'?>" />
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet'
-        type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif'
+        rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
     <link rel=" stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/clear.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/common.css "?>' />
     <link rel="stylesheet " type="text/css " href='<?=base_url()."assets/cms/css/font-awesome.min.css "?>' />
@@ -132,114 +134,120 @@
                                         </div>
                                         <div class="service-content">
                                         <div class="text text-concat ellipsis">
-                                            <?=$s['deskripsi_sub_kategori']?>
+                                                <?=$s['deskripsi_sub_kategori']?>
                                         </div>
-                                                <br />
-                                                <br>
-                                                <div class="ui button" tabindex="0">
-                                                    <div onclick="showDeskripsi('<?=$s['id_sub_kategori']?>')" class="visible content">Read
-                                                        More
-                                                    </div>
-                                                    <div class="hidden content">
-                                                        <i class="right arrow icon"></i>
-                                                    </div>
-                                                </div>
+                                     
+                                       
+                                        <br />
+                                        <br>
+                                        <div class="ui button" tabindex="0">
+                                            <div onclick="showDeskripsi('<?=$s['id_sub_kategori']?>')" class="visible content">Read
+                                                More
+                                            </div>
+                                            <div class="hidden content">
+                                                <i class="right arrow icon"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <?php } }?>
-                            </li>
-                            <li>
+                    </div>
+                    <?php } }?>
+                    </li>
+                    <li>
 
-                                <div class="service-holder ">
-                                    <div class="row">
-                                        <?php $no=1; $servis=$this->MModel->getData("select * from servis");
+                        <div class="service-holder ">
+                            <div class="row">
+                                <?php $no=1; $servis=$this->MModel->getData("select * from servis");
 					if($servis){
 					foreach($servis as $s){
 					
 					$no_hasil=$no++;
 					if($no_hasil % 2 == 0) { 
 						$id_servis=$s['id_servis'];?>
-                                        <div class="col-md-12">
-                                            <div id="button">
-                                                <ul class="hover">
-                                                    <li class="top">
-                                                        <a class="btn btn-data-center form-control btn-md">
-                                                            <?=$s['nama_servis']?>
-                                                                <i class="fa fa-angle-down pull-right"></i>
-                                                        </a>
-                                                    </li>
-                                                    <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
+                                <div class="col-md-12">
+                                    <div id="button">
+                                        <ul class="hover">
+                                            <li class="top">
+                                                <a class="btn btn-data-center form-control btn-md">
+                                                    <?=$s['nama_servis']?>
+                                                    <i class="fa fa-angle-down pull-right"></i>
+                                                </a>
+                                            </li>
+                                            <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
                                                     if($sub){
                                                     foreach($sub as $b) { 
                                                     $hasil_no=$noo++; 
                                                     if($hasil_no==1) { ?>
-                                                    <li class="item">
-                                                        <div class="triangle"></div>
-                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
-                                                            <?=$b['nama_sub_kategori']?>
-                                                        </a>
-                                                    </li>
-                                                    <?php } else { ?>
-                                                    <li class="item">
-                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
-                                                            <?=$b['nama_sub_kategori']?>
-                                                        </a>
-                                                    </li>
-                                                    <?php } } } ?>
+                                            <li class="item">
+                                                <div class="triangle"></div>
+                                                <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()"
+                                                    onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                    <?=$b['nama_sub_kategori']?>
+                                                </a>
+                                            </li>
+                                            <?php } else { ?>
+                                            <li class="item">
+                                                <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()"
+                                                    onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                    <?=$b['nama_sub_kategori']?>
+                                                </a>
+                                            </li>
+                                            <?php } } } ?>
 
-                                                </ul>
+                                        </ul>
 
-                                            </div>
-                                        </div>
-                                        <?php } if($no_hasil % 2 != 0 ) { 
+                                    </div>
+                                </div>
+                                <?php } if($no_hasil % 2 != 0 ) { 
 						$id_servis=$s['id_servis']; ?>
-                                        <div class="col-md-12">
-                                            <div id="button">
-                                                <ul class="hover">
-                                                    <li class="top">
-                                                        <a class="btn btn-data-center form-control btn-md">
-                                                            <?=$s['nama_servis']?>
-                                                                <i class="fa fa-angle-down pull-right"></i>
-                                                        </a>
-                                                    </li>
-                                                    <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
+                                <div class="col-md-12">
+                                    <div id="button">
+                                        <ul class="hover">
+                                            <li class="top">
+                                                <a class="btn btn-data-center form-control btn-md">
+                                                    <?=$s['nama_servis']?>
+                                                    <i class="fa fa-angle-down pull-right"></i>
+                                                </a>
+                                            </li>
+                                            <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
 									if($sub){
 									foreach($sub as $b) { 
 									$hasil_no=$noo++; 
 									if($hasil_no==1) { ?>
-                                                    <li class="item">
-                                                        <div class="triangle"></div>
-                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
-                                                            <?=$b['nama_sub_kategori']?>
-                                                        </a>
-                                                    </li>
-                                                    <?php } else { ?>
-                                                    <li class="item">
-                                                        <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()" onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
-                                                            <?=$b['nama_sub_kategori']?>
-                                                        </a>
-                                                    </li>
-                                                    <?php } } } ?>
-                                                </ul>
-
-                                            </div>
-                                        </div>
-                                        <?php } } }?>
+                                            <li class="item">
+                                                <div class="triangle"></div>
+                                                <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()"
+                                                    onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                    <?=$b['nama_sub_kategori']?>
+                                                </a>
+                                            </li>
+                                            <?php } else { ?>
+                                            <li class="item">
+                                                <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()"
+                                                    onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
+                                                    <?=$b['nama_sub_kategori']?>
+                                                </a>
+                                            </li>
+                                            <?php } } } ?>
+                                        </ul>
 
                                     </div>
                                 </div>
+                                <?php } } }?>
 
-                            </li>
+                            </div>
+                        </div>
 
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
+                    </li>
 
+                    </ul>
+                    <div class="clear"></div>
                 </div>
+
             </div>
-            <div class='clear'></div>
         </div>
+        <div class='clear'></div>
+    </div>
     </div>
 
 
@@ -265,16 +273,12 @@
                 <div class="grid" id="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
-                        <a href="javascript:void(0);">
+                        <a href="<?=base_url().'Welcome/product'?>">
                             <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="clear"></div>
-                <div class="block portfolio-load-more-holder">
-                    <a href="<?=base_url().'Welcome/product'?>" class="more-posts">LOAD MORE</a>
-                    <img src="<?=base_url().'assets/cms/images/icon_infinity.svg'?>" alt="Load more">
-                </div>
             </div>
             <div class="clear"></div>
         </div>
@@ -287,7 +291,7 @@
             <div class="section-title-holder left">
                 <div class="section-num">
                     <center>
-                        <span>About</span>
+                        <span class="judul">About</span>
                     </center>
                 </div>
                 <!-- <h2 class="entry-title">CRAFTERS</h2> -->
@@ -307,7 +311,7 @@
                         </span>
                         <br>
                         <?=$setting->misi?>
-                            <br>
+                        <br>
                     </div>
                     <div class="clear"></div>
                     <br>
@@ -365,15 +369,17 @@
                                         <h4 class="member-name">Tali Cahaya Buana</h4>
                                         <div class="member-content">
                                             <?=$setting->deskripsi?>
-                                                <br>
+                                            <br>
                                         </div>
                                     </div>
                                     <div class="member-image-holder">
-                                        <img style="padding:50px; margin-top:100px;" src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>" alt="">
+                                        <img style="padding:50px; margin-top:100px;" src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>"
+                                            alt="">
                                         <center>
                                             <h3>Company Profile</h3>
 
-                                            <button class="ui primary button" onclick="showComPro()">Launch</button></center>
+                                            <button class="ui primary button" onclick="showComPro()">Launch</button>
+                                        </center>
 
 
                                         </center>
@@ -464,99 +470,18 @@
             <div class="section-content-holder left">
                 <div class="content-wrapper">
                     <?=$deskripsi->desc_data_center?>
-                        <div class="clear"></div>
-                        <br>
-                        <br>
+                    <div class="clear"></div>
+                    <br>
+                    <br>
                 </div>
                 <div class="full-width ">
-                    <video width="100%" controls>
-                        <source src="<?=base_url().'img/video/'.$video->video?>" type="video/mp4">
-                    </video>
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/-gM0fkXdhlQ?rel=0&amp;showinfo=0"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="clear"></div>
         </div>
-        <!-- <div class="extra-content-full-width">
-            <script>
-                var fwslider1_speed = "500";
-                var fwslider1_auto = "false";
-                var fwslider1_hover = "true";
-                var fwslider1_start = "0";
-                var fwslider1_width = "400";
-                var fwslider1_num = "5";
-            </script>
-            <div class="fwslider1 fw-image-slider-holder list_carousel relative">
-                <div class="caroufredsel_wrapper">
-                    <ul id="fwslider1" class="fw-image-slider">
-                        <?php $mitra=$this->MModel->getData("select * from mitra"); 
-                    if($mitra){
-                    foreach($mitra as $m) {?>
-                        <li class="fw-slide">
-                            <img src="<?=base_url().'img/mitra/'.$m['foto_mitra']?>" alt="">
-                            <p class="fw-slide-text">
-                                <?=$m['nama_mitra']?>
-                            </p>
-                        </li>
-                        <?php } } ?>
-                    </ul>
-                </div>
-                <div class="clear"></div>
-                <div id="fwslider1_fw_image_slide_pager" class="fw_carousel_pagination"></div>
-            </div>
-            <a id="fwslider1_fw_next" class="carousel_fw_next" href="#"></a>
-            <div class="clear"></div>
-        </div> -->
     </div>
-
-    <!-- Skills -->
-
-    <!-- <div id="skills" class="section">
-        <div class="block content-1170 center-relative">
-            <div class="section-title-holder right">
-                <div class="section-num">
-                    <center>
-                        <span>Partner</span>
-                    </center>
-                </div>
-            </div>
-            <div class="section-content-holder left">
-                <div class="content-wrapper">
-                    <div class="extra-content-full-width">
-                        <script>
-                            var fwslider1_speed = "500";
-                            var fwslider1_auto = "false";
-                            var fwslider1_hover = "true";
-                            var fwslider1_start = "0";
-                            var fwslider1_width = "400";
-                            var fwslider1_num = "5";
-                        </script>
-                        <div class="fwslider1 fw-image-slider-holder list_carousel relative">
-                            <div class="caroufredsel_wrapper">
-                                <ul id="fwslider1" class="fw-image-slider">
-                                    <?php if($mitra){
-                                    foreach($mitra as $m) {?>
-                                    <li class="fw-slide">
-                                        <li class="fw-slide">
-                                            <a href="<?=$m['link_mitra']?>"><img src="<?=base_url().'img/mitra/'.$m['foto_mitra']?>"
-                                                    alt=""></a>
-
-                                        </li>
-                                    </li>
-                                    <?php } }?>
-                                </ul>
-                            </div>
-                            <div class="clear"></div>
-                            <div id="fwslider1_fw_image_slide_pager" class="fw_carousel_pagination"></div>
-                        </div>
-                        <a id="fwslider1_fw_next" class="carousel_fw_next" href="#"></a>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div> -->
-
     <!-- Contact -->
     <div id="contact" class="section">
         <div class="block content-1170 center-relative">
@@ -584,11 +509,12 @@
                             <hr class="hr-color">
                             <div class="body-ft-panel">
                                 <?=$setting->alamat?>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    <img src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>" style="width: 150px;" alt="">
+                                </br>
+                                </br>
+                                </br>
+                                </br>
+                                <img src="<?=base_url().'assets/cms/demo-images/logo_TCB.png'?>" style="width: 150px;"
+                                    alt="">
 
                             </div>
                         </div>
@@ -832,7 +758,8 @@
 
         <div class="content">
             <img src="" id="img_ket" width="100%" alt="">
-            <p id="deskripsi">Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+            <p id="deskripsi">Your inbox is getting full, would you like us to enable automatic archiving of old
+                messages?</p>
         </div>
         <div class="actions">
             <div class="ui green ok inverted button">
@@ -850,9 +777,9 @@
                 <param name="allowFullScreen" value="true" />
                 <param name="movie" value="fullscreen.swf" />
                 <param name="bgcolor" value="#fff" />
-                <embed id="magazine" width="100%" height="100%" src="<?=base_url().'img/Magazine.swf'?>" allowFullScreen="true" bgcolor="#333333"
-                    name="fullscreen" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
-                />
+                <embed id="magazine" width="100%" height="100%" src="<?=base_url().'img/Magazine.swf'?>"
+                    allowFullScreen="true" bgcolor="#333333" name="fullscreen" align="middle" type="application/x-shockwave-flash"
+                    pluginspage="http://www.macromedia.com/go/getflashplayer" />
             </object>
         </div>
         <div class="actions">
@@ -869,7 +796,7 @@
         <a href="tel:<?=$setting->telepon?>"><i class="phone icon"></i> </a>
     </div>
 
-   
+
 
 
 </body>
