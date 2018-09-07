@@ -39,6 +39,7 @@ class Welcome extends CI_Controller
       $this->load->view('cms/kategori',$data);
     }
     else{
+      $this->session->set_flashdata('nodata', 'Data not found');
       redirect(base_url().'Welcome/product');
     }
     
@@ -54,7 +55,7 @@ class Welcome extends CI_Controller
   {
     $config['base_url'] = base_url().'Welcome/product/';
     $config['total_rows'] = $this->db->count_all_results('merk');
-    $config['per_page'] = '5';
+    $config['per_page'] = '6';
     $from = $this->uri->segment(3);
 
     $config['query_string_segment'] = 'start';
@@ -87,7 +88,7 @@ class Welcome extends CI_Controller
     $this->pagination->initialize($config);
 
 
-    $data['data']=$this->MModel->getLimit($page,'id_merk','5','merk');
+    $data['data']=$this->MModel->getLimit($page,'id_merk','6','merk');
     $data['page']=$this->pagination->create_links();
     $this->load->view('cms/product',$data);
 

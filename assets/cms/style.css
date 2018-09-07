@@ -5,7 +5,9 @@ body {
     font-weight: 400;
     color: #23214c;
 }
-
+p{
+    margin:0;
+}
 ul li {
     list-style: none;
 }
@@ -101,6 +103,9 @@ body a:hover {
 
 .sm-clean li.active a {
     color: #fff !important;
+    font-weight: bold;
+    font-size:17px;
+
 }
 
 .mob-menu {
@@ -245,7 +250,7 @@ body a:hover {
 }
 
 .top-logo {
-    width: 160px !important;
+    width: 320px !important;
     padding-top: 150px;
 }
 
@@ -302,7 +307,14 @@ h1.big-title {
     bottom: 0;
     width: 100%;
 }
+.menu-wrapper.center-relative.section-home{
+    background-color:#14336F;
 
+}
+
+#home .section-title-holder {
+    background-color:#14336F;
+}
 /* END HOME SECTION */
 
 /* SERVICE SECTION */
@@ -317,7 +329,7 @@ h1.big-title {
 }
 
 #services .section-title-holder {
-    background-color: rgb(34, 73, 150);
+    background-color: #d63031;
 }
 
 #services .section-title-holder span {
@@ -366,7 +378,10 @@ h1.big-title {
 }
 
 #portfolio .section-title-holder span {
-    color: #e3a436;
+    color: #fff;
+}
+#portfolio .section-title-holder span.judul {
+    color: #ffffff;
 }
 
 .page-template-page-portfolio .section {
@@ -530,11 +545,14 @@ div.pp_default .pp_loaderIcon {
 }
 
 #about .section-title-holder {
-    background-color: #5666f8;
+    background-color: #2980b9;
 }
 
 #about .section-title-holder span {
     color: rgb(67, 78, 185);
+}
+#about .section-title-holder span.judul {
+    color:#fff;
 }
 
 #about .section-content-holder {
@@ -693,7 +711,7 @@ div.pp_default .pp_loaderIcon {
 }
 
 #video .section-title-holder span {
-    color: #e3a436;
+    color: #fff;
 }
 
 #video .section-content-holder {
@@ -804,7 +822,7 @@ a.video-popup-holder:hover img.popup-play {
 }
 
 #contact .section-title-holder {
-    background-color: rgb(173, 55, 55);
+    background-color: #d63031;
 }
 
 #contact .section-title-holder span {
@@ -1214,6 +1232,7 @@ footer {
         margin-top: 10px;
     }
     .section-num span {
+        color:#fff;
         font-size: 50px;
         margin-left: -15px;
     }

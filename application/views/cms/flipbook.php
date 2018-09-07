@@ -206,36 +206,37 @@ background-size: 100% auto;">
                 <form class="form" id="formC" action="#" method="post">
                     <input type="hidden" name="id" value="">
                     <div class="form-group">
-                        <label for="">Name</label>
-                        <input type="text" name="name" id="" placeholder="Name" class="form-control" required>
+                        <h5 for="">Name<span style="color:#E74C3C;"> *</h5>
+                        <input type="text" name="name" id="" class="form-control" required>
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label for="">Email</label>
-                        <input type="email" name="email" id="" placeholder="Email" class="form-control" required>
+                        <h5 for="">Email<span style="color:#E74C3C;"> *</h5>
+                        <input type="email" name="email" id=""  class="form-control" required>
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label for="">Contact</label>
-                        <input type="number" name="contact" id="" placeholder="Contact" class="form-control" required>
+                        <h5>Contact </h5>
+                        <input type="number" name="contact" id="" class="form-control">
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label for="">Company</label>
-                        <input type="text" name="company" id="" placeholder="Company" class="form-control" required>
+                        <h5 for="">Company<span style="color:#E74C3C;"> *</span></h5>
+                        <input type="text" name="company" id="" class="form-control" required>
                         <p class="help-block mb-0"></p>
                     </div>
                     <div class="form-group">
-                        <label for="">The type of Company</label>
-                        <input type="text" name="type_company" id="" placeholder="The type of Company" class="form-control" required>
+                        <h5 for="">The type of Company</h5>
+                        <input type="text" name="type_company" id="" class="form-control">
                         <p class="help-block mb-0"></p>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Address</label>
-                        <textarea type="text" name="address" id="" placeholder="Address " class="form-control" rows="3" required></textarea>
+                        <h5 for="">Address</h5>
+                        <textarea type="text" name="address" id="" class="form-control" rows="3" ></textarea>
                         <p class="help-block mb-0"></p>
                     </div>
+                    <h5><span style="color:#E74C3C;"> *) Required</span></h5>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-raised btn-primary" id="btnSave1" onclick="">Save</button>

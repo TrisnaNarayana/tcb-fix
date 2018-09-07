@@ -263,16 +263,12 @@
                 <div class="grid" id="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
-                        <a href="javascript:void(0);">
+                        <a href="<?=base_url().'Welcome/product'?>">
                             <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="clear"></div>
-                <div class="block portfolio-load-more-holder">
-                    <a href="<?=base_url().'Welcome/product'?>" class="more-posts">LOAD MORE</a>
-                    <img src="<?=base_url().'assets/cms/images/icon_infinity.svg'?>" alt="Load more">
-                </div>
             </div>
             <div class="clear"></div>
         </div>
@@ -285,7 +281,7 @@
             <div class="section-title-holder left">
                 <div class="section-num">
                     <center>
-                        <span>About</span>
+                        <span class="judul">About</span>
                     </center>
                 </div>
                 <!-- <h2 class="entry-title">CRAFTERS</h2> -->
@@ -467,94 +463,12 @@
                         <br>
                 </div>
                 <div class="full-width ">
-                    <video width="100%" controls>
-                        <source src="<?=base_url().'img/video/'.$video->video?>" type="video/mp4">
-                    </video>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/-gM0fkXdhlQ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="clear"></div>
         </div>
-        <!-- <div class="extra-content-full-width">
-            <script>
-                var fwslider1_speed = "500";
-                var fwslider1_auto = "false";
-                var fwslider1_hover = "true";
-                var fwslider1_start = "0";
-                var fwslider1_width = "400";
-                var fwslider1_num = "5";
-            </script>
-            <div class="fwslider1 fw-image-slider-holder list_carousel relative">
-                <div class="caroufredsel_wrapper">
-                    <ul id="fwslider1" class="fw-image-slider">
-                        <?php $mitra=$this->MModel->getData("select * from mitra"); 
-                    if($mitra){
-                    foreach($mitra as $m) {?>
-                        <li class="fw-slide">
-                            <img src="<?=base_url().'img/mitra/'.$m['foto_mitra']?>" alt="">
-                            <p class="fw-slide-text">
-                                <?=$m['nama_mitra']?>
-                            </p>
-                        </li>
-                        <?php } } ?>
-                    </ul>
-                </div>
-                <div class="clear"></div>
-                <div id="fwslider1_fw_image_slide_pager" class="fw_carousel_pagination"></div>
-            </div>
-            <a id="fwslider1_fw_next" class="carousel_fw_next" href="#"></a>
-            <div class="clear"></div>
-        </div> -->
     </div>
-
-    <!-- Skills -->
-
-    <!-- <div id="skills" class="section">
-        <div class="block content-1170 center-relative">
-            <div class="section-title-holder right">
-                <div class="section-num">
-                    <center>
-                        <span>Partner</span>
-                    </center>
-                </div>
-            </div>
-            <div class="section-content-holder left">
-                <div class="content-wrapper">
-                    <div class="extra-content-full-width">
-                        <script>
-                            var fwslider1_speed = "500";
-                            var fwslider1_auto = "false";
-                            var fwslider1_hover = "true";
-                            var fwslider1_start = "0";
-                            var fwslider1_width = "400";
-                            var fwslider1_num = "5";
-                        </script>
-                        <div class="fwslider1 fw-image-slider-holder list_carousel relative">
-                            <div class="caroufredsel_wrapper">
-                                <ul id="fwslider1" class="fw-image-slider">
-                                    <?php if($mitra){
-                                    foreach($mitra as $m) {?>
-                                    <li class="fw-slide">
-                                        <li class="fw-slide">
-                                            <a href="<?=$m['link_mitra']?>"><img src="<?=base_url().'img/mitra/'.$m['foto_mitra']?>"
-                                                    alt=""></a>
-
-                                        </li>
-                                    </li>
-                                    <?php } }?>
-                                </ul>
-                            </div>
-                            <div class="clear"></div>
-                            <div id="fwslider1_fw_image_slide_pager" class="fw_carousel_pagination"></div>
-                        </div>
-                        <a id="fwslider1_fw_next" class="carousel_fw_next" href="#"></a>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div> -->
-
     <!-- Contact -->
     <div id="contact" class="section">
         <div class="block content-1170 center-relative">

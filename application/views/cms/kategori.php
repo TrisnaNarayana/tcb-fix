@@ -28,7 +28,6 @@ background-position-y: top;
 background-size: 100% auto;">
     <div class="wrapper">
 
-        <h1>Category : <?=$detail->nama_merk?></h1>
 
         <div class="page__section">
             <ul class="breadcrumbs breadcrumbs_type5">
