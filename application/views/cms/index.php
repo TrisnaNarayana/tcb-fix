@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="<?=base_url().'assets/cms/css/semantic.min.css'?>">
     <link rel="stylesheet" type="text/css" href='<?=base_url()."assets/cms/style.css"?>' />
     <link rel="stylesheet" type="text/css" href='<?=base_url()."assets/cms/css/contact.css"?>' />
+    <link rel="stylesheet" type="text/css" href='<?=base_url()."assets/bower_components/font-awesome/css/font-awesome.min.css"?>' />
 
 
     <!--[if lt IE 9]>
@@ -791,9 +792,9 @@
     </div>
 
     <div class="menu-button"><i class="share alternate icon"></i>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=628988600980&text=Hai Tali Cahaya Buana"><i class="whatsapp icon"></i></a>
-        <a href="mailto:<?=$setting->email?>"><i class="envelope icon"></i></a>
-        <a href="tel:<?=$setting->telepon?>"><i class="phone icon"></i> </a>
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=628988600980&text=Hai Tali Cahaya Buana"><i class="fa fa-whatsapp"></i></a>
+        <a href="mailto:<?=$setting->email?>"><i class="fa fa-envelope"></i></a>
+        <a href="tel:<?=$setting->telepon?>"><i class="fa fa-phone"></i> </a>
     </div>
 
 
