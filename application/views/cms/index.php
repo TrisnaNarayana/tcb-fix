@@ -219,16 +219,22 @@
                 <div class="grid" id="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
-                        <a href="javascript:void(0);">
-                            <img src="<?=base_url().'assets/cms/demo-images/banner-product-sm.png'?>" alt="">
+                        <a href="<?=base_url().'Welcome/product'?>" class="content_product">
+                            <img src="<?=base_url().'assets/cms/demo-images/banner-product-sm.png'?>" class="image_product" alt="">
+                            <div class="middle-product">
+                                <div class="text-product" onClick="windows.location(<?=site_url('Welcome/product')?>);">Click For Launch</div>
+                            </div>
                         </a>
                     </div>
                 </div>
                 <div class="grid" id="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item element-item p_one">
-                        <a href="<?=base_url().'Welcome/product'?>">
-                            <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" alt="">
+                        <a href="<?=base_url().'Welcome/product'?>" class="content_product">
+                            <img src="<?=base_url().'assets/cms/demo-images/banner-product.png'?>" class="image_product" alt="">
+                            <div class="middle-product">
+                                <div class="text-product" onClick="windows.location(<?=site_url('Welcome/product')?>);">Click For Launch</div>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -245,7 +251,7 @@
             <div class="section-title-holder left">
                 <div class="section-num">
                     <center>
-                        <span class="judul">About</span>
+                        <span>About</span>
                     </center>
                 </div>
                 <!-- <h2 class="entry-title">CRAFTERS</h2> -->
