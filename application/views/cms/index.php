@@ -356,12 +356,7 @@
     </div>
     <div class="clear"></div>
     </div>
-
-    <div class="block content-1170 center-relative">
-        <div class="extra-content-left">
-        </div>
     </div>
-    </div> -->
 
     <!-- Video -->
     <div id="video" class="section">
