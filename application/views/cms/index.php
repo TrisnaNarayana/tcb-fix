@@ -161,81 +161,30 @@
                                 <?php $no=1; $servis=$this->MModel->getData("select * from servis");
 					if($servis){
 					foreach($servis as $s){
-					
-					$no_hasil=$no++;
-					if($no_hasil % 2 == 0) { 
-						$id_servis=$s['id_servis'];?>
-                                <div class="col-md-12">
-                                    <div id="button">
-                                        <ul class="hover">
-                                            <li class="top">
-                                                <a class="btn btn-data-center form-control btn-md">
-                                                    <?=$s['nama_servis']?>
-                                                    <i class="fa fa-angle-down pull-right"></i>
-                                                </a>
-                                            </li>
-                                            <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
-                                                    if($sub){
-                                                    foreach($sub as $b) { 
-                                                    $hasil_no=$noo++; 
-                                                    if($hasil_no==1) { ?>
-                                            <li class="item">
-                                                <div class="triangle"></div>
-                                                <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()"
-                                                    onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
-                                                    <?=$b['nama_sub_kategori']?>
-                                                </a>
-                                            </li>
-                                            <?php } else { ?>
-                                            <li class="item">
-                                                <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()"
-                                                    onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
-                                                    <?=$b['nama_sub_kategori']?>
-                                                </a>
-                                            </li>
-                                            <?php } } } ?>
+					?>
 
-                                        </ul>
-
-                                    </div>
-                                </div>
-                                <?php } if($no_hasil % 2 != 0 ) { 
-						$id_servis=$s['id_servis']; ?>
-                                <div class="col-md-12">
-                                    <div id="button">
-                                        <ul class="hover">
-                                            <li class="top">
-                                                <a class="btn btn-data-center form-control btn-md">
-                                                    <?=$s['nama_servis']?>
-                                                    <i class="fa fa-angle-down pull-right"></i>
-                                                </a>
-                                            </li>
-                                            <?php $noo=1; $sub=$this->MModel->getData("select * from sub_kategori where id_servis='$id_servis'");
-									if($sub){
-									foreach($sub as $b) { 
-									$hasil_no=$noo++; 
-									if($hasil_no==1) { ?>
-                                            <li class="item">
-                                                <div class="triangle"></div>
-                                                <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()"
-                                                    onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
-                                                    <?=$b['nama_sub_kategori']?>
-                                                </a>
-                                            </li>
-                                            <?php } else { ?>
-                                            <li class="item">
-                                                <a class="btn btn-data-center-sub form-control btn-md" href="javascript:void()"
-                                                    onclick="showDeskripsi(<?=$b['id_sub_kategori']?>)">
-                                                    <?=$b['nama_sub_kategori']?>
-                                                </a>
-                                            </li>
-                                            <?php } } } ?>
-                                        </ul>
-
-                                    </div>
-                                </div>
-                                <?php } } }?>
-
+<div class="ui list">
+  <div class="item">
+    <i class="folder icon"></i>
+    <div class="content">
+      <div class="header"><?=$s['nama_servis']?></div>
+      <div class="list">
+      <?php 
+          $id = $s['id_servis'];
+          $subservice = $this->MModel->getData("select * from sub_kategori where id_servis=$id");
+          foreach($subservice as $b){?>
+        <div class="item">
+          <i class="folder icon"></i>
+          <div class="content">
+            <div class="header"><a href="javascript:void(0);" onClick="showDeskripsi(<?=$b['id_sub_kategori'];?>);"><?=$b['nama_sub_kategori']?></a></div>
+          </div>
+        </div>
+        <?php } ?>
+      </div>
+    </div>
+  </div>
+</div>
+                    <?php } } ?>
                             </div>
                         </div>
 
@@ -637,49 +586,49 @@
 
     <script type="text/javascript">
 
-        $('#formC').on('submit', function (e) {
-            $('#btnSave1').text('Menyimpan...');
-            $('#btnSave1').attr('disabled', true);
-            var url;
-            if (save_method == 'add') {
-                url = "<?=base_url().'Client/add';?>";
-            } else {
-                url = "<?=base_url().'Client/update';?>";
-            }
-            e.preventDefault();
-            $.ajax({
-                url: url,
-                method: "POST",
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function (data) {
-                    if (save_method == 'add') {
-                        $('#addClient').modal('hide');
-                        swal({
-                            title: 'Sukses!',
-                            text: 'Data berhasil di simpan',
-                            type: 'success'
-                        },
-                            function () {
-                                location.reload();
-                            });
-                    }
-                    else {
-                        $('#addClient').modal('hide');
-                        swal({
-                            title: 'Sukses!',
-                            text: 'Data berhasil di ubah',
-                            type: 'success'
-                        },
-                            function () {
-                                location.reload();
-                            });
-                    }
-                }
-            });
-        });
+        // $('#formC').on('submit', function (e) {
+        //     $('#btnSave1').text('Menyimpan...');
+        //     $('#btnSave1').attr('disabled', true);
+        //     var url;
+        //     if (save_method == 'add') {
+        //         url = "<?=base_url().'Client/add';?>";
+        //     } else {
+        //         url = "<?=base_url().'Client/update';?>";
+        //     }
+        //     e.preventDefault();
+        //     $.ajax({
+        //         url: url,
+        //         method: "POST",
+        //         data: new FormData(this),
+        //         contentType: false,
+        //         cache: false,
+        //         processData: false,
+        //         success: function (data) {
+        //             if (save_method == 'add') {
+        //                 $('#addClient').modal('hide');
+        //                 swal({
+        //                     title: 'Sukses!',
+        //                     text: 'Data berhasil di simpan',
+        //                     type: 'success'
+        //                 },
+        //                     function () {
+        //                         location.reload();
+        //                     });
+        //             }
+        //             else {
+        //                 $('#addClient').modal('hide');
+        //                 swal({
+        //                     title: 'Sukses!',
+        //                     text: 'Data berhasil di ubah',
+        //                     type: 'success'
+        //                 },
+        //                     function () {
+        //                         location.reload();
+        //                     });
+        //             }
+        //         }
+        //     });
+        // });
 
         function showModal(swf) {
             var url = "<?=base_url().'img/info/'?>" + swf;
