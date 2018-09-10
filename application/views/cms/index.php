@@ -134,70 +134,74 @@
                                             <?=$s['nama_sub_kategori']?>
                                         </div>
                                         <div class="service-content">
-                                        <div class="text text-concat ellipsis">
+                                            <div class="text text-concat ellipsis">
                                                 <?=$s['deskripsi_sub_kategori']?>
-                                        </div>
-                                     
-                                       
-                                        <br />
-                                        <br>
-                                        <div class="ui button" tabindex="0">
-                                            <div onclick="showDeskripsi('<?=$s['id_sub_kategori']?>')" class="visible content">Read
-                                                More
                                             </div>
-                                            <div class="hidden content">
-                                                <i class="right arrow icon"></i>
+
+
+                                            <br />
+                                            <br>
+                                            <div class="ui button" tabindex="0">
+                                                <div onclick="showDeskripsi('<?=$s['id_sub_kategori']?>')" class="visible content">Read
+                                                    More
+                                                </div>
+                                                <div class="hidden content">
+                                                    <i class="right arrow icon"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                    </div>
-                    <?php } }?>
-                    </li>
-                    <li>
+                                <?php } }?>
+                            </li>
+                            <li>
 
-                        <div class="service-holder ">
-                            <div class="row">
-                                <?php $no=1; $servis=$this->MModel->getData("select * from servis");
+                                <div class="service-holder ">
+                                    <div class="row">
+                                        <?php $no=1; $servis=$this->MModel->getData("select * from servis");
 					if($servis){
 					foreach($servis as $s){
 					?>
 
-<div class="ui list">
-  <div class="item">
-    <i class="folder icon"></i>
-    <div class="content">
-      <div class="header"><?=$s['nama_servis']?></div>
-      <div class="list">
-      <?php 
+                                        <div class="ui list">
+                                            <div class="item">
+                                                <i class="folder icon"></i>
+                                                <div class="content">
+                                                    <div class="header">
+                                                        <?=$s['nama_servis']?>
+                                                    </div>
+                                                    <div class="list">
+                                                        <?php 
           $id = $s['id_servis'];
           $subservice = $this->MModel->getData("select * from sub_kategori where id_servis=$id");
           foreach($subservice as $b){?>
-        <div class="item">
-          <i class="folder icon"></i>
-          <div class="content">
-            <div class="header"><a href="javascript:void(0);" onClick="showDeskripsi(<?=$b['id_sub_kategori'];?>);"><?=$b['nama_sub_kategori']?></a></div>
-          </div>
-        </div>
-        <?php } ?>
-      </div>
-    </div>
-  </div>
-</div>
-                    <?php } } ?>
-                            </div>
-                        </div>
+                                                        <div class="item">
+                                                            <i class="folder icon"></i>
+                                                            <div class="content">
+                                                                <div class="header"><a href="javascript:void(0);"
+                                                                        onClick="showDeskripsi(<?=$b['id_sub_kategori'];?>);">
+                                                                        <?=$b['nama_sub_kategori']?></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php } } ?>
+                                    </div>
+                                </div>
 
-                    </li>
+                            </li>
 
-                    </ul>
-                    <div class="clear"></div>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+
                 </div>
-
             </div>
+            <div class='clear'></div>
         </div>
-        <div class='clear'></div>
-    </div>
     </div>
 
 
@@ -347,61 +351,16 @@
             <div class="clear"></div>
         </div>
     </div>
-
-    <!-- News -->
-    <!-- <div id="news" class="section">
-        <div class="block content-1170 center-relative">
-            <div class="section-title-holder right">
-                <div class="section-num">
-                    <span>
-                        <center>
-                            Information
-                        </center>
-                    </span>
-                </div>
-            </div>
-            <div class="section-content-holder left">
-                <div class="content-wrapper">
-                    <div class="blog-holder block center-relative">
-                        <?php $no=1; $info=$this->MModel->getData("select * from info");
-                    if($info) {
-                    foreach($info as $i) { ?>
-                        <article class="relative blog-item-holder center-relative">
-                            <div class="num">
-                                <?=$no++?>
-                            </div>
-                            <div class="info">
-                                <div class="author vcard "></div>
-                                <div class="cat-links">
-                                    <ul>
-                                        <li>
-                                            <br>
-                                            <button class="positive ui button" id="#" onclick="showModal('<?=$i['swf']?>')">Launch</button>
-                                        </li>
-                                        <li>
-                                            <br>
-                                            <a target="_blank" class="negative ui button" href="<?=base_url().'img/info/'.$i['pdf']?>" id="modallaunch">Download</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <h3 class="entry-title">
-                                <a href="#"><?=$i['judul_info']?></a>
-                            </h3>
-                            <div class="clear"></div>
-                        </article>
-                        <?php } } ?>
-                    </div>
                  <!-- pursitakania@yahoo.com Rachmania Anistyorini <rachmaniaanis@gmail.com> -->
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
+    </div>
+    </div>
+    <div class="clear"></div>
+    </div>
 
-        <div class="block content-1170 center-relative">
-            <div class="extra-content-left">
-            </div>
+    <div class="block content-1170 center-relative">
+        <div class="extra-content-left">
         </div>
+    </div>
     </div> -->
 
     <!-- Video -->
@@ -443,7 +402,6 @@
                         </center>
                     </span>
                 </div>
-                <!-- <h2 class="entry-title">Contact</h2> -->
             </div>
             <div class="section-content-holder right">
                 <div class="content-wrapper">
@@ -487,11 +445,13 @@
                                         </a>
                                     </center>
                                 </p>
+                                <br>
                                 <center>
                                     <p>
                                         <?=$setting->telepon?>
                                     </p>
                                 </center>
+                                <br>
                                 <center>
                                     <p>
                                         <center>
@@ -500,6 +460,7 @@
                                             </a>
                                         </center>
                                     </p>
+                                    <br>
                                     <p>
                                         <?=$setting->email?>
                                     </p>
@@ -518,9 +479,7 @@
             <div class="clear"></div>
         </div>
     </div>
-
     <!-- Footer -->
-
     <footer>
         <div class="footer content-1170 center-relative">
             <ul>
@@ -530,8 +489,6 @@
             </ul>
         </div>
     </footer>
-
-
     <!--Load JavaScript-->
     <script type="text/javascript" src="<?=base_url().'assets/cms/js/jquery.js'?>"></script>
     <script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
@@ -549,7 +506,6 @@
     <script type='text/javascript' src='<?=base_url()."assets/cms/js/main.js"?>'></script>
     <script src="<?=base_url().'assets/cms/js/semantic.min.js'?>"></script>
     <script>
-
         jQuery(function ($) {
             $('.flexslider').flexslider({
                 animation: "slide",
