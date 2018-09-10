@@ -63,12 +63,18 @@ background-size: 100% 100%;">
                     <div class="duo column row">
                         <?php
                         $no1=1;
-                        foreach($data as $d) { ?>
+                        foreach($data as $d) { 
+                        $id_merk=$d['id_merk'];
+                        $cari=$this->MModel->get("select * from kategori a inner join product b on b.id_kategori=a.id_kategori where id_merk='$id_merk'") ; ?>
                         <div class="sixteen wide mobile eight wide tablet eight wide computer column">
                                 <div class="block x4" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;">
                                 </div>
                                 <div class="middle">
-                            <div class="text"><a href="">Click For View Brochure</a></div>
+                            <?php if($cari) { ?>
+                                <div class="text"><a href="<?=site_url('welcome/kategori/'.$d['id_merk'])?>">Click For View Brochure</a></div>
+                            <?php } else { ?>
+                                <div class="text bg-danger"><a href="<?=site_url('welcome/kategori/'.$d['id_merk'])?>">No Data</a></div>
+                            <?php } ?>
                         </div>
                         </div>
                         <?php 

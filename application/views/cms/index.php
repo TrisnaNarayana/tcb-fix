@@ -392,7 +392,7 @@
                         </article>
                         <?php } } ?>
                     </div>
-
+                 <!-- pursitakania@yahoo.com Rachmania Anistyorini <rachmaniaanis@gmail.com> -->
                 </div>
             </div>
             <div class="clear"></div>
