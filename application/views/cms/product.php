@@ -42,6 +42,9 @@ background-size: 100% 100%;">
             </td>
         </tr>
     </table>
+    <style>
+  
+    </style>
     <div class="background">
         <div class="ui container">
             <div class="content">
@@ -62,7 +65,11 @@ background-size: 100% 100%;">
                         $no1=1;
                         foreach($data as $d) { ?>
                         <div class="sixteen wide mobile eight wide tablet eight wide computer column">
-                            <div class="block x4" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
+                                <div class="block x4" onclick="window.location='<?=site_url('welcome/kategori/'.$d['id_merk'])?>';" style="background:url(<?=base_url().'img/merk/'.$d['img_merk'];?>);background-size:cover;background-repeat:no-repeat;background-position:center;">
+                                </div>
+                                <div class="middle">
+                            <div class="text"><a href="">Click For View Brochure</a></div>
+                        </div>
                         </div>
                         <?php 
                         }?>
@@ -83,7 +90,6 @@ background-size: 100% 100%;">
 </body>
 
 <script type="text/javascript" src="<?=base_url().'assets/cms/js/jquery.js'?>"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type='text/javascript' src="<?=base_url().'assets/cms/js/jquery.flexslider.js'?>"></script>
 <script type='text/javascript' src='<?=base_url()."assets/cms/js/jquery.sticky-kit.min.js"?>'></script>
