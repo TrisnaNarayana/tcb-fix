@@ -19,7 +19,7 @@
 </head>
 
 <body style="background-color: rgb(20, 51, 111);
-background-image: url(<?=base_url();?>assets/cms/demo-images/book.png);
+background-image: url(<?=base_url();?>assets/cms/demo-images/mgf.png);
 background-repeat: no-repeat;
 background-position: center top;
 background-position-x: center;
@@ -51,8 +51,7 @@ background-size: 100% auto;">
                         </div>
                     </div>
                     <div class="service-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, debitis.</p>
-                        <a href="#view-id" class="btn btn-primary btn-lg" data-toggle="modal" style="margin-top:5%;">Launch</a>
+                        <a href="#view-id" class="btn btn-primary btn-lg" data-toggle="modal" style="margin-top:30%;">Launch</a>
 
                     </div>
                 </div>
@@ -66,10 +65,7 @@ background-size: 100% auto;">
                         </div>
                     </div>
                     <div class="service-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, debitis.</p>
-                        <a href="javascript:void(0)" onclick="addClient()" class="btn btn-primary btn-lg" style="margin-top:5%;">Download</a>
-
-
+                        <a href="javascript:void(0)" onclick="addClient()" class="btn btn-primary btn-lg" style="margin-top:30%;">Download</a>
                     </div>
                 </div>
             </div>

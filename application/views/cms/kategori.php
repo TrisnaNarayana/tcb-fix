@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/kategori.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/semantic.min.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/cms/css/breadcrumb.css">
-    
+    <!-- <link rel="stylesheet" href="<?=base_url();?>assets/bower_components/bootstrap/dist/cs"> -->
 
 
 </head>
